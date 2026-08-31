@@ -4,7 +4,6 @@
     "title": "What people have said.",
     "kicker": "Feedback from network owners, community managers and staff leads I've worked with over the years."
   },
-
   "summary": {
     "show": true,
     "ratingLabel": "Average rating",
@@ -12,7 +11,6 @@
     "repeatLabel": "Came back again",
     "repeatValue": "64%"
   },
-
   "items": [
     {
       "id": "rev-aurora",
@@ -26,7 +24,10 @@
       "date": "Feb 2026",
       "rating": 5,
       "avatar": "/media/avatar-01.svg",
-      "images": ["/media/showcase-01.svg", "/media/showcase-08.svg"]
+      "images": [
+        "/media/showcase-01.svg",
+        "/media/showcase-08.svg"
+      ]
     },
     {
       "id": "rev-obsidian",
@@ -40,7 +41,9 @@
       "date": "Jan 2026",
       "rating": 5,
       "avatar": "/media/avatar-02.svg",
-      "images": ["/media/showcase-03.svg"]
+      "images": [
+        "/media/showcase-03.svg"
+      ]
     },
     {
       "id": "rev-ironhold",
@@ -54,7 +57,10 @@
       "date": "Nov 2025",
       "rating": 5,
       "avatar": "/media/avatar-03.svg",
-      "images": ["/media/showcase-06.svg", "/media/showcase-04.svg"]
+      "images": [
+        "/media/showcase-06.svg",
+        "/media/showcase-04.svg"
+      ]
     },
     {
       "id": "rev-verdant",
@@ -82,35 +88,9 @@
       "date": "Jun 2025",
       "rating": 5,
       "avatar": "/media/avatar-05.svg",
-      "images": ["/media/showcase-05.svg"]
-    },
-    {
-      "id": "rev-perf",
-      "featured": false,
-      "quote": "We were about to pay for a hardware upgrade we didn't need. He read our timings report, pulled out nine plugins and retuned the config, and tick time went from 41ms to 12ms. That was a one off fee instead of a bigger bill every month.",
-      "author": "Nadia Petrova",
-      "handle": "@nadiap",
-      "role": "Technical lead",
-      "platform": "BuiltByBit",
-      "project": "Performance pass",
-      "date": "Apr 2025",
-      "rating": 5,
-      "avatar": "/media/avatar-06.svg",
-      "images": ["/media/showcase-08.svg"]
-    },
-    {
-      "id": "rev-bots",
-      "featured": false,
-      "quote": "Clear about what he was doing the whole way through, finished ahead of the date he gave me, and the documentation meant I could make my own changes afterwards. Would hire again without thinking about it.",
-      "author": "Kofi Baptiste",
-      "handle": "@kofib",
-      "role": "Community owner",
-      "platform": "Discord",
-      "project": "Verification and tickets",
-      "date": "Feb 2025",
-      "rating": 4.5,
-      "avatar": "/media/avatar-07.svg",
-      "images": ["/media/showcase-07.svg"]
+      "images": [
+        "/media/showcase-05.svg"
+      ]
     }
   ]
 }

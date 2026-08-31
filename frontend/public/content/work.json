@@ -4,7 +4,6 @@
     "title": "Current jobs, and things I've finished.",
     "kicker": "Live work with honest progress first, then a gallery of finished setups. Click any cover to see the rest of the shots."
   },
-
   "active": {
     "marker": "Active projects",
     "title": "On the bench right now.",
@@ -16,30 +15,31 @@
         "name": "Aurora Network proxy rebuild",
         "phase": "Configuration",
         "progress": 68,
-        "started": "Jan 2026",
-        "eta": "Apr 2026",
         "summary": "Moving four standalone Paper servers onto one Velocity proxy, with shared permissions, unified chat and player data that follows people between servers.",
-        "stack": ["Velocity", "Paper", "LuckPerms", "Redis"],
-        "nextUp": [
-          "Party and friends sync across servers",
-          "Load test the hub at 400 concurrent players",
-          "Walk the staff through the new permission tracks"
+        "stack": [
+          "Velocity",
+          "Paper",
+          "LuckPerms",
+          "Redis"
         ],
-        "links": [{ "label": "Network site", "href": "https://example.com" }]
+        "links": [
+          {
+            "label": "Network site",
+            "href": "https://example.com"
+          }
+        ]
       },
       {
         "id": "obsidian-season",
         "name": "Obsidian Guild season three",
         "phase": "Content build",
         "progress": 42,
-        "started": "Feb 2026",
-        "eta": "May 2026",
         "summary": "A custom progression season with tiered quests, seasonal cosmetics, and a leaderboard that ties Discord roles to in game rank.",
-        "stack": ["MythicMobs", "ItemsAdder", "Discord.js", "PlaceholderAPI"],
-        "nextUp": [
-          "Balance the tier four and five quest rewards",
-          "Wire the leaderboard webhook into Discord",
-          "Playtest the first three hours of progression"
+        "stack": [
+          "MythicMobs",
+          "ItemsAdder",
+          "Discord.js",
+          "PlaceholderAPI"
         ],
         "links": []
       },
@@ -48,16 +48,16 @@
         "name": "Staff training programme",
         "phase": "Rollout",
         "progress": 85,
-        "started": "Dec 2025",
-        "eta": "Mar 2026",
         "summary": "A reusable hiring and training setup. Application scoring, a two week onboarding path, and an escalation ladder that survives contact with real drama.",
-        "stack": ["Notion", "Discord", "Policy design"],
-        "nextUp": ["Final pass on the appeals policy", "Record the four onboarding walkthroughs"],
+        "stack": [
+          "Notion",
+          "Discord",
+          "Policy design"
+        ],
         "links": []
       }
     ]
   },
-
   "showcase": {
     "marker": "Showcase",
     "title": "Finished work.",
@@ -70,30 +70,42 @@
         "title": "Multi server network core",
         "category": "Server configuration",
         "year": "2025",
-        "featured": true,
         "summary": "Four servers behind one address, sharing permissions, chat and player data.",
-        "description": "Built for a network that had outgrown a single Paper instance. Each gamemode runs on its own server, so a crash on minigames never touches survival, and LuckPerms contexts keep one permission tree across all of them.",
         "cover": "/media/showcase-01.svg",
-        "gallery": ["/media/showcase-01.svg", "/media/showcase-08.svg", "/media/showcase-02.svg"],
-        "tags": ["Velocity", "Paper", "Redis", "LuckPerms"],
-        "highlights": [
-          "Held 12ms average tick time with 400 players on",
-          "Rolling restarts, so nobody gets kicked for a server cycle"
+        "gallery": [
+          "/media/showcase-01.svg",
+          "/media/showcase-08.svg",
+          "/media/showcase-02.svg"
         ],
-        "links": [{ "label": "Live network", "href": "https://example.com" }]
+        "tags": [
+          "Velocity",
+          "Paper",
+          "Redis",
+          "LuckPerms"
+        ],
+        "links": [
+          {
+            "label": "Live network",
+            "href": "https://example.com"
+          }
+        ]
       },
       {
         "id": "permission-tree",
         "title": "Permission tree rebuild",
         "category": "Plugin configuration",
         "year": "2024",
-        "featured": false,
         "summary": "Ninety tangled permission groups cut down to fourteen inherited tracks in one weekend.",
-        "description": "The old setup granted permissions per user with no inheritance at all, so every promotion meant hand editing about forty nodes. After the rebuild a rank change is one command.",
         "cover": "/media/showcase-02.svg",
-        "gallery": ["/media/showcase-02.svg", "/media/showcase-05.svg"],
-        "tags": ["LuckPerms", "Tracks", "Contexts"],
-        "highlights": ["Promotions went from 40 manual edits to a single command", "Every track documented in the staff handbook"],
+        "gallery": [
+          "/media/showcase-02.svg",
+          "/media/showcase-05.svg"
+        ],
+        "tags": [
+          "LuckPerms",
+          "Tracks",
+          "Contexts"
+        ],
         "links": []
       },
       {
@@ -101,13 +113,17 @@
         "title": "Discord community structure",
         "category": "Discord",
         "year": "2024",
-        "featured": false,
         "summary": "A 40 channel layout with staged access that took a community from 400 to 12,000 members.",
-        "description": "New members land in six channels. The rest opens up as they verify, introduce themselves and actually take part, which keeps the first impression readable instead of overwhelming.",
         "cover": "/media/showcase-03.svg",
-        "gallery": ["/media/showcase-03.svg", "/media/showcase-07.svg"],
-        "tags": ["Discord", "Onboarding", "Roles"],
-        "highlights": ["Verified onboarding took spam joins down to almost nothing", "Moderator workload dropped by roughly 70%"],
+        "gallery": [
+          "/media/showcase-03.svg",
+          "/media/showcase-07.svg"
+        ],
+        "tags": [
+          "Discord",
+          "Onboarding",
+          "Roles"
+        ],
         "links": []
       },
       {
@@ -115,13 +131,18 @@
         "title": "Closed loop server economy",
         "category": "Plugin configuration",
         "year": "2024",
-        "featured": false,
         "summary": "Shops, jobs and a player market balanced so money actually leaves the economy again.",
-        "description": "Server economies usually inflate because currency comes in faster than it goes out. This one pairs every income source with a sink, and I modelled the numbers before anything went live.",
         "cover": "/media/showcase-04.svg",
-        "gallery": ["/media/showcase-04.svg", "/media/showcase-06.svg"],
-        "tags": ["EssentialsX", "Jobs", "Shops", "Balancing"],
-        "highlights": ["Currency supply stayed flat across a full 90 day season"],
+        "gallery": [
+          "/media/showcase-04.svg",
+          "/media/showcase-06.svg"
+        ],
+        "tags": [
+          "EssentialsX",
+          "Jobs",
+          "Shops",
+          "Balancing"
+        ],
         "links": []
       },
       {
@@ -129,27 +150,18 @@
         "title": "Moderation and staff systems",
         "category": "Management",
         "year": "2025",
-        "featured": false,
         "summary": "Hiring rubrics, shift rotas and an escalation ladder for an eleven person team spread across three timezones.",
-        "description": "The technical side was the easy part. The real work was writing decision rules clear enough that a new moderator on their first shift knows what to do without pinging an owner at 3am.",
         "cover": "/media/showcase-05.svg",
-        "gallery": ["/media/showcase-05.svg", "/media/showcase-03.svg"],
-        "tags": ["Hiring", "Rotas", "Escalation", "Policy"],
-        "highlights": ["Turnover fell to two people leaving in nine months", "Every type of decision has a named owner"],
-        "links": []
-      },
-      {
-        "id": "quest-engine",
-        "title": "Custom quest and content chain",
-        "category": "Plugin configuration",
-        "year": "2024",
-        "featured": false,
-        "summary": "Sixty custom items and a matching encounter chain that carried an SMP through its first season.",
-        "description": "Items, mobs and quests were configured together rather than separately, so every reward has a use and every encounter exists for a reason beyond filling out a menu.",
-        "cover": "/media/showcase-06.svg",
-        "gallery": ["/media/showcase-06.svg", "/media/showcase-04.svg", "/media/showcase-01.svg"],
-        "tags": ["ItemsAdder", "MythicMobs", "ModelEngine"],
-        "highlights": ["38% of players were still around at day 30"],
+        "gallery": [
+          "/media/showcase-05.svg",
+          "/media/showcase-03.svg"
+        ],
+        "tags": [
+          "Hiring",
+          "Rotas",
+          "Escalation",
+          "Policy"
+        ],
         "links": []
       },
       {
@@ -157,27 +169,17 @@
         "title": "Verification and ticket automation",
         "category": "Discord",
         "year": "2023",
-        "featured": false,
         "summary": "One verification, ticket and logging stack, deployed across eleven communities.",
-        "description": "Built once, parameterised, then rolled out to eleven servers with different rules. Each owner got documentation so they could change it later without touching a bot dashboard.",
         "cover": "/media/showcase-07.svg",
-        "gallery": ["/media/showcase-07.svg", "/media/showcase-03.svg"],
-        "tags": ["Discord.js", "Carl-bot", "Webhooks"],
-        "highlights": ["Eleven communities running off one documented template"],
-        "links": []
-      },
-      {
-        "id": "performance-pass",
-        "title": "Performance and stability pass",
-        "category": "Server configuration",
-        "year": "2025",
-        "featured": false,
-        "summary": "A plugin audit and tuning job that took average tick time from 41ms to 12ms.",
-        "description": "Nine plugins removed, four replaced, chunk loading and entity limits retuned. No hardware upgrade needed, because the hardware was never the problem.",
-        "cover": "/media/showcase-08.svg",
-        "gallery": ["/media/showcase-08.svg", "/media/showcase-01.svg"],
-        "tags": ["Paper", "Spark", "Timings", "Tuning"],
-        "highlights": ["41ms down to 12ms average tick time", "Nine redundant plugins gone"],
+        "gallery": [
+          "/media/showcase-07.svg",
+          "/media/showcase-03.svg"
+        ],
+        "tags": [
+          "Discord.js",
+          "Carl-bot",
+          "Webhooks"
+        ],
         "links": []
       }
     ]

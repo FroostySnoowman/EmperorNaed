@@ -68,8 +68,7 @@ export const siteSchema = z.object({
     siteName: z.string().default(''),
     url: z.string().default(''),
     title: z.string().default(''),
-    description: z.string().default(''),
-    image: z.string().default('/og.png'),
+      image: z.string().default('/og.png'),
     imageAlt: z.string().default(''),
     themeColor: z.string().default('#de0f3f'),
   }).prefault({}),
@@ -138,9 +137,6 @@ export const homeSchema = z.object({
   pillars: headingSchema.extend({
     items: z.array(pillarSchema).default([]),
   }).prefault({}),
-  timelinePreview: previewSchema.prefault({}),
-  workPreview: previewSchema.prefault({}),
-  skillsPreview: previewSchema.prefault({}),
   reviewsPreview: previewSchema.prefault({}),
   closing: z.object({
     title: z.string().default(''),
@@ -158,7 +154,6 @@ export const timelineEntrySchema = z.object({
   summary: z.string().default(''),
   status: z.enum(['completed', 'ongoing', 'archived']).default('completed'),
   tags: z.array(z.string()).default([]),
-  highlights: z.array(z.string()).default([]),
   links: z.array(linkSchema).default([]),
 })
 
@@ -173,10 +168,7 @@ export const activeProjectSchema = z.object({
   summary: z.string().default(''),
   phase: z.string().default(''),
   progress: z.number().min(0).max(100).default(0),
-  started: z.string().default(''),
-  eta: z.string().default(''),
   stack: z.array(z.string()).default([]),
-  nextUp: z.array(z.string()).default([]),
   links: z.array(linkSchema).default([]),
 })
 
@@ -190,9 +182,7 @@ export const showcaseItemSchema = z.object({
   cover: z.string().default(''),
   gallery: z.array(z.string()).default([]),
   tags: z.array(z.string()).default([]),
-  highlights: z.array(z.string()).default([]),
   links: z.array(linkSchema).default([]),
-  featured: z.boolean().default(false),
 })
 
 export const workSchema = z.object({
@@ -211,7 +201,6 @@ export const workSchema = z.object({
 export const skillSchema = z.object({
   name: z.string().default(''),
   level: z.number().min(0).max(100).default(0),
-  note: z.string().default(''),
 })
 
 export const skillGroupSchema = z.object({
@@ -232,17 +221,6 @@ export const skillsSchema = z.object({
           id: z.string().default(''),
           title: z.string().default(''),
           items: z.array(z.string()).default([]),
-        }),
-      )
-      .default([]),
-  }).prefault({}),
-  approach: headingSchema.extend({
-    steps: z
-      .array(
-        z.object({
-          id: z.string().default(''),
-          title: z.string().default(''),
-          body: z.string().default(''),
         }),
       )
       .default([]),

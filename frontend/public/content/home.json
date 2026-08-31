@@ -40,80 +40,35 @@
 
   "pillars": {
     "marker": "01 / What I do",
-    "title": "What I actually do.",
+    "title": "Three things, done properly.",
     "kicker": "Most servers I get called into aren't broken because of bad plugins. They're broken because nobody ever wrote down how any of it works.",
     "items": [
       {
         "id": "servers",
-        "title": "Server configuration",
+        "title": "Servers and plugins",
         "icon": "server",
-        "body": "Paper and Purpur tuning, Velocity proxies, world management, and the performance work that keeps tick times flat once the server actually fills up.",
-        "tags": ["Paper", "Velocity", "Performance"]
-      },
-      {
-        "id": "plugins",
-        "title": "Plugin configuration",
-        "icon": "plugin",
-        "body": "Permissions, economies, custom items, quests, menus. Most of the job is getting twenty plugins to stop fighting over the same events.",
-        "tags": ["LuckPerms", "ItemsAdder", "MythicMobs"]
+        "body": "Paper and Purpur tuning, Velocity proxies, permissions, economies and custom content. Most of the job is getting twenty plugins to stop fighting over the same events.",
+        "tags": ["Paper", "Velocity", "LuckPerms"]
       },
       {
         "id": "discord",
-        "title": "Discord engineering",
+        "title": "Discord communities",
         "icon": "discord",
-        "body": "Channel structure, role hierarchies, onboarding, tickets, and enough automation that moderating stops being a second job for someone.",
+        "body": "Channel structure, roles, onboarding and tickets, with enough automation that moderating stops being a second job for someone.",
         "tags": ["Roles", "Automation", "Tickets"]
       },
       {
         "id": "management",
-        "title": "Staff and team management",
+        "title": "Staff and teams",
         "icon": "users",
-        "body": "Hiring rubrics, training, shift rotas, escalation ladders. Teams that can make a call at 3am without waiting for an owner to wake up.",
-        "tags": ["Hiring", "Training", "Escalation"]
-      },
-      {
-        "id": "community",
-        "title": "Community operations",
-        "icon": "shield",
-        "body": "Rules that hold up when somebody argues with them, appeals that stay fair, and events that bring people back without paying them to log in.",
-        "tags": ["Moderation", "Policy", "Retention"]
-      },
-      {
-        "id": "infra",
-        "title": "Hosting and infrastructure",
-        "icon": "gauge",
-        "body": "Panels, backups, staged migrations, monitoring. It's the boring layer, and it decides how bad a bad night ends up being.",
-        "tags": ["Pterodactyl", "Backups", "Monitoring"]
+        "body": "Hiring, training, rotas and escalation ladders. Teams that can make a call at 3am without waiting for an owner to wake up.",
+        "tags": ["Hiring", "Training", "Moderation"]
       }
     ]
   },
 
-  "timelinePreview": {
-    "marker": "02 / Project timeline",
-    "title": "Where I've worked.",
-    "kicker": "The networks and communities I've set up, run, or been called in to rescue.",
-    "limit": 3,
-    "cta": { "label": "Full timeline", "to": "/timeline" }
-  },
-
-  "workPreview": {
-    "marker": "03 / Active projects",
-    "title": "On the bench right now.",
-    "kicker": "Three jobs in progress, with an honest read on how far along each one really is.",
-    "limit": 3,
-    "cta": { "label": "See all work", "to": "/work" }
-  },
-
-  "skillsPreview": {
-    "marker": "04 / Skills",
-    "title": "What I'm good at.",
-    "kicker": "The technical side keeps a server up. The management side is what keeps people logging back into it.",
-    "limit": 3,
-    "cta": { "label": "All skills", "to": "/skills" }
-  },
-
   "reviewsPreview": {
-    "marker": "05 / Reviews",
+    "marker": "02 / Reviews",
     "title": "What clients said.",
     "kicker": "Feedback from owners, community managers and staff leads I've worked with.",
     "limit": 3,

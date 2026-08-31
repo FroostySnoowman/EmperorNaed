@@ -5,14 +5,13 @@
     "titleAccent": "running.",
     "kicker": "Could be a whole network rebuild, could be one plugin that refuses to behave. Send over the details either way and I'll tell you if I'm the right person for it."
   },
-
   "channels": [
     {
       "id": "discord",
       "label": "Discord, fastest reply",
       "value": "@emperornaed",
       "href": "https://discord.com/users/000000000000000000",
-      "note": "Easily the best way to reach me. I read everything and usually answer the same day.",
+      "note": "Easily the best way to reach me. I read everything and usually answer the same day, UTC+1.",
       "icon": "discord",
       "copyable": true,
       "primary": true
@@ -36,19 +35,8 @@
       "icon": "store",
       "copyable": false,
       "primary": false
-    },
-    {
-      "id": "timezone",
-      "label": "Timezone",
-      "value": "UTC+1 (CET)",
-      "href": "",
-      "note": "Usually around between 10:00 and 23:00. Outside that I'll pick it up in the morning.",
-      "icon": "clock",
-      "copyable": false,
-      "primary": false
     }
   ],
-
   "aside": {
     "title": "Before you write",
     "points": [
@@ -57,7 +45,6 @@
       "Screenshots or config files are always welcome."
     ]
   },
-
   "form": {
     "enabled": true,
     "webhookUrl": "",
@@ -94,7 +81,6 @@
     "errorDisabled": "The form isn't hooked up yet, so please use Discord or email above.",
     "sendAnother": "Send another"
   },
-
   "faq": {
     "marker": "FAQ",
     "title": "The usual questions.",
@@ -119,16 +105,6 @@
         "id": "existing",
         "question": "Can you work on a server that already exists?",
         "answer": "Yes, that's most of what I do. I'll audit what you've got first and tell you honestly what's worth keeping. I'm not going to push a rebuild on you if a smaller fix does the job."
-      },
-      {
-        "id": "management",
-        "question": "Do you only do technical work?",
-        "answer": "No. A good chunk of it is management. Hiring, training, rotas, escalation ladders, moderation policy. Plenty of servers are technically fine and still falling apart for entirely human reasons."
-      },
-      {
-        "id": "revisions",
-        "question": "What if I want changes later?",
-        "answer": "Small tweaks in the two week support window are included. After that I'm happy to take on more work, though the documentation is written so your own team can handle most changes without me."
       }
     ]
   }

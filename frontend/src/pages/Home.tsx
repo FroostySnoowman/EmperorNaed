@@ -7,7 +7,6 @@ import { ActionLink } from '../components/ui/ActionLink'
 import { BrandMark } from '../components/ui/BrandMark'
 import { Icon } from '../components/ui/Icon'
 import { Marquee } from '../components/ui/Marquee'
-import { Meter } from '../components/ui/Meter'
 import { Rating } from '../components/ui/Rating'
 import { Reveal } from '../components/ui/Reveal'
 import { RevealText } from '../components/ui/RevealText'
@@ -306,156 +305,6 @@ function Pillars() {
   )
 }
 
-function TimelinePreview() {
-  const { home, timeline } = useContent()
-  const preview = home.timelinePreview
-  const entries = timeline.entries.slice(0, preview.limit)
-  if (entries.length === 0) return null
-
-  return (
-    <section className="shell mt-28 sm:mt-36">
-      <SectionHeading
-        marker={preview.marker}
-        title={preview.title}
-        kicker={preview.kicker}
-        action={
-          <ActionLink to={preview.cta.to} variant="ghost" withArrow>
-            {preview.cta.label}
-          </ActionLink>
-        }
-      />
-
-      <div className="relative mt-16">
-        <div className="absolute inset-x-0 top-[7px] hidden h-px bg-gradient-to-r from-crimson-600/50 via-white/10 to-transparent md:block" aria-hidden />
-
-        <div className="grid gap-10 md:grid-cols-3 md:gap-6">
-          {entries.map((entry, index) => (
-            <Reveal key={entry.id || entry.title} delay={index * 0.09} className="relative">
-              <span className="absolute -top-1 left-0 hidden h-4 w-4 items-center justify-center md:flex" aria-hidden>
-                <span className="h-2 w-2 rotate-45 bg-crimson-500 shadow-[0_0_14px_rgba(242,46,86,0.8)]" />
-              </span>
-              <div className="md:pl-7">
-                <div className="font-mono text-[11px] uppercase tracking-[0.16em] text-crimson-400/85">{entry.period}</div>
-                <h3 className="mt-3 font-display text-lg font-bold tracking-tight text-white">{entry.title}</h3>
-                {entry.org ? <div className="mt-1 text-sm text-white/40">{entry.org}</div> : null}
-                <p className="mt-3 text-sm leading-relaxed text-white/50">{entry.summary}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function WorkPreview() {
-  const { home, work } = useContent()
-  const preview = home.workPreview
-  const items = work.active.items.slice(0, preview.limit)
-  if (items.length === 0) return null
-
-  return (
-    <section className="shell mt-28 sm:mt-36">
-      <SectionHeading
-        marker={preview.marker}
-        title={preview.title}
-        kicker={preview.kicker}
-        action={
-          <ActionLink to={preview.cta.to} variant="ghost" withArrow>
-            {preview.cta.label}
-          </ActionLink>
-        }
-      />
-
-      <div className="mt-14 grid gap-5 lg:grid-cols-3">
-        {items.map((item, index) => (
-          <Reveal key={item.id || item.name} delay={index * 0.07}>
-            <SpotlightCard className="h-full rounded-2xl" innerClassName="flex h-full flex-col p-7">
-              <div className="flex items-center justify-between gap-3">
-                <span className="inline-flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.16em] text-white/45">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-crimson-400" />
-                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-crimson-400" />
-                  </span>
-                  {item.phase || 'In progress'}
-                </span>
-                <span className="font-mono text-[12px] font-semibold tabular-nums text-white/70">{item.progress}%</span>
-              </div>
-
-              <div className="mt-4 h-[3px] overflow-hidden rounded-full bg-white/[0.07]">
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: item.progress / 100 }}
-                  viewport={inView}
-                  transition={{ duration: 1.1, delay: 0.15 + index * 0.07, ease: EASE }}
-                  style={{ transformOrigin: 'left center' }}
-                  className="h-full w-full rounded-full bg-gradient-to-r from-crimson-700 to-crimson-400"
-                />
-              </div>
-
-              <h3 className="mt-6 font-display text-lg font-bold tracking-tight text-white">{item.name}</h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-white/55">{item.summary}</p>
-
-              {item.stack.length > 0 ? (
-                <div className="mt-6 flex flex-wrap gap-1.5">
-                  {item.stack.slice(0, 4).map((tech) => (
-                    <span key={tech} className="chip">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
-            </SpotlightCard>
-          </Reveal>
-        ))}
-      </div>
-    </section>
-  )
-}
-
-function SkillsPreview() {
-  const { home, skills } = useContent()
-  const preview = home.skillsPreview
-  const groups = skills.groups.slice(0, preview.limit)
-  if (groups.length === 0) return null
-
-  return (
-    <section className="shell mt-28 sm:mt-36">
-      <SectionHeading
-        marker={preview.marker}
-        title={preview.title}
-        kicker={preview.kicker}
-        action={
-          <ActionLink to={preview.cta.to} variant="ghost" withArrow>
-            {preview.cta.label}
-          </ActionLink>
-        }
-      />
-
-      <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {groups.map((group, index) => (
-          <Reveal key={group.id || group.title} delay={index * 0.07}>
-            <SpotlightCard className="h-full rounded-2xl" innerClassName="flex h-full flex-col p-7">
-              <div className="flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03] text-crimson-300">
-                  <Icon name={group.icon} className="text-[18px]" />
-                </span>
-                <h3 className="font-display text-base font-bold tracking-tight text-white">{group.title}</h3>
-              </div>
-
-              <div className="mt-7 flex-1 space-y-5">
-                {group.skills.slice(0, 3).map((skill, skillIndex) => (
-                  <Meter key={skill.name} label={skill.name} level={skill.level} delay={skillIndex * 0.08} />
-                ))}
-              </div>
-            </SpotlightCard>
-          </Reveal>
-        ))}
-      </div>
-    </section>
-  )
-}
-
 function ReviewsPreview() {
   const { home, reviews } = useContent()
   const preview = home.reviewsPreview
@@ -552,9 +401,6 @@ export function Home() {
       <StatsStrip />
       <TickerStrip />
       <Pillars />
-      <TimelinePreview />
-      <WorkPreview />
-      <SkillsPreview />
       <ReviewsPreview />
       <Closing />
     </>

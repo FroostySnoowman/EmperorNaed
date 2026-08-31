@@ -51,39 +51,6 @@ function ActiveCard({ project, index }: { project: ActiveProject; index: number 
 
         {project.summary ? <p className="mt-6 text-sm leading-relaxed text-white/55">{project.summary}</p> : null}
 
-        {(project.started || project.eta) && (
-          <dl className="mt-6 grid grid-cols-2 gap-3">
-            {project.started ? (
-              <div className="rounded-xl border border-white/[0.07] bg-white/[0.02] px-4 py-3">
-                <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-white/30">Started</dt>
-                <dd className="mt-1 text-sm font-medium text-white/80">{project.started}</dd>
-              </div>
-            ) : null}
-            {project.eta ? (
-              <div className="rounded-xl border border-white/[0.07] bg-white/[0.02] px-4 py-3">
-                <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-white/30">Target</dt>
-                <dd className="mt-1 text-sm font-medium text-white/80">{project.eta}</dd>
-              </div>
-            ) : null}
-          </dl>
-        )}
-
-        {project.nextUp.length > 0 ? (
-          <div className="mt-6">
-            <div className="font-mono text-[10px] uppercase tracking-marker text-white/30">Next up</div>
-            <ul className="mt-3 space-y-2">
-              {project.nextUp.map((task) => (
-                <li key={task} className="flex items-start gap-2.5 text-sm text-white/55">
-                  <span className="mt-[3px] grid h-3.5 w-3.5 shrink-0 place-items-center rounded-[4px] border border-crimson-500/40 bg-crimson-600/10">
-                    <Icon name="check" className="text-[8px] text-crimson-300" />
-                  </span>
-                  {task}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-
         <div className="mt-auto pt-7">
           {project.stack.length > 0 ? (
             <div className="flex flex-wrap gap-1.5">
@@ -133,7 +100,7 @@ function ShowcaseCard({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10, scale: 0.98 }}
       transition={{ duration: 0.5, ease: EASE }}
-      className={cn('min-w-0', item.featured && 'lg:col-span-2')}
+      className="min-w-0"
     >
       <SpotlightCard className="h-full rounded-2xl" innerClassName="flex h-full flex-col">
         {images.length > 0 ? (
@@ -143,7 +110,7 @@ function ShowcaseCard({
             className="group/cover relative block w-full overflow-hidden"
             aria-label={`Open gallery for ${item.title}`}
           >
-            <div className={cn('overflow-hidden bg-ink-850', item.featured ? 'aspect-[21/9]' : 'aspect-[16/10]')}>
+            <div className="aspect-[16/10] overflow-hidden bg-ink-850">
               <img
                 src={item.cover || images[0]}
                 alt=""
@@ -170,18 +137,6 @@ function ShowcaseCard({
 
           <h3 className="mt-4 font-display text-lg font-bold tracking-tight text-white sm:text-xl">{item.title}</h3>
           {item.summary ? <p className="mt-2.5 text-sm leading-relaxed text-white/55">{item.summary}</p> : null}
-          {item.description ? <p className="mt-3 text-sm leading-relaxed text-white/40">{item.description}</p> : null}
-
-          {item.highlights.length > 0 ? (
-            <ul className="mt-5 space-y-2">
-              {item.highlights.map((highlight) => (
-                <li key={highlight} className="flex gap-2.5 text-sm text-white/50">
-                  <span className="mt-[7px] h-1 w-1 shrink-0 rotate-45 bg-crimson-500/80" aria-hidden />
-                  {highlight}
-                </li>
-              ))}
-            </ul>
-          ) : null}
 
           <div className="mt-auto pt-6">
             {item.tags.length > 0 ? (
@@ -242,7 +197,7 @@ export function Work() {
         {work.active.items.length === 0 ? (
           <p className="mt-10 text-sm text-white/40">{work.active.emptyLabel}</p>
         ) : (
-          <div className="mt-14 grid gap-5 lg:grid-cols-2">
+          <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {work.active.items.map((project, index) => (
               <ActiveCard key={project.id || project.name} project={project} index={index} />
             ))}
@@ -288,7 +243,7 @@ export function Work() {
         {visible.length === 0 ? (
           <p className="mt-10 text-sm text-white/40">{work.showcase.emptyLabel}</p>
         ) : (
-          <motion.div layout className="mt-12 grid gap-5 lg:grid-cols-2">
+          <motion.div layout className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             <AnimatePresence mode="popLayout">
               {visible.map((item) => (
                 <ShowcaseCard key={item.id || item.title} item={item} onOpenGallery={lightbox.open} />

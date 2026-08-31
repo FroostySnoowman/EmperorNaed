@@ -146,40 +146,15 @@ export function Reviews() {
             <SpotlightCard className="rounded-[1.4rem]" innerClassName="p-8 sm:p-12">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_15%_0%,rgba(222,15,63,0.16),transparent_55%)]" aria-hidden />
 
-              <div className="relative grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-start">
-                <div className="min-w-0">
-                  <Icon name="quote" className="text-[30px] text-crimson-600/50" />
-                  <blockquote className="mt-6 text-pretty font-display text-xl font-semibold leading-[1.5] tracking-tight text-white/90 sm:text-2xl">
-                    {featured.quote}
-                  </blockquote>
-                  <ImageStrip review={featured} onOpen={lightbox.open} height="h-28" />
-                </div>
+              <div className="relative">
+                <Icon name="quote" className="text-[30px] text-crimson-600/50" />
+                <blockquote className="mt-6 max-w-3xl text-pretty font-display text-xl font-semibold leading-[1.5] tracking-tight text-white/90 sm:text-2xl">
+                  {featured.quote}
+                </blockquote>
 
-                <div className="min-w-0 lg:border-l lg:border-white/[0.07] lg:pl-10">
+                <div className="mt-8 flex flex-wrap items-center justify-between gap-5 border-t border-white/[0.06] pt-6">
+                  <Author review={featured} size="lg" />
                   <Rating value={featured.rating} />
-                  <div className="mt-6">
-                    <Author review={featured} size="lg" />
-                  </div>
-                  <dl className="mt-7 space-y-3 border-t border-white/[0.06] pt-6">
-                    {featured.project ? (
-                      <div>
-                        <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-white/30">Project</dt>
-                        <dd className="mt-1 text-sm text-white/70">{featured.project}</dd>
-                      </div>
-                    ) : null}
-                    {featured.platform ? (
-                      <div>
-                        <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-white/30">Platform</dt>
-                        <dd className="mt-1 text-sm text-white/70">{featured.platform}</dd>
-                      </div>
-                    ) : null}
-                    {featured.date ? (
-                      <div>
-                        <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-white/30">Date</dt>
-                        <dd className="mt-1 text-sm text-white/70">{featured.date}</dd>
-                      </div>
-                    ) : null}
-                  </dl>
                 </div>
               </div>
             </SpotlightCard>
