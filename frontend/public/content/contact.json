@@ -1,0 +1,135 @@
+{
+  "intro": {
+    "marker": "Contact",
+    "title": "Tell me what you're",
+    "titleAccent": "running.",
+    "kicker": "Whether it's a full network rebuild or one plugin that refuses to behave, send over the details and I'll tell you honestly whether I'm the right person for it."
+  },
+
+  "channels": [
+    {
+      "id": "discord",
+      "label": "Discord — fastest reply",
+      "value": "@emperornaed",
+      "href": "https://discord.com/users/000000000000000000",
+      "note": "Best place to reach me. I read every message and usually reply the same day.",
+      "icon": "discord",
+      "copyable": true,
+      "primary": true
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "value": "hello@emperornaed.com",
+      "href": "mailto:hello@emperornaed.com",
+      "note": "Better for longer briefs, quotes and anything with attachments.",
+      "icon": "mail",
+      "copyable": true,
+      "primary": false
+    },
+    {
+      "id": "builtbybit",
+      "label": "BuiltByBit",
+      "value": "EmperorNaed",
+      "href": "https://builtbybit.com/",
+      "note": "For anyone who prefers working through platform escrow.",
+      "icon": "store",
+      "copyable": false,
+      "primary": false
+    },
+    {
+      "id": "timezone",
+      "label": "Timezone",
+      "value": "UTC+1 (CET)",
+      "href": "",
+      "note": "Usually online 10:00 – 23:00. Outside that I'll pick it up the next morning.",
+      "icon": "clock",
+      "copyable": false,
+      "primary": false
+    }
+  ],
+
+  "aside": {
+    "title": "Before you write",
+    "points": [
+      "Tell me what you're running now and what keeps breaking.",
+      "A rough budget and deadline saves us both a round of messages.",
+      "Screenshots or config files are always welcome."
+    ]
+  },
+
+  "form": {
+    "enabled": true,
+    "webhookUrl": "",
+    "eyebrow": "Send a brief",
+    "title": "Start the conversation.",
+    "note": "Fill this in and it lands in my Discord straight away. No account needed, no newsletter, no follow-up spam.",
+    "subjects": [
+      "Server configuration",
+      "Plugin configuration",
+      "Discord setup or rebuild",
+      "Staff & team management",
+      "Performance / rescue job",
+      "Something else"
+    ],
+    "labels": {
+      "name": "Your name",
+      "contact": "Discord or email",
+      "subject": "What do you need",
+      "budget": "Budget (optional)",
+      "message": "Tell me about it"
+    },
+    "placeholders": {
+      "name": "How should I address you?",
+      "contact": "@yourhandle or you@example.com",
+      "subject": "",
+      "budget": "e.g. £200 – £500",
+      "message": "What are you running, what's broken, and where do you want it in six months?"
+    },
+    "submitIdle": "Send message",
+    "submitSending": "Sending…",
+    "successTitle": "Message sent",
+    "successBody": "It's in my Discord now. I'll get back to you within about twelve hours.",
+    "errorGeneric": "That didn't send. Try again in a moment, or reach me on Discord directly.",
+    "errorDisabled": "The contact form isn't connected yet — please use Discord or email above.",
+    "sendAnother": "Send another"
+  },
+
+  "faq": {
+    "marker": "FAQ",
+    "title": "The usual questions.",
+    "kicker": "If yours isn't here, just ask.",
+    "items": [
+      {
+        "id": "pricing",
+        "question": "How do you price work?",
+        "answer": "Fixed price per project, quoted after we've talked through the scope. Small jobs like a permissions fix or a single plugin config are usually a flat fee; full network or Discord rebuilds are quoted in stages so you can stop after any milestone."
+      },
+      {
+        "id": "timeline",
+        "question": "How long does a project take?",
+        "answer": "A single plugin or permissions job is typically a few days. A full server configuration runs two to four weeks. Network rebuilds and staff programmes take longer because they involve training people, not just editing files."
+      },
+      {
+        "id": "handover",
+        "question": "What do I get at the end?",
+        "answer": "The working configuration, written documentation covering every decision, a walkthrough call with you and your staff, and two weeks of follow-up support for anything that surfaces once real players hit it."
+      },
+      {
+        "id": "existing",
+        "question": "Can you work on an existing server?",
+        "answer": "Yes — that's most of my work. I audit what you already have first and tell you plainly what's worth keeping. I won't push a rebuild if a targeted fix does the job."
+      },
+      {
+        "id": "management",
+        "question": "Do you only do technical work?",
+        "answer": "No. A good chunk of what I do is management: hiring rubrics, training paths, rotas, escalation ladders and moderation policy. Plenty of servers are technically fine and failing for entirely human reasons."
+      },
+      {
+        "id": "revisions",
+        "question": "What if I want changes after handover?",
+        "answer": "Minor tweaks during the two-week support window are included. Beyond that, I'm happy to take on further work — but the documentation is written so your own team can make most changes without me."
+      }
+    ]
+  }
+}

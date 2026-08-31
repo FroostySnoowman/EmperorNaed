@@ -1,0 +1,110 @@
+{
+  "intro": {
+    "marker": "Skills",
+    "title": "Configuration that holds, teams that hold it.",
+    "kicker": "Two halves of the same job. The technical work keeps a server stable; the management work keeps it stable after I have left."
+  },
+
+  "groups": [
+    {
+      "id": "server-config",
+      "title": "Server configuration",
+      "icon": "server",
+      "summary": "Getting the platform right before a single plugin goes in.",
+      "skills": [
+        { "name": "Paper & Purpur tuning", "level": 96, "note": "View distance, entity limits, chunk loading and the config flags that actually move tick time." },
+        { "name": "Velocity & proxy networks", "level": 92, "note": "Multi-server routing, forwarding modes, shared player data and safe restart cycles." },
+        { "name": "World management", "level": 88, "note": "Multiverse setups, pregeneration, border control and seasonal world resets." },
+        { "name": "Performance profiling", "level": 90, "note": "Spark and timings reports read properly — fixing the cause rather than the symptom." }
+      ]
+    },
+    {
+      "id": "plugin-config",
+      "title": "Plugin configuration",
+      "icon": "plugin",
+      "summary": "Making twenty plugins behave like one coherent system.",
+      "skills": [
+        { "name": "LuckPerms architecture", "level": 97, "note": "Inherited tracks, contexts and per-server overrides that survive a rank rework." },
+        { "name": "Economy & shop balancing", "level": 91, "note": "Income sources paired with sinks, modelled before launch rather than patched after." },
+        { "name": "Custom items & mobs", "level": 89, "note": "ItemsAdder, MythicMobs and ModelEngine configured as one content pipeline." },
+        { "name": "Config debugging", "level": 94, "note": "Tracing conflicts between plugins competing for the same events and handlers." },
+        { "name": "Protection & logging", "level": 92, "note": "WorldGuard regions, CoreProtect retention and rollback procedures that work under pressure." }
+      ]
+    },
+    {
+      "id": "discord",
+      "title": "Discord engineering",
+      "icon": "discord",
+      "summary": "Structure and automation for communities that outgrew a single channel.",
+      "skills": [
+        { "name": "Server architecture", "level": 95, "note": "Channel trees, category permissions and progressive unlocks tied to member journey." },
+        { "name": "Role & permission design", "level": 94, "note": "Hierarchies that stay readable past thirty roles and never grant more than intended." },
+        { "name": "Bot configuration", "level": 90, "note": "Verification, tickets, logging and auto-moderation wired to a documented rule set." },
+        { "name": "Minecraft ↔ Discord links", "level": 87, "note": "Webhook relays for chat, punishments and rank sync across both platforms." }
+      ]
+    },
+    {
+      "id": "staff-management",
+      "title": "Staff & team management",
+      "icon": "users",
+      "summary": "Building teams that make good calls without an owner in the room.",
+      "skills": [
+        { "name": "Hiring & rubrics", "level": 93, "note": "Written application scoring so hiring is repeatable rather than a vibe check." },
+        { "name": "Training & onboarding", "level": 92, "note": "Two-week onboarding paths with shadowing, checkpoints and a real sign-off." },
+        { "name": "Rotas & coverage", "level": 88, "note": "Shift planning across timezones with handover notes that actually get read." },
+        { "name": "Escalation & delegation", "level": 91, "note": "Clear ladders so every decision type has a named owner and a fallback." },
+        { "name": "Performance reviews", "level": 85, "note": "Regular one-to-ones and honest feedback before a problem becomes a departure." }
+      ]
+    },
+    {
+      "id": "community-ops",
+      "title": "Community operations",
+      "icon": "shield",
+      "summary": "Policy and process that survive contact with a real argument.",
+      "skills": [
+        { "name": "Rules & policy writing", "level": 92, "note": "Rule sets specific enough to enforce consistently and defend publicly." },
+        { "name": "Conflict resolution", "level": 90, "note": "De-escalation, mediation and appeals handled without picking sides by default." },
+        { "name": "Moderation systems", "level": 93, "note": "Punishment ladders, appeal routes and audit trails for every action taken." },
+        { "name": "Retention & engagement", "level": 84, "note": "Events and progression loops that bring players back without paying them to log in." }
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "title": "Hosting & infrastructure",
+      "icon": "gauge",
+      "summary": "The unglamorous layer that decides how bad a bad night gets.",
+      "skills": [
+        { "name": "Panel & host setup", "level": 89, "note": "Pterodactyl nodes, allocations, resource limits and sane restart schedules." },
+        { "name": "Backups & recovery", "level": 91, "note": "Offsite rotation with restores actually tested, not just configured." },
+        { "name": "Migrations", "level": 87, "note": "Staged host and version moves with rollback points at every step." },
+        { "name": "Monitoring & alerting", "level": 83, "note": "Uptime, TPS and crash alerts routed to the person who can act on them." }
+      ]
+    }
+  ],
+
+  "toolbox": {
+    "marker": "Toolbox",
+    "title": "What I work with daily.",
+    "kicker": "Not an exhaustive list — just the tools I reach for without thinking.",
+    "groups": [
+      { "id": "platforms", "title": "Platforms", "items": ["Paper", "Purpur", "Spigot", "Velocity", "BungeeCord", "Waterfall", "Folia"] },
+      { "id": "essentials", "title": "Core plugins", "items": ["LuckPerms", "EssentialsX", "WorldGuard", "WorldEdit", "CoreProtect", "PlaceholderAPI", "Vault"] },
+      { "id": "content", "title": "Content & custom", "items": ["ItemsAdder", "MythicMobs", "ModelEngine", "Citizens", "Oraxen", "BetonQuest"] },
+      { "id": "discord", "title": "Discord stack", "items": ["Discord.js", "Carl-bot", "Dyno", "Ticket Tool", "DiscordSRV", "Webhooks"] },
+      { "id": "ops", "title": "Ops & hosting", "items": ["Pterodactyl", "Spark", "Timings", "MySQL", "Redis", "SFTP", "Git"] },
+      { "id": "management", "title": "Management", "items": ["Notion", "Trello", "Google Workspace", "Rubrics", "Rotas", "Handbooks"] }
+    ]
+  },
+
+  "approach": {
+    "marker": "How I work",
+    "title": "Four steps, every time.",
+    "kicker": "Same process whether it is a single plugin fix or a full network rebuild.",
+    "steps": [
+      { "id": "audit", "title": "Audit", "body": "I go through what you already have — configs, plugins, roles, staff structure — and write down what is actually broken versus what merely looks messy." },
+      { "id": "blueprint", "title": "Blueprint", "body": "You get a written plan before I touch anything: what changes, what stays, what it costs in time, and what could go wrong." },
+      { "id": "build", "title": "Build", "body": "Configuration happens on a staging copy wherever possible, with checkpoints so you see progress rather than waiting for a reveal." },
+      { "id": "handover", "title": "Handover", "body": "Written documentation, a walkthrough call, and two weeks of follow-up support. The goal is that you never need to call me again." }
+    ]
+  }
+}

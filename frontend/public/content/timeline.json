@@ -1,0 +1,100 @@
+{
+  "intro": {
+    "marker": "Project timeline",
+    "title": "Six years of servers, communities and clean handovers.",
+    "kicker": "Newest first. Each entry is a real engagement — what the brief was, what I configured, and what the team was left with."
+  },
+
+  "entries": [
+    {
+      "id": "aurora-network",
+      "period": "2025 — Present",
+      "title": "Lead configurator & operations advisor",
+      "org": "Aurora Network",
+      "status": "ongoing",
+      "summary": "Rebuilding a 4-server Velocity network from a single overloaded Paper instance, while training the staff team to run it without me.",
+      "highlights": [
+        "Split survival, creative, minigames and hub onto a Velocity proxy with shared LuckPerms context",
+        "Cut average tick time from 41ms to 12ms through plugin auditing and chunk tuning",
+        "Wrote a 32-page operations handbook and ran four staff training sessions"
+      ],
+      "tags": ["Velocity", "LuckPerms", "Performance", "Staff training"],
+      "links": [{ "label": "Network site", "href": "https://example.com" }]
+    },
+    {
+      "id": "obsidian-guild",
+      "period": "2024 — 2025",
+      "title": "Discord architect & community manager",
+      "org": "Obsidian Guild",
+      "status": "completed",
+      "summary": "Took a 400-member Discord with no structure and turned it into a 12,000-member community with a moderation team that runs itself.",
+      "highlights": [
+        "Designed a 40-channel architecture with progressive role unlocks and a verified onboarding flow",
+        "Built ticket routing and auto-moderation that cut manual moderator actions by roughly 70%",
+        "Hired and trained an 11-person moderation team on a written escalation ladder"
+      ],
+      "tags": ["Discord", "Automation", "Moderation", "Hiring"],
+      "links": []
+    },
+    {
+      "id": "ironhold-smp",
+      "period": "2024",
+      "title": "Full server configuration",
+      "org": "Ironhold SMP",
+      "status": "completed",
+      "summary": "End-to-end configuration for a seasonal SMP — economy, land claims, custom items and the quest chain that carried the first season.",
+      "highlights": [
+        "Balanced a closed-loop economy across shops, jobs and a player market",
+        "Configured 60+ custom items in ItemsAdder with matching MythicMobs encounters",
+        "Season launched on schedule and held a 38% day-30 player retention"
+      ],
+      "tags": ["ItemsAdder", "MythicMobs", "Economy", "WorldGuard"],
+      "links": []
+    },
+    {
+      "id": "verdant-realms",
+      "period": "2023 — 2024",
+      "title": "Staff lead & permissions rescue",
+      "org": "Verdant Realms",
+      "status": "completed",
+      "summary": "Called in after a permissions rewrite locked out half the staff team mid-season. Rebuilt the hierarchy and stayed on to lead the team.",
+      "highlights": [
+        "Rebuilt a broken 90-group LuckPerms tree into 14 inherited tracks in a weekend",
+        "Introduced shift rotas and handover notes across three timezones",
+        "Reduced staff turnover from monthly churn to two departures in nine months"
+      ],
+      "tags": ["LuckPerms", "Team management", "Rotas"],
+      "links": []
+    },
+    {
+      "id": "crimson-bots",
+      "period": "2022 — 2023",
+      "title": "Bot configuration & automation",
+      "org": "Freelance — multiple communities",
+      "status": "completed",
+      "summary": "A run of automation contracts across eleven Discord communities: verification, tickets, logging, and cross-posting to Minecraft.",
+      "highlights": [
+        "Standardised a reusable verification and ticket stack deployed across all eleven servers",
+        "Linked in-game punishments to Discord role changes via webhook relays",
+        "Documented every setup so each owner could edit it themselves"
+      ],
+      "tags": ["Discord.js", "Carl-bot", "Webhooks", "Documentation"],
+      "links": []
+    },
+    {
+      "id": "first-network",
+      "period": "2019 — 2022",
+      "title": "Started configuring, then never stopped",
+      "org": "Community servers",
+      "status": "archived",
+      "summary": "Learned the craft the usual way — running a friend's survival server, breaking it, and figuring out exactly why it broke.",
+      "highlights": [
+        "Went from single-server Spigot setups to multi-server BungeeCord networks",
+        "Picked up permissions, economies and world management the hard way",
+        "Started taking paid configuration work in late 2021"
+      ],
+      "tags": ["Spigot", "BungeeCord", "Foundations"],
+      "links": []
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "hero": {
+    "badge": "Available for new projects",
+    "titleLead": "Minecraft and Discord,",
+    "titleAccent": "done properly.",
+    "intro": "I configure servers, plugins, bots and permissions — then build the staff structure that keeps them running long after handover. Six years of setups that stayed stable.",
+    "primaryCta": { "label": "Start a project", "to": "/contact" },
+    "secondaryCta": { "label": "See my work", "to": "/work" },
+    "scrollHint": "Scroll to explore",
+
+    "panel": {
+      "eyebrow": "Current status",
+      "title": "Taking on new builds",
+      "body": "Two slots open this month for full network configurations or Discord rebuilds. Smaller plugin and permission jobs usually turn around inside a week.",
+      "meta": [
+        { "label": "Response", "value": "< 12 hours" },
+        { "label": "Timezone", "value": "UTC+1 (CET)" },
+        { "label": "Active builds", "value": "3" },
+        { "label": "Working since", "value": "2019" }
+      ],
+      "footnote": "Every build ships with written documentation and a walkthrough call, so your team can run it without me."
+    }
+  },
+
+  "stats": [
+    { "id": "servers", "value": "140+", "label": "Servers configured" },
+    { "id": "years", "value": "6", "label": "Years in the scene" },
+    { "id": "teams", "value": "35+", "label": "Staff teams trained" },
+    { "id": "reply", "value": "< 12h", "label": "Average reply time" }
+  ],
+
+  "marquee": {
+    "label": "Stack",
+    "items": [
+      "Paper", "Purpur", "Velocity", "BungeeCord", "LuckPerms", "EssentialsX",
+      "WorldGuard", "CoreProtect", "PlaceholderAPI", "ItemsAdder", "ModelEngine",
+      "MythicMobs", "Citizens", "Discord.js", "Carl-bot", "Pterodactyl"
+    ]
+  },
+
+  "pillars": {
+    "marker": "01 / What I do",
+    "title": "Four things, done to a standard.",
+    "kicker": "Most setups break because nobody wrote down how they work. I configure the system and the process behind it.",
+    "items": [
+      {
+        "id": "servers",
+        "title": "Server configuration",
+        "icon": "server",
+        "body": "Paper and Purpur tuning, Velocity proxy networks, world management and the performance pass that keeps TPS flat under load.",
+        "tags": ["Paper", "Velocity", "Performance"]
+      },
+      {
+        "id": "plugins",
+        "title": "Plugin configuration",
+        "icon": "plugin",
+        "body": "Permissions, economies, custom items, quests and menus — configured to fit each other rather than fighting for the same handlers.",
+        "tags": ["LuckPerms", "ItemsAdder", "MythicMobs"]
+      },
+      {
+        "id": "discord",
+        "title": "Discord engineering",
+        "icon": "discord",
+        "body": "Channel architecture, role hierarchies, onboarding flows, ticket systems and the automation that keeps moderation from becoming a full-time job.",
+        "tags": ["Roles", "Automation", "Tickets"]
+      },
+      {
+        "id": "management",
+        "title": "Staff & team management",
+        "icon": "users",
+        "body": "Hiring rubrics, training paths, shift rotas and escalation ladders. I build teams that make decisions without waiting for an owner to wake up.",
+        "tags": ["Hiring", "Training", "Escalation"]
+      },
+      {
+        "id": "community",
+        "title": "Community operations",
+        "icon": "shield",
+        "body": "Rule sets that hold up under argument, appeal processes that stay fair, and retention loops that bring players back without bribery.",
+        "tags": ["Moderation", "Policy", "Retention"]
+      },
+      {
+        "id": "infra",
+        "title": "Hosting & infrastructure",
+        "icon": "gauge",
+        "body": "Panel setup, backup schedules, staged migrations and monitoring — so a bad night is an inconvenience rather than a rollback.",
+        "tags": ["Pterodactyl", "Backups", "Monitoring"]
+      }
+    ]
+  },
+
+  "timelinePreview": {
+    "marker": "02 / Project timeline",
+    "title": "Where I have been.",
+    "kicker": "A run through the networks and communities I have configured, led, or rescued.",
+    "limit": 3,
+    "cta": { "label": "Full timeline", "to": "/timeline" }
+  },
+
+  "workPreview": {
+    "marker": "03 / Active projects",
+    "title": "On the bench right now.",
+    "kicker": "Live builds, with an honest read on how far along each one actually is.",
+    "limit": 3,
+    "cta": { "label": "See all work", "to": "/work" }
+  },
+
+  "skillsPreview": {
+    "marker": "04 / Skills",
+    "title": "Configuration and leadership.",
+    "kicker": "The technical side keeps the server up. The management side keeps it worth logging into.",
+    "limit": 3,
+    "cta": { "label": "All skills", "to": "/skills" }
+  },
+
+  "reviewsPreview": {
+    "marker": "05 / Reviews",
+    "title": "What owners say after.",
+    "kicker": "Feedback from network owners, community managers and staff leads I have worked with.",
+    "limit": 3,
+    "cta": { "label": "Read all reviews", "to": "/reviews" }
+  },
+
+  "closing": {
+    "title": "Let's build something worth logging into.",
+    "body": "Tell me what you are running, what keeps breaking, and where you want it in six months. I will tell you honestly whether I am the right person for it.",
+    "primaryCta": { "label": "Start a project", "to": "/contact" },
+    "secondaryCta": { "label": "Browse the work", "to": "/work" }
+  }
+}
