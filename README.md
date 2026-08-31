@@ -15,7 +15,7 @@
 
 A single page app portfolio built for **Emperor Naed**, who configures Minecraft servers and Discord communities and trains the staff teams that run them.
 
-There are six pages. **Home**, **Timeline**, **Work** (active projects plus a filterable showcase), **Skills**, **Reviews** and **Contact**.
+There are seven pages. **Home**, **Timeline**, **Work** (active projects plus a filterable showcase), **Gallery** (screenshots only), **Skills**, **Reviews** and **Contact**.
 
 No backend, no database. Every piece of text, every project, review and skill lives in a JSON file that gets read when the page loads, so edits go live on a refresh without rebuilding anything.
 
@@ -24,9 +24,9 @@ No backend, no database. Every piece of text, every project, review and skill li
 | Area | Stack |
 | --- | --- |
 | App | React 19, Vite 6, TypeScript |
-| Styling | Tailwind CSS 3 with a custom crimson and obsidian palette |
+| Styling | Tailwind CSS 3, Inter, a near-black and crimson palette |
 | Routing | React Router 7 |
-| Motion | Framer Motion, Lenis smooth scroll |
+| Motion | Framer Motion, used sparingly |
 | Content | JSON files validated with Zod |
 | Contact form | Pages Function that forwards to a Discord webhook |
 | Hosting | Cloudflare Pages |
@@ -64,6 +64,7 @@ Everything lives in [`frontend/public/content/`](frontend/public/content/). Edit
 | `home.json` | Hero, stats, ticker, the "what I do" cards, section previews, closing CTA |
 | `timeline.json` | Project timeline entries |
 | `work.json` | Active projects with progress, and the finished work showcase |
+| `gallery.json` | The image gallery, with captions and categories |
 | `skills.json` | Skill groups, the toolbox, and the "how a job goes" steps |
 | `reviews.json` | Reviews, star ratings, avatars and screenshots |
 | `contact.json` | Contact channels, form labels, and the FAQ |
@@ -73,7 +74,7 @@ A few things worth knowing:
 - **Nothing is required.** Delete any field you don't want and it falls back to a sensible default. Delete a whole section and it just stops rendering.
 - **To add an entry, copy an existing one.** Every list is an array, so duplicate an item, change the values, and give it a new `id`.
 - **Typos get caught.** If a file has broken JSON the site shows a screen naming the exact file and field, rather than a blank page.
-- **Images** go in [`frontend/public/media/`](frontend/public/media/) and get referenced as `/media/your-file.png`. The placeholders in there can be deleted once real screenshots exist.
+- **Images** go in [`frontend/public/media/`](frontend/public/media/) and get referenced as `/media/your-file.png`. Gallery shots live in [`frontend/public/media/gallery/`](frontend/public/media/gallery/). The placeholders in both can be deleted once real screenshots exist.
 - **The profile picture** is `brand.avatar` in `site.json`, and it shows up in the header, hero, footer and contact form. The loading screen uses it too, but that renders before any JSON has loaded, so its path lives in [`frontend/src/content/bootBrand.ts`](frontend/src/content/bootBrand.ts) instead. Change both if you swap the image.
 
 ## Link Previews

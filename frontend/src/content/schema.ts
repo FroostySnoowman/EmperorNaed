@@ -227,6 +227,21 @@ export const skillsSchema = z.object({
   }).prefault({}),
 })
 
+export const galleryItemSchema = z.object({
+  id: z.string().default(''),
+  src: z.string().default(''),
+  alt: z.string().default(''),
+  caption: z.string().default(''),
+  category: z.string().default(''),
+})
+
+export const gallerySchema = z.object({
+  intro: headingSchema.prefault({}),
+  allLabel: z.string().default('All'),
+  emptyLabel: z.string().default('Nothing here yet.'),
+  items: z.array(galleryItemSchema).default([]),
+})
+
 export const reviewSchema = z.object({
   id: z.string().default(''),
   quote: z.string().default(''),
@@ -334,6 +349,8 @@ export type WorkContent = z.infer<typeof workSchema>
 export type Skill = z.infer<typeof skillSchema>
 export type SkillGroup = z.infer<typeof skillGroupSchema>
 export type SkillsContent = z.infer<typeof skillsSchema>
+export type GalleryItem = z.infer<typeof galleryItemSchema>
+export type GalleryContent = z.infer<typeof gallerySchema>
 export type Review = z.infer<typeof reviewSchema>
 export type ReviewsContent = z.infer<typeof reviewsSchema>
 export type Channel = z.infer<typeof channelSchema>
@@ -344,6 +361,7 @@ export type Content = {
   home: HomeContent
   timeline: TimelineContent
   work: WorkContent
+  gallery: GalleryContent
   skills: SkillsContent
   reviews: ReviewsContent
   contact: ContactContent

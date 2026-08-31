@@ -39,7 +39,7 @@
   },
 
   "pillars": {
-    "marker": "01 / What I do",
+    "marker": "What I do",
     "title": "Three things, done properly.",
     "kicker": "Most servers I get called into aren't broken because of bad plugins. They're broken because nobody ever wrote down how any of it works.",
     "items": [
@@ -68,7 +68,7 @@
   },
 
   "reviewsPreview": {
-    "marker": "02 / Reviews",
+    "marker": "Reviews",
     "title": "What clients said.",
     "kicker": "Feedback from owners, community managers and staff leads I've worked with.",
     "limit": 3,

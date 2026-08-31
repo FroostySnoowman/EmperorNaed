@@ -1,7 +1,5 @@
-import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
-import { EASE } from '../../lib/motion'
-import { RevealText } from './RevealText'
+import { Reveal } from './Reveal'
 
 export function PageIntro({
   marker,
@@ -15,50 +13,20 @@ export function PageIntro({
   aside?: ReactNode
 }) {
   return (
-    <section className="shell relative pt-16 sm:pt-24">
-      <div className="grid gap-10 lg:grid-cols-[1.35fr_0.65fr] lg:items-end">
-        <div className="min-w-0">
-          {marker ? (
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, ease: EASE }}
-              className="marker"
-            >
-              <span className="h-px w-7 bg-gradient-to-r from-transparent to-crimson-500" aria-hidden />
-              {marker}
-            </motion.div>
-          ) : null}
-
-          <h1 className="mt-6 max-w-4xl font-display text-4xl font-extrabold leading-[1.02] tracking-[-0.03em] sm:text-5xl lg:text-6xl">
-            <RevealText text={title} wordClassName="text-gradient" />
+    <section className="shell pt-14 sm:pt-20">
+      <Reveal className="grid gap-10 lg:grid-cols-[1.6fr_0.9fr] lg:items-end">
+        <div>
+          {marker ? <p className="eyebrow">{marker}</p> : null}
+          <h1 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl">
+            {title}
           </h1>
-
           {kicker ? (
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.18, ease: EASE }}
-              className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-white/55 sm:text-lg"
-            >
-              {kicker}
-            </motion.p>
+            <p className="mt-4 max-w-2xl text-pretty text-[15px] leading-relaxed text-white/60">{kicker}</p>
           ) : null}
         </div>
-
-        {aside ? (
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.24, ease: EASE }}
-            className="min-w-0"
-          >
-            {aside}
-          </motion.div>
-        ) : null}
-      </div>
-
-      <div className="rule-fade mt-14" />
+        {aside ? <div>{aside}</div> : null}
+      </Reveal>
+      <div className="rule mt-12" />
     </section>
   )
 }

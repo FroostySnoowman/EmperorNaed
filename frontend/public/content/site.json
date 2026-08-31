@@ -26,6 +26,7 @@
     { "label": "Home", "to": "/", "end": true },
     { "label": "Timeline", "to": "/timeline" },
     { "label": "Work", "to": "/work" },
+    { "label": "Gallery", "to": "/gallery" },
     { "label": "Skills", "to": "/skills" },
     { "label": "Reviews", "to": "/reviews" },
     { "label": "Contact", "to": "/contact" }
@@ -49,6 +50,7 @@
         "links": [
           { "label": "Project timeline", "to": "/timeline" },
           { "label": "See my work", "to": "/work" },
+          { "label": "Gallery", "to": "/gallery" },
           { "label": "Skills", "to": "/skills" },
           { "label": "Reviews", "to": "/reviews" }
         ]

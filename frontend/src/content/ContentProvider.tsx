@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { ContentContext, type ContentIssue, type ContentState } from './ContentContext'
 import {
   contactSchema,
+  gallerySchema,
   homeSchema,
   reviewsSchema,
   siteSchema,
@@ -17,6 +18,7 @@ const SOURCES = {
   home: { file: 'content/home.json', schema: homeSchema },
   timeline: { file: 'content/timeline.json', schema: timelineSchema },
   work: { file: 'content/work.json', schema: workSchema },
+  gallery: { file: 'content/gallery.json', schema: gallerySchema },
   skills: { file: 'content/skills.json', schema: skillsSchema },
   reviews: { file: 'content/reviews.json', schema: reviewsSchema },
   contact: { file: 'content/contact.json', schema: contactSchema },

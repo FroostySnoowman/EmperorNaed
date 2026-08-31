@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1400" viewBox="0 0 1400 1400" role="img" aria-label="Survival World">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#13101b"/><stop offset="55%" stop-color="#0a0810"/><stop offset="100%" stop-color="#180c14"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="28%" r="60%">
+      <stop offset="0%" stop-color="rgba(222,15,63,0.40)"/><stop offset="100%" stop-color="rgba(222,15,63,0)"/>
+    </radialGradient>
+    <pattern id="hatch" width="10" height="10" patternTransform="rotate(135)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1400" height="1400" fill="url(#bg)"/>
+  <rect width="1400" height="1400" fill="url(#hatch)"/>
+  <rect width="1400" height="1400" fill="url(#glow)"/>
+  <circle cx="1008" cy="420" r="40" fill="none" stroke="rgba(242,46,86,0.28)" stroke-width="1.5"/><circle cx="1008" cy="420" r="86" fill="none" stroke="rgba(242,46,86,0.25)" stroke-width="1.5"/><circle cx="1008" cy="420" r="132" fill="none" stroke="rgba(242,46,86,0.21)" stroke-width="1.5"/><circle cx="1008" cy="420" r="178" fill="none" stroke="rgba(242,46,86,0.18)" stroke-width="1.5"/><circle cx="1008" cy="420" r="224" fill="none" stroke="rgba(242,46,86,0.14)" stroke-width="1.5"/><circle cx="1008" cy="420" r="270" fill="none" stroke="rgba(242,46,86,0.11)" stroke-width="1.5"/><circle cx="1008" cy="420" r="316" fill="none" stroke="rgba(242,46,86,0.07)" stroke-width="1.5"/><circle cx="1051" cy="315" r="5" fill="#f22e56" opacity="0.8"/><circle cx="1147" cy="379" r="5" fill="#f22e56" opacity="0.8"/><circle cx="1138" cy="474" r="5" fill="#f22e56" opacity="0.8"/><circle cx="1031" cy="529" r="5" fill="#f22e56" opacity="0.8"/><circle cx="906" cy="501" r="5" fill="#f22e56" opacity="0.8"/><circle cx="858" cy="412" r="5" fill="#f22e56" opacity="0.8"/><circle cx="924" cy="329" r="5" fill="#f22e56" opacity="0.8"/><circle cx="1053" cy="315" r="5" fill="#f22e56" opacity="0.8"/><rect x="98" y="1118" width="30" height="30" rx="3" fill="rgba(242,46,86,0.15)"/><rect x="161" y="1020" width="30" height="128" rx="3" fill="rgba(242,46,86,0.24)"/><rect x="224" y="922" width="30" height="226" rx="3" fill="rgba(242,46,86,0.33)"/><rect x="287" y="824" width="30" height="324" rx="3" fill="rgba(242,46,86,0.42)"/><rect x="350" y="726" width="30" height="422" rx="3" fill="rgba(242,46,86,0.51)"/><rect x="413" y="628" width="30" height="520" rx="3" fill="rgba(242,46,86,0.15)"/><rect x="476" y="1069" width="30" height="79" rx="3" fill="rgba(242,46,86,0.24)"/><rect x="539" y="971" width="30" height="177" rx="3" fill="rgba(242,46,86,0.33)"/><rect x="602" y="873" width="30" height="275" rx="3" fill="rgba(242,46,86,0.42)"/>
+  <line x1="98" y1="1176" x2="1302" y2="1176" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="98" y="238" font-family="JetBrains Mono, monospace" font-size="17" letter-spacing="4" fill="rgba(255,255,255,0.40)">IRONHOLD SMP</text>
+  <text x="98" y="392" font-family="Sora, system-ui, sans-serif" font-size="63" font-weight="800" fill="#ffffff">Survival World</text>
+  <rect x="98" y="462" width="77" height="4" fill="#de0f3f"/>
+</svg>
