@@ -109,7 +109,7 @@ export function Timeline() {
                 {String(entries.length).padStart(2, '0')}
               </div>
               <p className="mt-3 text-xs leading-relaxed text-white/40">
-                Every engagement, newest first — from first brief to handover.
+                Newest first, going back to the first job I took on.
               </p>
             </div>
           ) : null

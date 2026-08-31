@@ -18,6 +18,86 @@ function truncate(value: string, limit: number): string {
   return value.length <= limit ? value : `${value.slice(0, limit - 1)}…`
 }
 
+type ContactValues = {
+  name: string
+  contact: string
+  subject: string
+  budget: string
+  message: string
+}
+
+type ContactLabels = {
+  name: string
+  contact: string
+  budget: string
+  message: string
+}
+
+function buildFields(values: ContactValues, labels: ContactLabels) {
+  const fields = [
+    { name: labels.name, value: truncate(values.name || 'Not given', FIELD_LIMIT), inline: true },
+    { name: labels.contact, value: truncate(values.contact || 'Not given', FIELD_LIMIT), inline: true },
+  ]
+  if (values.budget) {
+    fields.push({ name: labels.budget, value: truncate(values.budget, FIELD_LIMIT), inline: true })
+  }
+  fields.push({ name: labels.message, value: truncate(values.message || 'Not given', FIELD_LIMIT), inline: false })
+  return fields
+}
+
+async function postToWorker(values: ContactValues, labels: ContactLabels): Promise<'sent' | 'unavailable' | 'failed'> {
+  let response: Response
+  try {
+    response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...values, labels }),
+    })
+  } catch {
+    return 'unavailable'
+  }
+
+  if (!(response.headers.get('content-type') ?? '').includes('application/json')) {
+    return 'unavailable'
+  }
+
+  const data = (await response.json().catch(() => null)) as { ok?: boolean; error?: string } | null
+
+  if (response.ok && data?.ok) return 'sent'
+  if (data?.error === 'not_configured' || data?.error === 'not_found') return 'unavailable'
+  return 'failed'
+}
+
+async function postToWebhook(
+  webhook: string,
+  values: ContactValues,
+  labels: ContactLabels,
+  brand: string,
+): Promise<boolean> {
+  try {
+    const response = await fetch(webhook, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username: `${brand} · Portfolio`,
+        allowed_mentions: { parse: [] },
+        embeds: [
+          {
+            title: truncate(values.subject || 'New enquiry', 256),
+            color: 0xde0f3f,
+            timestamp: new Date().toISOString(),
+            fields: buildFields(values, labels),
+            footer: { text: 'Sent from the portfolio contact form' },
+          },
+        ],
+      }),
+    })
+    return response.ok
+  } catch {
+    return false
+  }
+}
+
 function ChannelCard({ channel, primary }: { channel: Channel; primary: boolean }) {
   const body = (
     <>
@@ -98,7 +178,7 @@ function ContactForm() {
   const [status, setStatus] = useState<Status>('idle')
   const [error, setError] = useState('')
 
-  const webhook = String(import.meta.env.VITE_DISCORD_WEBHOOK_URL ?? '').trim() || form.webhookUrl.trim()
+  const fallbackWebhook = String(import.meta.env.VITE_DISCORD_WEBHOOK_URL ?? '').trim() || form.webhookUrl.trim()
 
   const reset = () => {
     setName('')
@@ -119,41 +199,39 @@ function ContactForm() {
       return
     }
 
-    if (!webhook) {
+    setStatus('sending')
+
+    const values = {
+      name: name.trim(),
+      contact: contactValue.trim(),
+      subject: subject.trim(),
+      budget: budget.trim(),
+      message: message.trim(),
+    }
+
+    const viaWorker = await postToWorker(values, form.labels)
+
+    if (viaWorker === 'sent') {
+      setStatus('sent')
+      return
+    }
+
+    if (viaWorker === 'failed') {
+      setStatus('error')
+      setError(form.errorGeneric)
+      return
+    }
+
+    if (!fallbackWebhook) {
       setStatus('error')
       setError(form.errorDisabled)
       return
     }
 
-    setStatus('sending')
-
-    try {
-      const response = await fetch(webhook, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          username: `${site.brand.name} · Portfolio`,
-          embeds: [
-            {
-              title: truncate(subject.trim() || 'New enquiry', 256),
-              color: 0xde0f3f,
-              timestamp: new Date().toISOString(),
-              fields: [
-                { name: form.labels.name, value: truncate(name.trim() || '—', FIELD_LIMIT), inline: true },
-                { name: form.labels.contact, value: truncate(contactValue.trim() || '—', FIELD_LIMIT), inline: true },
-                ...(budget.trim() ? [{ name: form.labels.budget, value: truncate(budget.trim(), FIELD_LIMIT), inline: true }] : []),
-                { name: form.labels.message, value: truncate(message.trim() || '—', FIELD_LIMIT) },
-              ],
-              footer: { text: 'Sent from the portfolio contact form' },
-            },
-          ],
-        }),
-      })
-
-      if (!response.ok) throw new Error(`Request failed (${response.status})`)
-
+    const sent = await postToWebhook(fallbackWebhook, values, form.labels, site.brand.name)
+    if (sent) {
       setStatus('sent')
-    } catch {
+    } else {
       setStatus('error')
       setError(form.errorGeneric)
     }

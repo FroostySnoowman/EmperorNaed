@@ -1,32 +1,32 @@
 {
   "hero": {
-    "badge": "Available for new projects",
-    "titleLead": "Minecraft and Discord,",
-    "titleAccent": "done properly.",
-    "intro": "I configure servers, plugins, bots and permissions — then build the staff structure that keeps them running long after handover. Six years of setups that stayed stable.",
-    "primaryCta": { "label": "Start a project", "to": "/contact" },
+    "badge": "",
+    "titleLead": "Minecraft and Discord",
+    "titleAccent": "setups that last.",
+    "intro": "I configure servers, plugins, bots and permissions. Then I sort out the staff side of things, so the whole lot keeps running once I'm gone. Been doing this since 2019.",
+    "primaryCta": { "label": "Get in touch", "to": "/contact" },
     "secondaryCta": { "label": "See my work", "to": "/work" },
-    "scrollHint": "Scroll to explore",
+    "scrollHint": "Scroll down",
 
     "panel": {
       "eyebrow": "Current status",
       "title": "Taking on new builds",
-      "body": "Two slots open this month for full network configurations or Discord rebuilds. Smaller plugin and permission jobs usually turn around inside a week.",
+      "body": "I've got room for two bigger jobs this month, either a full network setup or a Discord rebuild. Smaller things like a permissions fix usually take a few days.",
       "meta": [
-        { "label": "Response", "value": "< 12 hours" },
+        { "label": "Reply time", "value": "Under 12h" },
         { "label": "Timezone", "value": "UTC+1 (CET)" },
-        { "label": "Active builds", "value": "3" },
-        { "label": "Working since", "value": "2019" }
+        { "label": "Jobs open", "value": "3" },
+        { "label": "Doing this since", "value": "2019" }
       ],
-      "footnote": "Every build ships with written documentation and a walkthrough call, so your team can run it without me."
+      "footnote": "Every job ends with written docs and a call to walk your team through it. The whole point is that you don't need me afterwards."
     }
   },
 
   "stats": [
     { "id": "servers", "value": "140+", "label": "Servers configured" },
-    { "id": "years", "value": "6", "label": "Years in the scene" },
+    { "id": "years", "value": "7", "label": "Years doing this" },
     { "id": "teams", "value": "35+", "label": "Staff teams trained" },
-    { "id": "reply", "value": "< 12h", "label": "Average reply time" }
+    { "id": "reply", "value": "< 12h", "label": "Usual reply time" }
   ],
 
   "marquee": {
@@ -40,49 +40,49 @@
 
   "pillars": {
     "marker": "01 / What I do",
-    "title": "Four things, done to a standard.",
-    "kicker": "Most setups break because nobody wrote down how they work. I configure the system and the process behind it.",
+    "title": "What I actually do.",
+    "kicker": "Most servers I get called into aren't broken because of bad plugins. They're broken because nobody ever wrote down how any of it works.",
     "items": [
       {
         "id": "servers",
         "title": "Server configuration",
         "icon": "server",
-        "body": "Paper and Purpur tuning, Velocity proxy networks, world management and the performance pass that keeps TPS flat under load.",
+        "body": "Paper and Purpur tuning, Velocity proxies, world management, and the performance work that keeps tick times flat once the server actually fills up.",
         "tags": ["Paper", "Velocity", "Performance"]
       },
       {
         "id": "plugins",
         "title": "Plugin configuration",
         "icon": "plugin",
-        "body": "Permissions, economies, custom items, quests and menus — configured to fit each other rather than fighting for the same handlers.",
+        "body": "Permissions, economies, custom items, quests, menus. Most of the job is getting twenty plugins to stop fighting over the same events.",
         "tags": ["LuckPerms", "ItemsAdder", "MythicMobs"]
       },
       {
         "id": "discord",
         "title": "Discord engineering",
         "icon": "discord",
-        "body": "Channel architecture, role hierarchies, onboarding flows, ticket systems and the automation that keeps moderation from becoming a full-time job.",
+        "body": "Channel structure, role hierarchies, onboarding, tickets, and enough automation that moderating stops being a second job for someone.",
         "tags": ["Roles", "Automation", "Tickets"]
       },
       {
         "id": "management",
-        "title": "Staff & team management",
+        "title": "Staff and team management",
         "icon": "users",
-        "body": "Hiring rubrics, training paths, shift rotas and escalation ladders. I build teams that make decisions without waiting for an owner to wake up.",
+        "body": "Hiring rubrics, training, shift rotas, escalation ladders. Teams that can make a call at 3am without waiting for an owner to wake up.",
         "tags": ["Hiring", "Training", "Escalation"]
       },
       {
         "id": "community",
         "title": "Community operations",
         "icon": "shield",
-        "body": "Rule sets that hold up under argument, appeal processes that stay fair, and retention loops that bring players back without bribery.",
+        "body": "Rules that hold up when somebody argues with them, appeals that stay fair, and events that bring people back without paying them to log in.",
         "tags": ["Moderation", "Policy", "Retention"]
       },
       {
         "id": "infra",
-        "title": "Hosting & infrastructure",
+        "title": "Hosting and infrastructure",
         "icon": "gauge",
-        "body": "Panel setup, backup schedules, staged migrations and monitoring — so a bad night is an inconvenience rather than a rollback.",
+        "body": "Panels, backups, staged migrations, monitoring. It's the boring layer, and it decides how bad a bad night ends up being.",
         "tags": ["Pterodactyl", "Backups", "Monitoring"]
       }
     ]
@@ -90,8 +90,8 @@
 
   "timelinePreview": {
     "marker": "02 / Project timeline",
-    "title": "Where I have been.",
-    "kicker": "A run through the networks and communities I have configured, led, or rescued.",
+    "title": "Where I've worked.",
+    "kicker": "The networks and communities I've set up, run, or been called in to rescue.",
     "limit": 3,
     "cta": { "label": "Full timeline", "to": "/timeline" }
   },
@@ -99,31 +99,31 @@
   "workPreview": {
     "marker": "03 / Active projects",
     "title": "On the bench right now.",
-    "kicker": "Live builds, with an honest read on how far along each one actually is.",
+    "kicker": "Three jobs in progress, with an honest read on how far along each one really is.",
     "limit": 3,
     "cta": { "label": "See all work", "to": "/work" }
   },
 
   "skillsPreview": {
     "marker": "04 / Skills",
-    "title": "Configuration and leadership.",
-    "kicker": "The technical side keeps the server up. The management side keeps it worth logging into.",
+    "title": "What I'm good at.",
+    "kicker": "The technical side keeps a server up. The management side is what keeps people logging back into it.",
     "limit": 3,
     "cta": { "label": "All skills", "to": "/skills" }
   },
 
   "reviewsPreview": {
     "marker": "05 / Reviews",
-    "title": "What owners say after.",
-    "kicker": "Feedback from network owners, community managers and staff leads I have worked with.",
+    "title": "What clients said.",
+    "kicker": "Feedback from owners, community managers and staff leads I've worked with.",
     "limit": 3,
     "cta": { "label": "Read all reviews", "to": "/reviews" }
   },
 
   "closing": {
-    "title": "Let's build something worth logging into.",
-    "body": "Tell me what you are running, what keeps breaking, and where you want it in six months. I will tell you honestly whether I am the right person for it.",
-    "primaryCta": { "label": "Start a project", "to": "/contact" },
+    "title": "Got something that needs sorting?",
+    "body": "Tell me what you're running and what's going wrong with it. If I'm not the right person for the job, I'll say so.",
+    "primaryCta": { "label": "Get in touch", "to": "/contact" },
     "secondaryCta": { "label": "Browse the work", "to": "/work" }
   }
 }

@@ -64,6 +64,15 @@ export const siteSchema = z.object({
     role: z.string().default(''),
     tagline: z.string().default(''),
   }).prefault({}),
+  seo: z.object({
+    siteName: z.string().default(''),
+    url: z.string().default(''),
+    title: z.string().default(''),
+    description: z.string().default(''),
+    image: z.string().default('/og.png'),
+    imageAlt: z.string().default(''),
+    themeColor: z.string().default('#de0f3f'),
+  }).prefault({}),
   availability: z.object({
     state: z.enum(['open', 'limited', 'closed']).default('open'),
     label: z.string().default(''),

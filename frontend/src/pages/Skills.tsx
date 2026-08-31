@@ -23,12 +23,12 @@ export function Skills() {
         aside={
           totalSkills > 0 ? (
             <div className="plate rounded-2xl p-6">
-              <div className="font-mono text-[10px] uppercase tracking-marker text-white/35">Disciplines</div>
+              <div className="font-mono text-[10px] uppercase tracking-marker text-white/35">Areas</div>
               <div className="mt-2 font-display text-4xl font-extrabold tracking-tight text-white">
                 {String(groups.length).padStart(2, '0')}
               </div>
               <p className="mt-3 text-xs leading-relaxed text-white/40">
-                {totalSkills} tracked competencies across configuration and team leadership.
+                {totalSkills} skills listed in total, split between config work and running teams.
               </p>
             </div>
           ) : null

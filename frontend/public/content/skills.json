@@ -1,8 +1,8 @@
 {
   "intro": {
     "marker": "Skills",
-    "title": "Configuration that holds, teams that hold it.",
-    "kicker": "Two halves of the same job. The technical work keeps a server stable; the management work keeps it stable after I have left."
+    "title": "What I know how to do.",
+    "kicker": "Two halves of the same job. The technical work keeps a server stable, and the management work keeps it stable after I've left."
   },
 
   "groups": [
@@ -10,50 +10,50 @@
       "id": "server-config",
       "title": "Server configuration",
       "icon": "server",
-      "summary": "Getting the platform right before a single plugin goes in.",
+      "summary": "Getting the platform right before a single plugin goes anywhere near it.",
       "skills": [
-        { "name": "Paper & Purpur tuning", "level": 96, "note": "View distance, entity limits, chunk loading and the config flags that actually move tick time." },
-        { "name": "Velocity & proxy networks", "level": 92, "note": "Multi-server routing, forwarding modes, shared player data and safe restart cycles." },
-        { "name": "World management", "level": 88, "note": "Multiverse setups, pregeneration, border control and seasonal world resets." },
-        { "name": "Performance profiling", "level": 90, "note": "Spark and timings reports read properly — fixing the cause rather than the symptom." }
+        { "name": "Paper and Purpur tuning", "level": 96, "note": "View distance, entity limits, chunk loading, and the handful of config flags that actually move tick time." },
+        { "name": "Velocity and proxy networks", "level": 92, "note": "Multi server routing, forwarding modes, shared player data, and restart cycles that don't kick anyone." },
+        { "name": "World management", "level": 88, "note": "Multiverse setups, pregeneration, borders, and seasonal world resets that don't lose builds." },
+        { "name": "Performance profiling", "level": 90, "note": "Reading Spark and timings reports properly, then fixing the cause instead of the symptom." }
       ]
     },
     {
       "id": "plugin-config",
       "title": "Plugin configuration",
       "icon": "plugin",
-      "summary": "Making twenty plugins behave like one coherent system.",
+      "summary": "Making twenty plugins behave like one system instead of twenty.",
       "skills": [
-        { "name": "LuckPerms architecture", "level": 97, "note": "Inherited tracks, contexts and per-server overrides that survive a rank rework." },
-        { "name": "Economy & shop balancing", "level": 91, "note": "Income sources paired with sinks, modelled before launch rather than patched after." },
-        { "name": "Custom items & mobs", "level": 89, "note": "ItemsAdder, MythicMobs and ModelEngine configured as one content pipeline." },
-        { "name": "Config debugging", "level": 94, "note": "Tracing conflicts between plugins competing for the same events and handlers." },
-        { "name": "Protection & logging", "level": 92, "note": "WorldGuard regions, CoreProtect retention and rollback procedures that work under pressure." }
+        { "name": "LuckPerms architecture", "level": 97, "note": "Inherited tracks, contexts and per server overrides that survive a rank rework." },
+        { "name": "Economy and shop balancing", "level": 91, "note": "Income sources paired with sinks, modelled up front rather than patched once inflation hits." },
+        { "name": "Custom items and mobs", "level": 89, "note": "ItemsAdder, MythicMobs and ModelEngine set up as one content pipeline." },
+        { "name": "Config debugging", "level": 94, "note": "Tracing conflicts between plugins that are quietly competing for the same events." },
+        { "name": "Protection and logging", "level": 92, "note": "WorldGuard regions, CoreProtect retention, and rollbacks that work when you're panicking." }
       ]
     },
     {
       "id": "discord",
       "title": "Discord engineering",
       "icon": "discord",
-      "summary": "Structure and automation for communities that outgrew a single channel.",
+      "summary": "Structure and automation for communities that outgrew one channel.",
       "skills": [
-        { "name": "Server architecture", "level": 95, "note": "Channel trees, category permissions and progressive unlocks tied to member journey." },
-        { "name": "Role & permission design", "level": 94, "note": "Hierarchies that stay readable past thirty roles and never grant more than intended." },
-        { "name": "Bot configuration", "level": 90, "note": "Verification, tickets, logging and auto-moderation wired to a documented rule set." },
-        { "name": "Minecraft ↔ Discord links", "level": 87, "note": "Webhook relays for chat, punishments and rank sync across both platforms." }
+        { "name": "Server architecture", "level": 95, "note": "Channel trees, category permissions, and access that opens up as members stick around." },
+        { "name": "Role and permission design", "level": 94, "note": "Hierarchies that stay readable past thirty roles and never grant more than you meant." },
+        { "name": "Bot configuration", "level": 90, "note": "Verification, tickets, logging and auto moderation, all wired to a written rule set." },
+        { "name": "Minecraft to Discord links", "level": 87, "note": "Webhook relays for chat, punishments and rank sync across both platforms." }
       ]
     },
     {
       "id": "staff-management",
-      "title": "Staff & team management",
+      "title": "Staff and team management",
       "icon": "users",
-      "summary": "Building teams that make good calls without an owner in the room.",
+      "summary": "Building teams that make good calls with nobody watching.",
       "skills": [
-        { "name": "Hiring & rubrics", "level": 93, "note": "Written application scoring so hiring is repeatable rather than a vibe check." },
-        { "name": "Training & onboarding", "level": 92, "note": "Two-week onboarding paths with shadowing, checkpoints and a real sign-off." },
-        { "name": "Rotas & coverage", "level": 88, "note": "Shift planning across timezones with handover notes that actually get read." },
-        { "name": "Escalation & delegation", "level": 91, "note": "Clear ladders so every decision type has a named owner and a fallback." },
-        { "name": "Performance reviews", "level": 85, "note": "Regular one-to-ones and honest feedback before a problem becomes a departure." }
+        { "name": "Hiring and rubrics", "level": 93, "note": "Written application scoring, so hiring is repeatable instead of a gut feeling." },
+        { "name": "Training and onboarding", "level": 92, "note": "Two week onboarding with shadowing, checkpoints and an actual sign off at the end." },
+        { "name": "Rotas and coverage", "level": 88, "note": "Shift planning across timezones, with handover notes people genuinely read." },
+        { "name": "Escalation and delegation", "level": 91, "note": "Clear ladders, so every type of decision has a named owner and a fallback." },
+        { "name": "Performance reviews", "level": 85, "note": "Regular one to ones and honest feedback, well before a problem turns into someone quitting." }
       ]
     },
     {
@@ -62,22 +62,22 @@
       "icon": "shield",
       "summary": "Policy and process that survive contact with a real argument.",
       "skills": [
-        { "name": "Rules & policy writing", "level": 92, "note": "Rule sets specific enough to enforce consistently and defend publicly." },
-        { "name": "Conflict resolution", "level": 90, "note": "De-escalation, mediation and appeals handled without picking sides by default." },
-        { "name": "Moderation systems", "level": 93, "note": "Punishment ladders, appeal routes and audit trails for every action taken." },
-        { "name": "Retention & engagement", "level": 84, "note": "Events and progression loops that bring players back without paying them to log in." }
+        { "name": "Rules and policy writing", "level": 92, "note": "Rules specific enough to enforce the same way twice and defend in public." },
+        { "name": "Conflict resolution", "level": 90, "note": "De-escalation, mediation and appeals, without defaulting to whoever shouted loudest." },
+        { "name": "Moderation systems", "level": 93, "note": "Punishment ladders, appeal routes, and an audit trail for everything staff do." },
+        { "name": "Retention and engagement", "level": 84, "note": "Events and progression that bring players back without paying them to log in." }
       ]
     },
     {
       "id": "infrastructure",
-      "title": "Hosting & infrastructure",
+      "title": "Hosting and infrastructure",
       "icon": "gauge",
       "summary": "The unglamorous layer that decides how bad a bad night gets.",
       "skills": [
-        { "name": "Panel & host setup", "level": 89, "note": "Pterodactyl nodes, allocations, resource limits and sane restart schedules." },
-        { "name": "Backups & recovery", "level": 91, "note": "Offsite rotation with restores actually tested, not just configured." },
-        { "name": "Migrations", "level": 87, "note": "Staged host and version moves with rollback points at every step." },
-        { "name": "Monitoring & alerting", "level": 83, "note": "Uptime, TPS and crash alerts routed to the person who can act on them." }
+        { "name": "Panel and host setup", "level": 89, "note": "Pterodactyl nodes, allocations, resource limits, and restart schedules that make sense." },
+        { "name": "Backups and recovery", "level": 91, "note": "Offsite rotation, with restores that have actually been tested rather than just configured." },
+        { "name": "Migrations", "level": 87, "note": "Staged host and version moves with a rollback point at every step." },
+        { "name": "Monitoring and alerting", "level": 83, "note": "Uptime, tick rate and crash alerts going to whoever can actually do something about them." }
       ]
     }
   ],
@@ -85,26 +85,26 @@
   "toolbox": {
     "marker": "Toolbox",
     "title": "What I work with daily.",
-    "kicker": "Not an exhaustive list — just the tools I reach for without thinking.",
+    "kicker": "Not a full list, just the things I reach for without thinking about it.",
     "groups": [
       { "id": "platforms", "title": "Platforms", "items": ["Paper", "Purpur", "Spigot", "Velocity", "BungeeCord", "Waterfall", "Folia"] },
       { "id": "essentials", "title": "Core plugins", "items": ["LuckPerms", "EssentialsX", "WorldGuard", "WorldEdit", "CoreProtect", "PlaceholderAPI", "Vault"] },
-      { "id": "content", "title": "Content & custom", "items": ["ItemsAdder", "MythicMobs", "ModelEngine", "Citizens", "Oraxen", "BetonQuest"] },
+      { "id": "content", "title": "Content and custom", "items": ["ItemsAdder", "MythicMobs", "ModelEngine", "Citizens", "Oraxen", "BetonQuest"] },
       { "id": "discord", "title": "Discord stack", "items": ["Discord.js", "Carl-bot", "Dyno", "Ticket Tool", "DiscordSRV", "Webhooks"] },
-      { "id": "ops", "title": "Ops & hosting", "items": ["Pterodactyl", "Spark", "Timings", "MySQL", "Redis", "SFTP", "Git"] },
+      { "id": "ops", "title": "Ops and hosting", "items": ["Pterodactyl", "Spark", "Timings", "MySQL", "Redis", "SFTP", "Git"] },
       { "id": "management", "title": "Management", "items": ["Notion", "Trello", "Google Workspace", "Rubrics", "Rotas", "Handbooks"] }
     ]
   },
 
   "approach": {
     "marker": "How I work",
-    "title": "Four steps, every time.",
-    "kicker": "Same process whether it is a single plugin fix or a full network rebuild.",
+    "title": "How a job usually goes.",
+    "kicker": "Roughly the same whether it's one plugin misbehaving or a whole network rebuild.",
     "steps": [
-      { "id": "audit", "title": "Audit", "body": "I go through what you already have — configs, plugins, roles, staff structure — and write down what is actually broken versus what merely looks messy." },
-      { "id": "blueprint", "title": "Blueprint", "body": "You get a written plan before I touch anything: what changes, what stays, what it costs in time, and what could go wrong." },
-      { "id": "build", "title": "Build", "body": "Configuration happens on a staging copy wherever possible, with checkpoints so you see progress rather than waiting for a reveal." },
-      { "id": "handover", "title": "Handover", "body": "Written documentation, a walkthrough call, and two weeks of follow-up support. The goal is that you never need to call me again." }
+      { "id": "audit", "title": "I look at what you've got", "body": "Configs, plugins, roles, staff setup. Then I write down what's genuinely broken and what only looks messy, because those aren't the same thing." },
+      { "id": "blueprint", "title": "You get a plan first", "body": "Before I touch anything you'll know what's changing, what's staying, roughly how long it takes, and what could go wrong along the way." },
+      { "id": "build", "title": "Then I build it", "body": "On a staging copy wherever that's possible, with checkpoints so you can see it coming together instead of waiting for a big reveal." },
+      { "id": "handover", "title": "And hand it over properly", "body": "Written docs, a call with you and your staff, and two weeks of support afterwards. Ideally you never need to call me again." }
     ]
   }
 }

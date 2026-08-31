@@ -52,7 +52,7 @@ async function loadSource(key: SourceKey): Promise<{ key: SourceKey; value: unkn
     parsed = JSON.parse(raw)
   } catch (err) {
     const detail = err instanceof Error ? err.message : 'Unknown parse error'
-    return [{ file, path: '', message: `Not valid JSON — ${detail}. A stray comma or a missing quote is the usual cause.` }]
+    return [{ file, path: '', message: `Not valid JSON. ${detail}. A stray comma or a missing quote is usually the culprit.` }]
   }
 
   const result = schema.safeParse(parsed)

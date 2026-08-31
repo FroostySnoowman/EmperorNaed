@@ -27,7 +27,8 @@ export function NotFound() {
           Off the map
         </h1>
         <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-white/50">
-          That page does not exist — it may have been renamed or moved. Everything else is still where you left it.
+          That page isn't here. It might have been renamed, or moved somewhere else. Everything else is still
+          where you left it.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">

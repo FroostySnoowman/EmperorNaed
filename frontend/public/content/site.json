@@ -4,7 +4,17 @@
     "monogram": "EN",
     "avatar": "/media/emperor-naed.png",
     "role": "Server & Community Configurator",
-    "tagline": "Minecraft servers, Discord communities, and the teams that keep them running."
+    "tagline": "I set up Minecraft servers and Discord communities, then train the people who run them."
+  },
+
+  "seo": {
+    "siteName": "Emperor Naed",
+    "url": "https://emperornaed.com",
+    "title": "Emperor Naed | Minecraft and Discord server configuration",
+    "description": "140+ servers configured over 7 years. I set up Minecraft networks, Discord communities, plugins and permissions, then train the staff teams that keep them running.",
+    "image": "/og.png",
+    "imageAlt": "Emperor Naed, server and community configurator",
+    "themeColor": "#de0f3f"
   },
 
   "availability": {
@@ -21,7 +31,7 @@
     { "label": "Contact", "to": "/contact" }
   ],
 
-  "headerCta": { "label": "Start a project", "to": "/contact" },
+  "headerCta": { "label": "Get in touch", "to": "/contact" },
 
   "socials": [
     { "id": "discord", "label": "Discord", "handle": "@emperornaed", "href": "https://discord.com/users/000000000000000000", "icon": "discord" },
@@ -31,7 +41,7 @@
   ],
 
   "footer": {
-    "blurb": "Configuration, automation, and team leadership for Minecraft networks and Discord communities. Built once, documented properly, handed over clean.",
+    "blurb": "I configure Minecraft networks and Discord communities, and I write everything down properly so your team isn't stuck guessing six months later.",
     "legal": "All rights reserved.",
     "columns": [
       {

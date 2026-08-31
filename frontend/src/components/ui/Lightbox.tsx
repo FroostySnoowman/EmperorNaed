@@ -71,7 +71,7 @@ export function Lightbox({
               <motion.img
                 key={state.images[state.index]}
                 src={state.images[state.index]}
-                alt={`${state.title} — ${state.index + 1}`}
+                alt={`${state.title} ${state.index + 1}`}
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}

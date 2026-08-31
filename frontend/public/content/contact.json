@@ -3,16 +3,16 @@
     "marker": "Contact",
     "title": "Tell me what you're",
     "titleAccent": "running.",
-    "kicker": "Whether it's a full network rebuild or one plugin that refuses to behave, send over the details and I'll tell you honestly whether I'm the right person for it."
+    "kicker": "Could be a whole network rebuild, could be one plugin that refuses to behave. Send over the details either way and I'll tell you if I'm the right person for it."
   },
 
   "channels": [
     {
       "id": "discord",
-      "label": "Discord — fastest reply",
+      "label": "Discord, fastest reply",
       "value": "@emperornaed",
       "href": "https://discord.com/users/000000000000000000",
-      "note": "Best place to reach me. I read every message and usually reply the same day.",
+      "note": "Easily the best way to reach me. I read everything and usually answer the same day.",
       "icon": "discord",
       "copyable": true,
       "primary": true
@@ -22,7 +22,7 @@
       "label": "Email",
       "value": "hello@emperornaed.com",
       "href": "mailto:hello@emperornaed.com",
-      "note": "Better for longer briefs, quotes and anything with attachments.",
+      "note": "Better for longer briefs, quotes, or anything with files attached.",
       "icon": "mail",
       "copyable": true,
       "primary": false
@@ -32,7 +32,7 @@
       "label": "BuiltByBit",
       "value": "EmperorNaed",
       "href": "https://builtbybit.com/",
-      "note": "For anyone who prefers working through platform escrow.",
+      "note": "If you'd rather go through platform escrow, that works for me.",
       "icon": "store",
       "copyable": false,
       "primary": false
@@ -42,7 +42,7 @@
       "label": "Timezone",
       "value": "UTC+1 (CET)",
       "href": "",
-      "note": "Usually online 10:00 – 23:00. Outside that I'll pick it up the next morning.",
+      "note": "Usually around between 10:00 and 23:00. Outside that I'll pick it up in the morning.",
       "icon": "clock",
       "copyable": false,
       "primary": false
@@ -63,13 +63,13 @@
     "webhookUrl": "",
     "eyebrow": "Send a brief",
     "title": "Start the conversation.",
-    "note": "Fill this in and it lands in my Discord straight away. No account needed, no newsletter, no follow-up spam.",
+    "note": "This lands in my Discord as soon as you send it. No account, no newsletter, nothing else happens to your details.",
     "subjects": [
       "Server configuration",
       "Plugin configuration",
       "Discord setup or rebuild",
-      "Staff & team management",
-      "Performance / rescue job",
+      "Staff and team management",
+      "Performance or rescue job",
       "Something else"
     ],
     "labels": {
@@ -80,18 +80,18 @@
       "message": "Tell me about it"
     },
     "placeholders": {
-      "name": "How should I address you?",
+      "name": "What should I call you?",
       "contact": "@yourhandle or you@example.com",
       "subject": "",
-      "budget": "e.g. £200 – £500",
+      "budget": "e.g. £200 to £500",
       "message": "What are you running, what's broken, and where do you want it in six months?"
     },
     "submitIdle": "Send message",
-    "submitSending": "Sending…",
+    "submitSending": "Sending",
     "successTitle": "Message sent",
     "successBody": "It's in my Discord now. I'll get back to you within about twelve hours.",
-    "errorGeneric": "That didn't send. Try again in a moment, or reach me on Discord directly.",
-    "errorDisabled": "The contact form isn't connected yet — please use Discord or email above.",
+    "errorGeneric": "That didn't send. Give it another go in a moment, or just message me on Discord.",
+    "errorDisabled": "The form isn't hooked up yet, so please use Discord or email above.",
     "sendAnother": "Send another"
   },
 
@@ -103,32 +103,32 @@
       {
         "id": "pricing",
         "question": "How do you price work?",
-        "answer": "Fixed price per project, quoted after we've talked through the scope. Small jobs like a permissions fix or a single plugin config are usually a flat fee; full network or Discord rebuilds are quoted in stages so you can stop after any milestone."
+        "answer": "Fixed price per project, quoted once we've talked through what's involved. Small jobs like a permissions fix or a single plugin config are a flat fee. Bigger network or Discord rebuilds get quoted in stages, so you can stop after any milestone if you want to."
       },
       {
         "id": "timeline",
         "question": "How long does a project take?",
-        "answer": "A single plugin or permissions job is typically a few days. A full server configuration runs two to four weeks. Network rebuilds and staff programmes take longer because they involve training people, not just editing files."
+        "answer": "A single plugin or permissions job is usually a few days. A full server configuration runs two to four weeks. Network rebuilds and staff programmes take longer, mostly because they involve training people rather than just editing files."
       },
       {
         "id": "handover",
         "question": "What do I get at the end?",
-        "answer": "The working configuration, written documentation covering every decision, a walkthrough call with you and your staff, and two weeks of follow-up support for anything that surfaces once real players hit it."
+        "answer": "The working setup, documentation covering why things are the way they are, a call to walk you and your staff through it, and two weeks of support for anything that turns up once real players get their hands on it."
       },
       {
         "id": "existing",
-        "question": "Can you work on an existing server?",
-        "answer": "Yes — that's most of my work. I audit what you already have first and tell you plainly what's worth keeping. I won't push a rebuild if a targeted fix does the job."
+        "question": "Can you work on a server that already exists?",
+        "answer": "Yes, that's most of what I do. I'll audit what you've got first and tell you honestly what's worth keeping. I'm not going to push a rebuild on you if a smaller fix does the job."
       },
       {
         "id": "management",
         "question": "Do you only do technical work?",
-        "answer": "No. A good chunk of what I do is management: hiring rubrics, training paths, rotas, escalation ladders and moderation policy. Plenty of servers are technically fine and failing for entirely human reasons."
+        "answer": "No. A good chunk of it is management. Hiring, training, rotas, escalation ladders, moderation policy. Plenty of servers are technically fine and still falling apart for entirely human reasons."
       },
       {
         "id": "revisions",
-        "question": "What if I want changes after handover?",
-        "answer": "Minor tweaks during the two-week support window are included. Beyond that, I'm happy to take on further work — but the documentation is written so your own team can make most changes without me."
+        "question": "What if I want changes later?",
+        "answer": "Small tweaks in the two week support window are included. After that I'm happy to take on more work, though the documentation is written so your own team can handle most changes without me."
       }
     ]
   }

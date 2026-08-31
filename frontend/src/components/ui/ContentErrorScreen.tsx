@@ -13,16 +13,16 @@ export function ContentErrorScreen({ issues }: { issues: ContentIssue[] }) {
           <div>
             <p className="marker">Content error</p>
             <h1 className="mt-2 font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">
-              A content file needs attention
+              Something's wrong with a content file
             </h1>
           </div>
         </div>
 
         <p className="mt-6 text-sm leading-relaxed text-white/55">
-          The site could not start because {files.length === 1 ? 'a content file' : 'some content files'} could not be
+          The site can't start because {files.length === 1 ? 'a content file' : 'some content files'} couldn't be
           read. Fix the {files.length === 1 ? 'entry' : 'entries'} below in{' '}
           <code className="rounded bg-white/[0.06] px-1.5 py-0.5 font-mono text-[12px] text-crimson-200">public/</code>{' '}
-          and refresh — no rebuild needed.
+          and refresh. There's no need to rebuild.
         </p>
 
         <ul className="mt-8 space-y-3">

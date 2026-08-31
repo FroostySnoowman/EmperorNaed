@@ -68,7 +68,7 @@ export function SiteHeader() {
             condensed ? 'h-[3.85rem]' : 'h-[4.6rem]',
           )}
         >
-          <Link to="/" className="group flex min-w-0 items-center gap-3" aria-label={`${brand.name} — home`}>
+          <Link to="/" className="group flex min-w-0 items-center gap-3" aria-label={`${brand.name}, back to home`}>
             <BrandMark
               avatar={brand.avatar}
               monogram={brand.monogram}

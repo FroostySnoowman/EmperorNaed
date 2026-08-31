@@ -63,7 +63,7 @@ function ImageStrip({
         <button
           key={`${review.id}-${index}`}
           type="button"
-          onClick={() => onOpen(review.images, index, `${review.author} — ${review.project || 'Review'}`)}
+          onClick={() => onOpen(review.images, index, `${review.author}, ${review.project || 'review'}`)}
           className={cn(
             'group/img overflow-hidden rounded-lg border border-white/[0.08] bg-ink-850',
             height,

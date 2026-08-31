@@ -22,7 +22,8 @@ export function RootLayout() {
 
   useEffect(() => {
     const page = site.nav.find((item) => item.to === pathname)
-    document.title = page && pathname !== '/' ? `${page.label} · ${site.brand.name}` : site.brand.name
+    const home = site.seo.title || site.brand.name
+    document.title = page && pathname !== '/' ? `${page.label} · ${site.brand.name}` : home
   }, [pathname, site])
 
   return (

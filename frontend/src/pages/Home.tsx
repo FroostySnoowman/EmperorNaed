@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import { useContent } from '../content/useContent'
+import { cn } from '../lib/cn'
 import { EASE, inView } from '../lib/motion'
 import { ActionLink } from '../components/ui/ActionLink'
 import { BrandMark } from '../components/ui/BrandMark'
@@ -50,7 +51,12 @@ function Hero() {
             </motion.div>
           ) : null}
 
-          <h1 className="mt-7 font-display text-[2.6rem] font-extrabold leading-[0.95] tracking-[-0.035em] min-[420px]:text-6xl sm:text-7xl lg:text-[5.1rem]">
+          <h1
+            className={cn(
+              'font-display text-[2.6rem] font-extrabold leading-[0.95] tracking-[-0.035em] min-[420px]:text-6xl sm:text-7xl lg:text-[5.1rem]',
+              hero.badge && 'mt-7',
+            )}
+          >
             <span className="block">
               <RevealText text={hero.titleLead} stagger={0.06} wordClassName="text-gradient" />
             </span>

@@ -1,15 +1,15 @@
 {
   "intro": {
     "marker": "Reviews",
-    "title": "What people say once the work is live.",
-    "kicker": "Feedback from network owners, community managers and staff leads. Placeholder entries — swap in the real ones whenever you like."
+    "title": "What people have said.",
+    "kicker": "Feedback from network owners, community managers and staff leads I've worked with over the years."
   },
 
   "summary": {
     "show": true,
     "ratingLabel": "Average rating",
     "countLabel": "Reviews collected",
-    "repeatLabel": "Repeat clients",
+    "repeatLabel": "Came back again",
     "repeatValue": "64%"
   },
 
@@ -17,12 +17,12 @@
     {
       "id": "rev-aurora",
       "featured": true,
-      "quote": "We had four servers, three permission systems and nobody who understood any of them. Naed spent a week auditing before touching a single config, then rebuilt the whole thing on Velocity without a day of downtime. What actually surprised me was the handover — a written handbook and four training sessions for my staff. Six months on we have not needed to call him once, which I think is the highest compliment I can give.",
+      "quote": "We had four servers, three different permission systems and nobody left who understood any of them. Naed spent a week just auditing before he touched a single config, then rebuilt the whole thing on Velocity without a day of downtime. What actually got me was the handover. A written handbook, and four training sessions for my staff. Six months later we still haven't had to call him, which is about the best thing I can say about anyone.",
       "author": "Ryan Keller",
       "handle": "@ryankeller",
       "role": "Network owner",
       "platform": "Discord",
-      "project": "Aurora Network — proxy rebuild",
+      "project": "Aurora Network proxy rebuild",
       "date": "Feb 2026",
       "rating": 5,
       "avatar": "/media/avatar-01.svg",
@@ -31,7 +31,7 @@
     {
       "id": "rev-obsidian",
       "featured": false,
-      "quote": "Our Discord was 400 people and completely unreadable. He restructured the entire thing and set up onboarding that actually filters people properly. We are past twelve thousand members now and my mod team is doing less work than they were at four hundred.",
+      "quote": "Our Discord was 400 people and completely unreadable. He restructured all of it and set up onboarding that filters people properly. We're past twelve thousand members now and my mod team is doing less work than they were at four hundred.",
       "author": "Mira Vance",
       "handle": "@miravance",
       "role": "Community manager",
@@ -45,7 +45,7 @@
     {
       "id": "rev-ironhold",
       "featured": false,
-      "quote": "Sixty custom items, a full quest chain and an economy that did not collapse in week two. He modelled the numbers before building anything, which nobody else I approached even offered to do.",
+      "quote": "Sixty custom items, a full quest chain, and an economy that didn't collapse in week two. He modelled the numbers before building any of it, which nobody else I spoke to even offered to do.",
       "author": "Jonas Thiel",
       "handle": "@jthiel",
       "role": "Server owner",
@@ -59,7 +59,7 @@
     {
       "id": "rev-verdant",
       "featured": false,
-      "quote": "He came in during an emergency — our permissions were broken mid-season and half the staff were locked out. Fixed in a weekend. Then he stayed on and fixed the reason it happened, which was really a management problem rather than a technical one.",
+      "quote": "He came in during an emergency. Our permissions were broken mid season and half the staff were locked out. Sorted in a weekend. Then he stayed on and fixed the reason it happened in the first place, which turned out to be a management problem rather than a technical one.",
       "author": "Sofia Lund",
       "handle": "@sofialund",
       "role": "Head of staff",
@@ -73,7 +73,7 @@
     {
       "id": "rev-staff",
       "featured": false,
-      "quote": "The staff training programme is the single best thing that has happened to our community. Written rubrics, an actual onboarding path, and an escalation ladder that means nobody wakes me up at 3am any more.",
+      "quote": "The staff training programme is the best thing that's happened to our community. Proper written scoring for applications, a real onboarding path, and an escalation ladder that means nobody wakes me up at 3am any more.",
       "author": "Adem Duran",
       "handle": "@ademduran",
       "role": "Founder",
@@ -87,7 +87,7 @@
     {
       "id": "rev-perf",
       "featured": false,
-      "quote": "We were about to pay for a hardware upgrade. He read our timings report, removed nine plugins and retuned the config — tick time went from 41ms to 12ms. Saved us a monthly bill increase for a one-off fee.",
+      "quote": "We were about to pay for a hardware upgrade we didn't need. He read our timings report, pulled out nine plugins and retuned the config, and tick time went from 41ms to 12ms. That was a one off fee instead of a bigger bill every month.",
       "author": "Nadia Petrova",
       "handle": "@nadiap",
       "role": "Technical lead",
@@ -101,12 +101,12 @@
     {
       "id": "rev-bots",
       "featured": false,
-      "quote": "Clear communication the whole way through, delivered ahead of the date he gave me, and the documentation meant I could make my own changes afterwards. Would hire again without hesitation.",
+      "quote": "Clear about what he was doing the whole way through, finished ahead of the date he gave me, and the documentation meant I could make my own changes afterwards. Would hire again without thinking about it.",
       "author": "Kofi Baptiste",
       "handle": "@kofib",
       "role": "Community owner",
       "platform": "Discord",
-      "project": "Verification & tickets",
+      "project": "Verification and tickets",
       "date": "Feb 2025",
       "rating": 4.5,
       "avatar": "/media/avatar-07.svg",

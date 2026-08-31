@@ -9,9 +9,6 @@ export function Meter({ label, level, note, delay = 0 }: { label: string; level:
     <div className="group/meter">
       <div className="flex items-baseline justify-between gap-4">
         <span className="text-sm font-medium text-white/85">{label}</span>
-        <span className="font-mono text-[11px] tabular-nums text-white/35 transition-colors group-hover/meter:text-crimson-300">
-          {value}
-        </span>
       </div>
 
       <div className="relative mt-2.5 h-[3px] overflow-hidden rounded-full bg-white/[0.07]">
