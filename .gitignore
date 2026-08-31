@@ -1,15 +1,25 @@
 # Dependencies
 node_modules/
 
+# Lockfiles are not committed, so Cloudflare runs `npm install` rather than `npm ci`
+package-lock.json
+
 # Builds
 dist/
 dist-ssr/
 build/
 
-# Environment — never commit the Discord webhook
+# Environment. Never commit the Discord webhook
 .env
 .env.local
 .env.*.local
+.dev.vars
+
+# Caches
+.vite/
+.wrangler/
+.cache/
+*.tsbuildinfo
 
 # Logs
 *.log
@@ -17,11 +27,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-
-# Caches
-.vite/
-.cache/
-*.tsbuildinfo
 
 # Editors
 .vscode/*
