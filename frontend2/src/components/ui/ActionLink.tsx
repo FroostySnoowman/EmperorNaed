@@ -29,11 +29,16 @@ export function ActionLink({
   onClick?: () => void
 }) {
   const external = isExternal(to)
-  const classes = cn(VARIANTS[variant], className)
+  const classes = cn(VARIANTS[variant], withArrow && 'group/link', className)
   const inner = (
     <>
       {children}
-      {withArrow ? <Icon name={external ? 'arrow-out' : 'arrow-right'} className="text-[1.1em]" /> : null}
+      {withArrow ? (
+        <Icon
+          name={external ? 'arrow-out' : 'arrow-right'}
+          className="text-[1.1em] transition-transform duration-200 group-hover/link:translate-x-1"
+        />
+      ) : null}
     </>
   )
 

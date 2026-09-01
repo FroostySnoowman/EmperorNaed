@@ -4,7 +4,9 @@ import { EASE } from '../lib/motion'
 import { pad2 } from '../lib/utils'
 import { ActionLink } from '../components/ui/ActionLink'
 import { Band } from '../components/ui/Band'
+import { Counter } from '../components/ui/Counter'
 import { Rise } from '../components/ui/Rise'
+import { Stagger, StaggerItem } from '../components/ui/Stagger'
 import { SectionHead } from '../components/ui/SectionHead'
 
 function Hero() {
@@ -64,14 +66,16 @@ function Figures() {
 
   return (
     <Band tone="raised" className="!py-0">
-      <dl className="grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-4">
-        {home.figures.map((figure, index) => (
-          <Rise key={figure.id || figure.label} delay={index * 0.05}>
-            <dd className="stat-num">{figure.value}</dd>
+      <Stagger className="grid grid-cols-2 gap-x-8 gap-y-12 lg:grid-cols-4" gap={0.09}>
+        {home.figures.map((figure) => (
+          <StaggerItem key={figure.id || figure.label}>
+            <dd className="stat-num">
+              <Counter value={figure.value} />
+            </dd>
             <dt className="kicker-mute mt-3">{figure.label}</dt>
-          </Rise>
+          </StaggerItem>
         ))}
-      </dl>
+      </Stagger>
     </Band>
   )
 }
@@ -85,9 +89,9 @@ function Disciplines() {
     <Band tone="ink">
       <SectionHead index="01" kicker={disciplines.label} title={disciplines.title} lede={disciplines.lede} />
 
-      <div className="mt-20 grid gap-14 lg:grid-cols-3 lg:gap-10">
+      <Stagger className="mt-20 grid gap-14 lg:grid-cols-3 lg:gap-10" gap={0.1}>
         {disciplines.items.map((item, index) => (
-          <Rise key={item.id || item.title} delay={index * 0.07}>
+          <StaggerItem key={item.id || item.title}>
             <p className="text-[13px] font-semibold tabular-nums text-accent">{pad2(index + 1)}</p>
             <h3 className="mt-5 text-big font-semibold text-white">{item.title}</h3>
             <p className="copy mt-5">{item.body}</p>
@@ -100,9 +104,9 @@ function Disciplines() {
                 ))}
               </ul>
             ) : null}
-          </Rise>
+          </StaggerItem>
         ))}
-      </div>
+      </Stagger>
     </Band>
   )
 }

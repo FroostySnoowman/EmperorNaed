@@ -80,5 +80,14 @@ function socialMeta(): Plugin {
 export default defineConfig({
   plugins: [react(), socialMeta()],
   server: { port: 5373, host: true },
-  build: { outDir: 'dist', sourcemap: false },
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    rollupOptions: {
+      onwarn(warning, defaultHandler) {
+        if (warning.code === 'INVALID_ANNOTATION' && warning.id?.includes('/node_modules/')) return
+        defaultHandler(warning)
+      },
+    },
+  },
 })

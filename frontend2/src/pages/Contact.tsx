@@ -3,7 +3,7 @@ import type { Channel } from '../content/schema'
 import { CopyButton } from '../components/ui/CopyButton'
 import { Icon } from '../components/ui/Icon'
 import { PageHead } from '../components/ui/PageHead'
-import { Rise } from '../components/ui/Rise'
+import { Stagger, StaggerItem } from '../components/ui/Stagger'
 
 function ChannelCard({ channel }: { channel: Channel }) {
   const inner = (
@@ -44,13 +44,13 @@ export function Contact() {
 
       {channels.length > 0 ? (
         <section className="page">
-          <div className="grid gap-4 md:grid-cols-3">
-            {channels.map((channel, index) => (
-              <Rise key={channel.id || channel.label} delay={index * 0.05}>
+          <Stagger className="grid gap-4 md:grid-cols-3" gap={0.09}>
+            {channels.map((channel) => (
+              <StaggerItem key={channel.id || channel.label} className="h-full">
                 <ChannelCard channel={channel} />
-              </Rise>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </section>
       ) : null}
     </div>

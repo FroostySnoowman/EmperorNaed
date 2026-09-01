@@ -1,9 +1,9 @@
+import { MotionConfig } from 'framer-motion'
 import { lazy, useContext, type ReactNode } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ContentContext } from './content/ContentContext'
 import { ContentProvider } from './content/ContentProvider'
 import { RootLayout } from './components/layout/RootLayout'
-import { BootScreen } from './components/ui/BootScreen'
 import { ContentErrorScreen } from './components/ui/ContentErrorScreen'
 import { Home } from './pages/Home'
 
@@ -18,7 +18,7 @@ const NotFound = lazy(() => import('./pages/NotFound').then((m) => ({ default: m
 
 function ContentGate({ children }: { children: ReactNode }) {
   const state = useContext(ContentContext)
-  if (state.status === 'loading') return <BootScreen />
+  if (state.status === 'loading') return null
   if (state.status === 'error') return <ContentErrorScreen issues={state.issues} />
   return <>{children}</>
 }
@@ -27,6 +27,7 @@ export default function App() {
   return (
     <ContentProvider>
       <ContentGate>
+        <MotionConfig reducedMotion="user">
         <BrowserRouter>
           <Routes>
             <Route element={<RootLayout />}>
@@ -42,6 +43,7 @@ export default function App() {
             </Route>
           </Routes>
         </BrowserRouter>
+        </MotionConfig>
       </ContentGate>
     </ContentProvider>
   )

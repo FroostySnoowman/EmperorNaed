@@ -64,12 +64,25 @@ export function SiteHeader() {
                 end={item.end || item.to === '/'}
                 className={({ isActive }) =>
                   cn(
-                    'text-[12px] font-semibold uppercase tracking-[0.14em] transition-colors duration-150',
+                    'group relative py-1 text-[12px] font-semibold uppercase tracking-[0.14em] transition-colors duration-150',
                     isActive ? 'text-accent' : 'text-mute hover:text-white',
                   )
                 }
               >
-                {item.label}
+                {({ isActive }) => (
+                  <>
+                    {item.label}
+                    {isActive ? (
+                      <motion.span
+                        layoutId="nav-underline"
+                        transition={{ type: 'spring', stiffness: 420, damping: 34 }}
+                        className="absolute -bottom-1 left-0 h-[2px] w-full bg-accent"
+                      />
+                    ) : (
+                      <span className="absolute -bottom-1 left-0 h-[2px] w-full origin-left scale-x-0 bg-white/40 transition-transform duration-200 group-hover:scale-x-100" />
+                    )}
+                  </>
+                )}
               </NavLink>
             ))}
           </nav>

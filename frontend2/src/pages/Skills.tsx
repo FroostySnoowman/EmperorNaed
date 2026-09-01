@@ -3,6 +3,7 @@ import { pad2 } from '../lib/utils'
 import { Band } from '../components/ui/Band'
 import { PageHead } from '../components/ui/PageHead'
 import { Rise } from '../components/ui/Rise'
+import { Stagger, StaggerItem } from '../components/ui/Stagger'
 import { SectionHead } from '../components/ui/SectionHead'
 
 export function Skills() {
@@ -14,10 +15,10 @@ export function Skills() {
       <PageHead kicker={intro.label} title={intro.title} lede={intro.lede} />
 
       <section className="page pb-24">
-        <div className="grid gap-4 lg:grid-cols-2">
+        <Stagger className="grid gap-4 lg:grid-cols-2" gap={0.09}>
           {groups.map((group, index) => (
-            <Rise key={group.id || group.title} delay={(index % 2) * 0.05}>
-              <div className="h-full bg-raised p-8 sm:p-10">
+            <StaggerItem key={group.id || group.title} className="h-full">
+              <div className="h-full bg-raised p-8 sm:p-10 block-hover">
                 <p className="text-[13px] font-semibold tabular-nums text-accent">{pad2(index + 1)}</p>
                 <h2 className="mt-4 text-big font-semibold text-white">{group.title}</h2>
                 {group.summary ? <p className="copy mt-4">{group.summary}</p> : null}
@@ -30,9 +31,9 @@ export function Skills() {
                   ))}
                 </ul>
               </div>
-            </Rise>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </section>
 
       {toolbox.rows.length > 0 ? (

@@ -7,6 +7,7 @@ import { ActionLink } from '../components/ui/ActionLink'
 import { Lightbox } from '../components/ui/Lightbox'
 import { PageHead } from '../components/ui/PageHead'
 import { Rise } from '../components/ui/Rise'
+import { Stagger, StaggerItem } from '../components/ui/Stagger'
 
 export function Gallery() {
   const { gallery } = useContent()
@@ -62,13 +63,13 @@ export function Gallery() {
             ) : null}
           </Rise>
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" gap={0.07}>
             {visible.map((item, index) => (
-              <Rise key={item.id || item.src} delay={(index % 3) * 0.05}>
+              <StaggerItem key={item.id || item.src}>
                 <button
                   type="button"
                   onClick={() => lightbox.open(sources, index, item.caption || item.alt || 'Screenshot')}
-                  className="group block w-full bg-raised text-left"
+                  className="group block w-full bg-raised text-left block-hover"
                   aria-label={`Open ${item.caption || item.alt || 'screenshot'}`}
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-ink">
@@ -87,9 +88,9 @@ export function Gallery() {
                     </div>
                   ) : null}
                 </button>
-              </Rise>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         )}
       </section>
 
