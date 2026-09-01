@@ -4,18 +4,19 @@ import { cn } from '../../lib/cn'
 import { isExternal } from '../../lib/utils'
 import { Icon } from './Icon'
 
-type Variant = 'primary' | 'ghost' | 'text'
+type Variant = 'fill' | 'outline' | 'onAccent' | 'text'
 
 const VARIANTS: Record<Variant, string> = {
-  primary: 'btn btn-primary btn-sheen',
-  ghost: 'btn btn-ghost btn-sheen',
-  text: 'group/link inline-flex items-center gap-2 text-sm font-semibold text-crimson-300 transition hover:text-crimson-200',
+  fill: 'btn btn-fill',
+  outline: 'btn btn-outline',
+  onAccent: 'btn btn-on-accent',
+  text: 'stack-link',
 }
 
 export function ActionLink({
   to,
   children,
-  variant = 'ghost',
+  variant = 'outline',
   className,
   withArrow = false,
   onClick,
@@ -28,18 +29,14 @@ export function ActionLink({
   onClick?: () => void
 }) {
   const external = isExternal(to)
-  const classes = cn(VARIANTS[variant], className)
-
+  const classes = cn(VARIANTS[variant], withArrow && 'group/link', className)
   const inner = (
     <>
-      <span className="relative z-[1]">{children}</span>
+      {children}
       {withArrow ? (
         <Icon
-          name={external ? 'arrow-up-right' : 'arrow-right'}
-          className={cn(
-            'relative z-[1] text-[1.05em] transition-transform duration-300',
-            variant === 'text' ? 'group-hover/link:translate-x-1' : 'group-hover:translate-x-0.5',
-          )}
+          name={external ? 'arrow-out' : 'arrow-right'}
+          className="text-[1.1em] transition-transform duration-200 group-hover/link:translate-x-1"
         />
       ) : null}
     </>
@@ -52,7 +49,6 @@ export function ActionLink({
       </a>
     )
   }
-
   return (
     <Link to={to} className={classes} onClick={onClick}>
       {inner}

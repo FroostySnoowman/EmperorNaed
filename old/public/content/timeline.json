@@ -1,0 +1,88 @@
+{
+  "intro": {
+    "marker": "Project timeline",
+    "title": "Everything I've worked on since 2019.",
+    "kicker": "Newest first. These are real jobs, with what I was brought in to do and what actually came out of it."
+  },
+  "entries": [
+    {
+      "id": "aurora-network",
+      "period": "2025 to now",
+      "title": "Lead configurator and operations advisor",
+      "org": "Aurora Network",
+      "status": "ongoing",
+      "summary": "Rebuilding a four server network from one badly overloaded Paper box, and training the staff so they can run it without me.",
+      "tags": [
+        "Velocity",
+        "LuckPerms",
+        "Performance",
+        "Staff training"
+      ],
+      "links": [
+        {
+          "label": "Network site",
+          "href": "https://example.com"
+        }
+      ]
+    },
+    {
+      "id": "obsidian-guild",
+      "period": "2024 to 2025",
+      "title": "Discord architect and community manager",
+      "org": "Obsidian Guild",
+      "status": "completed",
+      "summary": "Took a 400 member Discord with no real structure and turned it into a 12,000 member community with a mod team that runs itself.",
+      "tags": [
+        "Discord",
+        "Automation",
+        "Moderation",
+        "Hiring"
+      ],
+      "links": []
+    },
+    {
+      "id": "ironhold-smp",
+      "period": "2024",
+      "title": "Full server configuration",
+      "org": "Ironhold SMP",
+      "status": "completed",
+      "summary": "Everything for a seasonal SMP. Economy, land claims, custom items, and the quest chain that carried the first season.",
+      "tags": [
+        "ItemsAdder",
+        "MythicMobs",
+        "Economy",
+        "WorldGuard"
+      ],
+      "links": []
+    },
+    {
+      "id": "verdant-realms",
+      "period": "2023 to 2024",
+      "title": "Staff lead and permissions rescue",
+      "org": "Verdant Realms",
+      "status": "completed",
+      "summary": "Called in after a permissions rewrite locked half the staff team out mid season. Fixed it, then stayed on to run the team.",
+      "tags": [
+        "LuckPerms",
+        "Team management",
+        "Rotas"
+      ],
+      "links": []
+    },
+    {
+      "id": "crimson-bots",
+      "period": "2022 to 2023",
+      "title": "Bot configuration and automation",
+      "org": "Freelance, various communities",
+      "status": "completed",
+      "summary": "A run of automation contracts across eleven Discord communities. Verification, tickets, logging, and relays back into Minecraft.",
+      "tags": [
+        "Discord.js",
+        "Carl-bot",
+        "Webhooks",
+        "Documentation"
+      ],
+      "links": []
+    }
+  ]
+}

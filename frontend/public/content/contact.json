@@ -1,20 +1,17 @@
 {
   "intro": {
-    "marker": "Contact",
-    "title": "Tell me what you're",
-    "titleAccent": "running.",
-    "kicker": "Could be a whole network rebuild, could be one plugin that refuses to behave. Send over the details either way and I'll tell you if I'm the right person for it."
+    "label": "Contact",
+    "title": "Tell me what you're running.",
+    "lede": "Could be a whole network rebuild, could be one plugin that refuses to behave. Message me on any of these and I'll tell you honestly whether I'm the right person for it."
   },
   "channels": [
     {
       "id": "discord",
-      "label": "Discord, fastest reply",
+      "label": "Discord",
       "value": "@emperornaed",
       "href": "https://discord.com/users/000000000000000000",
       "note": "Easily the best way to reach me. I read everything and usually answer the same day, UTC+1.",
-      "icon": "discord",
-      "copyable": true,
-      "primary": true
+      "icon": "discord"
     },
     {
       "id": "email",
@@ -22,90 +19,15 @@
       "value": "hello@emperornaed.com",
       "href": "mailto:hello@emperornaed.com",
       "note": "Better for longer briefs, quotes, or anything with files attached.",
-      "icon": "mail",
-      "copyable": true,
-      "primary": false
+      "icon": "mail"
     },
     {
       "id": "builtbybit",
       "label": "BuiltByBit",
       "value": "EmperorNaed",
       "href": "https://builtbybit.com/",
-      "note": "If you'd rather go through platform escrow, that works for me.",
-      "icon": "store",
-      "copyable": false,
-      "primary": false
+      "note": "If you'd rather work through platform escrow, that suits me fine.",
+      "icon": "store"
     }
-  ],
-  "aside": {
-    "title": "Before you write",
-    "points": [
-      "Tell me what you're running now and what keeps breaking.",
-      "A rough budget and deadline saves us both a round of messages.",
-      "Screenshots or config files are always welcome."
-    ]
-  },
-  "form": {
-    "enabled": true,
-    "webhookUrl": "",
-    "eyebrow": "Send a brief",
-    "title": "Start the conversation.",
-    "note": "This lands in my Discord as soon as you send it. No account, no newsletter, nothing else happens to your details.",
-    "subjects": [
-      "Server configuration",
-      "Plugin configuration",
-      "Discord setup or rebuild",
-      "Staff and team management",
-      "Performance or rescue job",
-      "Something else"
-    ],
-    "labels": {
-      "name": "Your name",
-      "contact": "Discord or email",
-      "subject": "What do you need",
-      "budget": "Budget (optional)",
-      "message": "Tell me about it"
-    },
-    "placeholders": {
-      "name": "What should I call you?",
-      "contact": "@yourhandle or you@example.com",
-      "subject": "",
-      "budget": "e.g. £200 to £500",
-      "message": "What are you running, what's broken, and where do you want it in six months?"
-    },
-    "submitIdle": "Send message",
-    "submitSending": "Sending",
-    "successTitle": "Message sent",
-    "successBody": "It's in my Discord now. I'll get back to you within about twelve hours.",
-    "errorGeneric": "That didn't send. Give it another go in a moment, or just message me on Discord.",
-    "errorDisabled": "The form isn't hooked up yet, so please use Discord or email above.",
-    "sendAnother": "Send another"
-  },
-  "faq": {
-    "marker": "FAQ",
-    "title": "The usual questions.",
-    "kicker": "If yours isn't here, just ask.",
-    "items": [
-      {
-        "id": "pricing",
-        "question": "How do you price work?",
-        "answer": "Fixed price per project, quoted once we've talked through what's involved. Small jobs like a permissions fix or a single plugin config are a flat fee. Bigger network or Discord rebuilds get quoted in stages, so you can stop after any milestone if you want to."
-      },
-      {
-        "id": "timeline",
-        "question": "How long does a project take?",
-        "answer": "A single plugin or permissions job is usually a few days. A full server configuration runs two to four weeks. Network rebuilds and staff programmes take longer, mostly because they involve training people rather than just editing files."
-      },
-      {
-        "id": "handover",
-        "question": "What do I get at the end?",
-        "answer": "The working setup, documentation covering why things are the way they are, a call to walk you and your staff through it, and two weeks of support for anything that turns up once real players get their hands on it."
-      },
-      {
-        "id": "existing",
-        "question": "Can you work on a server that already exists?",
-        "answer": "Yes, that's most of what I do. I'll audit what you've got first and tell you honestly what's worth keeping. I'm not going to push a rebuild on you if a smaller fix does the job."
-      }
-    ]
-  }
+  ]
 }

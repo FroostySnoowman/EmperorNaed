@@ -1,7 +1,7 @@
 # Dependencies
 node_modules/
 
-# Lockfiles are not committed, so Cloudflare runs `npm install` rather than `npm ci`
+# Lockfiles
 package-lock.json
 
 # Builds

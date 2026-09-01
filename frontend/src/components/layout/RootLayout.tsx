@@ -2,44 +2,37 @@ import { motion } from 'framer-motion'
 import { Suspense, useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { useContent } from '../../content/useContent'
-import { useLenisRef } from '../../lib/lenis-context'
 import { EASE } from '../../lib/motion'
-import { Backdrop } from './Backdrop'
+import { applyRouteMeta, routeMeta } from '../../lib/seo'
 import { SiteFooter } from './SiteFooter'
 import { SiteHeader } from './SiteHeader'
 
 export function RootLayout() {
   const { pathname } = useLocation()
-  const lenisRef = useLenisRef()
-  const { site } = useContent()
+  const content = useContent()
 
   useEffect(() => {
-    const lenis = lenisRef.current
-    if (lenis) lenis.scrollTo(0, { immediate: true })
-    else window.scrollTo(0, 0)
-  }, [pathname, lenisRef])
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   useEffect(() => {
-    const page = site.nav.find((item) => item.to === pathname)
-    const home = site.seo.title || site.brand.name
-    document.title = page && pathname !== '/' ? `${page.label} · ${site.brand.name}` : home
-  }, [pathname, site])
+    applyRouteMeta(routeMeta(content, pathname))
+  }, [pathname, content])
 
   return (
-    <div className="relative flex min-h-[100svh] flex-col overflow-x-clip">
-      <Backdrop />
+    <div className="flex min-h-[100svh] flex-col">
       <SiteHeader />
-      <main className="flex-1 pt-[4.6rem]">
-        <motion.div
-          key={pathname}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, ease: EASE }}
-        >
-          <Suspense fallback={<div className="min-h-[70svh]" />}>
+      <main className="flex-1 pt-[4.5rem]">
+        <Suspense fallback={<div className="min-h-[70svh]" />}>
+          <motion.div
+            key={pathname}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.42, ease: EASE }}
+          >
             <Outlet />
-          </Suspense>
-        </motion.div>
+          </motion.div>
+        </Suspense>
       </main>
       <SiteFooter />
     </div>

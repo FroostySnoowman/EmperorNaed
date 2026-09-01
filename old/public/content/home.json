@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "badge": "",
+    "titleLead": "Minecraft and Discord",
+    "titleAccent": "setups that last.",
+    "intro": "I configure servers, plugins, bots and permissions. Then I sort out the staff side of things, so the whole lot keeps running once I'm gone. Been doing this since 2019.",
+    "primaryCta": { "label": "Get in touch", "to": "/contact" },
+    "secondaryCta": { "label": "See my work", "to": "/work" },
+    "scrollHint": "Scroll down",
+
+    "panel": {
+      "eyebrow": "Current status",
+      "title": "Taking on new builds",
+      "body": "I've got room for two bigger jobs this month, either a full network setup or a Discord rebuild. Smaller things like a permissions fix usually take a few days.",
+      "meta": [
+        { "label": "Reply time", "value": "Under 12h" },
+        { "label": "Timezone", "value": "UTC+1 (CET)" },
+        { "label": "Jobs open", "value": "3" },
+        { "label": "Doing this since", "value": "2019" }
+      ],
+      "footnote": "Every job ends with written docs and a call to walk your team through it. The whole point is that you don't need me afterwards."
+    }
+  },
+
+  "stats": [
+    { "id": "servers", "value": "140+", "label": "Servers configured" },
+    { "id": "years", "value": "7", "label": "Years doing this" },
+    { "id": "teams", "value": "35+", "label": "Staff teams trained" },
+    { "id": "reply", "value": "< 12h", "label": "Usual reply time" }
+  ],
+
+  "marquee": {
+    "label": "Stack",
+    "items": [
+      "Paper", "Purpur", "Velocity", "BungeeCord", "LuckPerms", "EssentialsX",
+      "WorldGuard", "CoreProtect", "PlaceholderAPI", "ItemsAdder", "ModelEngine",
+      "MythicMobs", "Citizens", "Discord.js", "Carl-bot", "Pterodactyl"
+    ]
+  },
+
+  "pillars": {
+    "marker": "01 / What I do",
+    "title": "Three things, done properly.",
+    "kicker": "Most servers I get called into aren't broken because of bad plugins. They're broken because nobody ever wrote down how any of it works.",
+    "items": [
+      {
+        "id": "servers",
+        "title": "Servers and plugins",
+        "icon": "server",
+        "body": "Paper and Purpur tuning, Velocity proxies, permissions, economies and custom content. Most of the job is getting twenty plugins to stop fighting over the same events.",
+        "tags": ["Paper", "Velocity", "LuckPerms"]
+      },
+      {
+        "id": "discord",
+        "title": "Discord communities",
+        "icon": "discord",
+        "body": "Channel structure, roles, onboarding and tickets, with enough automation that moderating stops being a second job for someone.",
+        "tags": ["Roles", "Automation", "Tickets"]
+      },
+      {
+        "id": "management",
+        "title": "Staff and teams",
+        "icon": "users",
+        "body": "Hiring, training, rotas and escalation ladders. Teams that can make a call at 3am without waiting for an owner to wake up.",
+        "tags": ["Hiring", "Training", "Moderation"]
+      }
+    ]
+  },
+
+  "reviewsPreview": {
+    "marker": "02 / Reviews",
+    "title": "What clients said.",
+    "kicker": "Feedback from owners, community managers and staff leads I've worked with.",
+    "limit": 3,
+    "cta": { "label": "Read all reviews", "to": "/reviews" }
+  },
+
+  "closing": {
+    "title": "Got something that needs sorting?",
+    "body": "Tell me what you're running and what's going wrong with it. If I'm not the right person for the job, I'll say so.",
+    "primaryCta": { "label": "Get in touch", "to": "/contact" },
+    "secondaryCta": { "label": "Browse the work", "to": "/work" }
+  }
+}

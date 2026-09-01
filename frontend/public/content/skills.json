@@ -1,70 +1,75 @@
 {
   "intro": {
-    "marker": "Skills",
-    "title": "What I know how to do.",
-    "kicker": "Two halves of the same job. The technical work keeps a server stable, and the management work keeps it stable after I've left."
+    "label": "Skills",
+    "title": "Configuration, and the management that keeps it working.",
+    "lede": "Two halves of the same job. The technical work keeps a server stable, and the management work keeps it stable after I've left."
   },
 
   "groups": [
     {
-      "id": "server-config",
-      "title": "Servers and performance",
-      "icon": "server",
-      "summary": "Getting the platform right before a single plugin goes near it.",
-      "skills": [
-        { "name": "Paper and Purpur tuning", "level": 96 },
-        { "name": "Velocity and proxy networks", "level": 92 },
-        { "name": "World management", "level": 88 },
-        { "name": "Performance profiling", "level": 90 }
+      "id": "plugins",
+      "title": "Plugin configuration",
+      "summary": "Making twenty plugins behave like one system instead of twenty.",
+      "items": [
+        "LuckPerms tracks, contexts and per server overrides",
+        "Economy balancing with matched income and sinks",
+        "ItemsAdder and MythicMobs as one content pipeline",
+        "Config conflict debugging across competing plugins",
+        "WorldGuard regions and protection rules",
+        "CoreProtect retention and rollback procedures"
       ]
     },
     {
-      "id": "plugin-config",
-      "title": "Plugin configuration",
-      "icon": "plugin",
-      "summary": "Making twenty plugins behave like one system instead of twenty.",
-      "skills": [
-        { "name": "LuckPerms architecture", "level": 97 },
-        { "name": "Economy and shop balancing", "level": 91 },
-        { "name": "Custom items and mobs", "level": 89 },
-        { "name": "Config debugging", "level": 94 }
+      "id": "servers",
+      "title": "Servers and performance",
+      "summary": "Getting the platform right before a single plugin goes near it.",
+      "items": [
+        "Paper and Purpur tuning for real tick time gains",
+        "Velocity and BungeeCord proxy networks",
+        "Shared player data and cross server chat",
+        "Spark and timings reports read properly",
+        "World management, pregeneration and resets",
+        "Pterodactyl nodes, backups and staged migrations"
       ]
     },
     {
       "id": "discord",
-      "title": "Discord engineering",
-      "icon": "discord",
+      "title": "Discord configuration",
       "summary": "Structure and automation for communities that outgrew one channel.",
-      "skills": [
-        { "name": "Server architecture", "level": 95 },
-        { "name": "Role and permission design", "level": 94 },
-        { "name": "Bot configuration", "level": 90 },
-        { "name": "Minecraft to Discord links", "level": 87 }
+      "items": [
+        "Channel trees and category permissions",
+        "Role hierarchies that stay readable past thirty roles",
+        "Verification, tickets and auto moderation",
+        "Bot setup wired to a written rule set",
+        "Webhook relays for chat and punishments",
+        "Rank sync between Minecraft and Discord"
       ]
     },
     {
-      "id": "staff-management",
-      "title": "Staff and community",
-      "icon": "users",
+      "id": "management",
+      "title": "Staff and management",
       "summary": "Building teams that make good calls with nobody watching.",
-      "skills": [
-        { "name": "Hiring and training", "level": 93 },
-        { "name": "Rotas and coverage", "level": 88 },
-        { "name": "Escalation and delegation", "level": 91 },
-        { "name": "Moderation policy", "level": 92 }
+      "items": [
+        "Written application scoring so hiring is repeatable",
+        "Two week onboarding with shadowing and sign off",
+        "Shift rotas and handover notes across timezones",
+        "Escalation ladders with a named owner per decision",
+        "Moderation policy and appeal routes that stay fair",
+        "One to ones and honest feedback before people quit"
       ]
     }
   ],
 
   "toolbox": {
-    "marker": "Toolbox",
-    "title": "What I work with daily.",
-    "kicker": "Not a full list, just the things I reach for without thinking about it.",
-    "groups": [
+    "label": "Toolbox",
+    "title": "What I reach for.",
+    "lede": "Not a full list, just the things I use without thinking about it.",
+    "rows": [
       { "id": "platforms", "title": "Platforms", "items": ["Paper", "Purpur", "Spigot", "Velocity", "BungeeCord", "Folia"] },
-      { "id": "essentials", "title": "Core plugins", "items": ["LuckPerms", "EssentialsX", "WorldGuard", "CoreProtect", "PlaceholderAPI", "Vault"] },
-      { "id": "content", "title": "Content and Discord", "items": ["ItemsAdder", "MythicMobs", "ModelEngine", "Discord.js", "Carl-bot", "DiscordSRV"] },
-      { "id": "ops", "title": "Ops and hosting", "items": ["Pterodactyl", "Spark", "MySQL", "Redis", "Git", "Notion"] }
+      { "id": "core", "title": "Core plugins", "items": ["LuckPerms", "EssentialsX", "WorldGuard", "CoreProtect", "PlaceholderAPI", "Vault"] },
+      { "id": "content", "title": "Content", "items": ["ItemsAdder", "MythicMobs", "ModelEngine", "Citizens", "BetonQuest"] },
+      { "id": "discord", "title": "Discord", "items": ["Discord.js", "Carl-bot", "Ticket Tool", "DiscordSRV"] },
+      { "id": "ops", "title": "Ops", "items": ["Pterodactyl", "Spark", "MySQL", "Redis", "Git"] }
     ]
   }
 }

@@ -1,0 +1,70 @@
+{
+  "intro": {
+    "marker": "Skills",
+    "title": "What I know how to do.",
+    "kicker": "Two halves of the same job. The technical work keeps a server stable, and the management work keeps it stable after I've left."
+  },
+
+  "groups": [
+    {
+      "id": "server-config",
+      "title": "Servers and performance",
+      "icon": "server",
+      "summary": "Getting the platform right before a single plugin goes near it.",
+      "skills": [
+        { "name": "Paper and Purpur tuning", "level": 96 },
+        { "name": "Velocity and proxy networks", "level": 92 },
+        { "name": "World management", "level": 88 },
+        { "name": "Performance profiling", "level": 90 }
+      ]
+    },
+    {
+      "id": "plugin-config",
+      "title": "Plugin configuration",
+      "icon": "plugin",
+      "summary": "Making twenty plugins behave like one system instead of twenty.",
+      "skills": [
+        { "name": "LuckPerms architecture", "level": 97 },
+        { "name": "Economy and shop balancing", "level": 91 },
+        { "name": "Custom items and mobs", "level": 89 },
+        { "name": "Config debugging", "level": 94 }
+      ]
+    },
+    {
+      "id": "discord",
+      "title": "Discord engineering",
+      "icon": "discord",
+      "summary": "Structure and automation for communities that outgrew one channel.",
+      "skills": [
+        { "name": "Server architecture", "level": 95 },
+        { "name": "Role and permission design", "level": 94 },
+        { "name": "Bot configuration", "level": 90 },
+        { "name": "Minecraft to Discord links", "level": 87 }
+      ]
+    },
+    {
+      "id": "staff-management",
+      "title": "Staff and community",
+      "icon": "users",
+      "summary": "Building teams that make good calls with nobody watching.",
+      "skills": [
+        { "name": "Hiring and training", "level": 93 },
+        { "name": "Rotas and coverage", "level": 88 },
+        { "name": "Escalation and delegation", "level": 91 },
+        { "name": "Moderation policy", "level": 92 }
+      ]
+    }
+  ],
+
+  "toolbox": {
+    "marker": "Toolbox",
+    "title": "What I work with daily.",
+    "kicker": "Not a full list, just the things I reach for without thinking about it.",
+    "groups": [
+      { "id": "platforms", "title": "Platforms", "items": ["Paper", "Purpur", "Spigot", "Velocity", "BungeeCord", "Folia"] },
+      { "id": "essentials", "title": "Core plugins", "items": ["LuckPerms", "EssentialsX", "WorldGuard", "CoreProtect", "PlaceholderAPI", "Vault"] },
+      { "id": "content", "title": "Content and Discord", "items": ["ItemsAdder", "MythicMobs", "ModelEngine", "Discord.js", "Carl-bot", "DiscordSRV"] },
+      { "id": "ops", "title": "Ops and hosting", "items": ["Pterodactyl", "Spark", "MySQL", "Redis", "Git", "Notion"] }
+    ]
+  }
+}

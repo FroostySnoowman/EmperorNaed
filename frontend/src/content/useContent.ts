@@ -4,8 +4,6 @@ import type { Content } from './schema'
 
 export function useContent(): Content {
   const state = useContext(ContentContext)
-  if (state.status !== 'ready') {
-    throw new Error('useContent() was called outside a ready ContentProvider.')
-  }
+  if (state.status !== 'ready') throw new Error('useContent() used outside a ready ContentProvider.')
   return state.content
 }

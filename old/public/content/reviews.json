@@ -1,0 +1,96 @@
+{
+  "intro": {
+    "marker": "Reviews",
+    "title": "What people have said.",
+    "kicker": "Feedback from network owners, community managers and staff leads I've worked with over the years."
+  },
+  "summary": {
+    "show": true,
+    "ratingLabel": "Average rating",
+    "countLabel": "Reviews collected",
+    "repeatLabel": "Came back again",
+    "repeatValue": "64%"
+  },
+  "items": [
+    {
+      "id": "rev-aurora",
+      "featured": true,
+      "quote": "We had four servers, three different permission systems and nobody left who understood any of them. Naed spent a week just auditing before he touched a single config, then rebuilt the whole thing on Velocity without a day of downtime. What actually got me was the handover. A written handbook, and four training sessions for my staff. Six months later we still haven't had to call him, which is about the best thing I can say about anyone.",
+      "author": "Ryan Keller",
+      "handle": "@ryankeller",
+      "role": "Network owner",
+      "platform": "Discord",
+      "project": "Aurora Network proxy rebuild",
+      "date": "Feb 2026",
+      "rating": 5,
+      "avatar": "/media/avatar-01.svg",
+      "images": [
+        "/media/showcase-01.svg",
+        "/media/showcase-08.svg"
+      ]
+    },
+    {
+      "id": "rev-obsidian",
+      "featured": false,
+      "quote": "Our Discord was 400 people and completely unreadable. He restructured all of it and set up onboarding that filters people properly. We're past twelve thousand members now and my mod team is doing less work than they were at four hundred.",
+      "author": "Mira Vance",
+      "handle": "@miravance",
+      "role": "Community manager",
+      "platform": "Discord",
+      "project": "Obsidian Guild",
+      "date": "Jan 2026",
+      "rating": 5,
+      "avatar": "/media/avatar-02.svg",
+      "images": [
+        "/media/showcase-03.svg"
+      ]
+    },
+    {
+      "id": "rev-ironhold",
+      "featured": false,
+      "quote": "Sixty custom items, a full quest chain, and an economy that didn't collapse in week two. He modelled the numbers before building any of it, which nobody else I spoke to even offered to do.",
+      "author": "Jonas Thiel",
+      "handle": "@jthiel",
+      "role": "Server owner",
+      "platform": "BuiltByBit",
+      "project": "Ironhold SMP",
+      "date": "Nov 2025",
+      "rating": 5,
+      "avatar": "/media/avatar-03.svg",
+      "images": [
+        "/media/showcase-06.svg",
+        "/media/showcase-04.svg"
+      ]
+    },
+    {
+      "id": "rev-verdant",
+      "featured": false,
+      "quote": "He came in during an emergency. Our permissions were broken mid season and half the staff were locked out. Sorted in a weekend. Then he stayed on and fixed the reason it happened in the first place, which turned out to be a management problem rather than a technical one.",
+      "author": "Sofia Lund",
+      "handle": "@sofialund",
+      "role": "Head of staff",
+      "platform": "Discord",
+      "project": "Verdant Realms",
+      "date": "Aug 2025",
+      "rating": 5,
+      "avatar": "/media/avatar-04.svg",
+      "images": []
+    },
+    {
+      "id": "rev-staff",
+      "featured": false,
+      "quote": "The staff training programme is the best thing that's happened to our community. Proper written scoring for applications, a real onboarding path, and an escalation ladder that means nobody wakes me up at 3am any more.",
+      "author": "Adem Duran",
+      "handle": "@ademduran",
+      "role": "Founder",
+      "platform": "Discord",
+      "project": "Staff programme",
+      "date": "Jun 2025",
+      "rating": 5,
+      "avatar": "/media/avatar-05.svg",
+      "images": [
+        "/media/showcase-05.svg"
+      ]
+    }
+  ]
+}

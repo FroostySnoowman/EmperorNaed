@@ -1,87 +1,69 @@
 {
   "intro": {
-    "marker": "Project timeline",
+    "label": "Project timeline",
     "title": "Everything I've worked on since 2019.",
-    "kicker": "Newest first. These are real jobs, with what I was brought in to do and what actually came out of it."
+    "lede": "Newest first. Real jobs, with what I was brought in to do and what actually came out of it."
   },
+
   "entries": [
     {
-      "id": "aurora-network",
+      "id": "aurora",
+      "year": "2025",
       "period": "2025 to now",
-      "title": "Lead configurator and operations advisor",
+      "role": "Lead configurator and operations advisor",
       "org": "Aurora Network",
-      "status": "ongoing",
-      "summary": "Rebuilding a four server network from one badly overloaded Paper box, and training the staff so they can run it without me.",
-      "tags": [
-        "Velocity",
-        "LuckPerms",
-        "Performance",
-        "Staff training"
-      ],
-      "links": [
-        {
-          "label": "Network site",
-          "href": "https://example.com"
-        }
-      ]
+      "summary": "Rebuilding a four server network off one badly overloaded Paper box, and training the staff so they can run it without me. Average tick time is down from 41ms to 12ms, and the operations handbook runs to 32 pages.",
+      "tags": ["Velocity", "LuckPerms", "Performance", "Staff training"],
+      "links": [{ "label": "Network site", "href": "https://example.com" }]
     },
     {
-      "id": "obsidian-guild",
+      "id": "obsidian",
+      "year": "2024",
       "period": "2024 to 2025",
-      "title": "Discord architect and community manager",
+      "role": "Discord architect and community manager",
       "org": "Obsidian Guild",
-      "status": "completed",
-      "summary": "Took a 400 member Discord with no real structure and turned it into a 12,000 member community with a mod team that runs itself.",
-      "tags": [
-        "Discord",
-        "Automation",
-        "Moderation",
-        "Hiring"
-      ],
+      "summary": "Took a 400 member Discord with no real structure and turned it into a 12,000 member community with a mod team that runs itself. Manual moderator actions dropped by roughly 70% once ticket routing was in.",
+      "tags": ["Discord", "Automation", "Moderation", "Hiring"],
       "links": []
     },
     {
-      "id": "ironhold-smp",
+      "id": "ironhold",
+      "year": "2024",
       "period": "2024",
-      "title": "Full server configuration",
+      "role": "Full server configuration",
       "org": "Ironhold SMP",
-      "status": "completed",
-      "summary": "Everything for a seasonal SMP. Economy, land claims, custom items, and the quest chain that carried the first season.",
-      "tags": [
-        "ItemsAdder",
-        "MythicMobs",
-        "Economy",
-        "WorldGuard"
-      ],
+      "summary": "Everything for a seasonal SMP. Economy, land claims, 60 custom items and the quest chain that carried the first season. Launched on time and still had 38% of its players at day 30.",
+      "tags": ["ItemsAdder", "MythicMobs", "Economy", "WorldGuard"],
       "links": []
     },
     {
-      "id": "verdant-realms",
+      "id": "verdant",
+      "year": "2023",
       "period": "2023 to 2024",
-      "title": "Staff lead and permissions rescue",
+      "role": "Staff lead and permissions rescue",
       "org": "Verdant Realms",
-      "status": "completed",
-      "summary": "Called in after a permissions rewrite locked half the staff team out mid season. Fixed it, then stayed on to run the team.",
-      "tags": [
-        "LuckPerms",
-        "Team management",
-        "Rotas"
-      ],
+      "summary": "Called in after a permissions rewrite locked half the staff team out mid season. Rebuilt 90 tangled groups into 14 inherited tracks over a weekend, then stayed on to run the team.",
+      "tags": ["LuckPerms", "Team management", "Rotas"],
       "links": []
     },
     {
-      "id": "crimson-bots",
+      "id": "crimson",
+      "year": "2022",
       "period": "2022 to 2023",
-      "title": "Bot configuration and automation",
+      "role": "Bot configuration and automation",
       "org": "Freelance, various communities",
-      "status": "completed",
-      "summary": "A run of automation contracts across eleven Discord communities. Verification, tickets, logging, and relays back into Minecraft.",
-      "tags": [
-        "Discord.js",
-        "Carl-bot",
-        "Webhooks",
-        "Documentation"
-      ],
+      "summary": "A run of automation contracts across eleven Discord communities. One verification and ticket stack, built once and rolled out to all of them, with documentation so each owner could edit it themselves.",
+      "tags": ["Discord.js", "Webhooks", "Documentation"],
+      "links": []
+    },
+    {
+      "id": "start",
+      "year": "2019",
+      "period": "2019 to 2022",
+      "role": "Started configuring, never really stopped",
+      "org": "Community servers",
+      "summary": "Learned this the usual way. Running a friend's survival server, breaking it, and working out exactly why it broke. Started taking paid work in late 2021.",
+      "tags": ["Spigot", "BungeeCord"],
       "links": []
     }
   ]

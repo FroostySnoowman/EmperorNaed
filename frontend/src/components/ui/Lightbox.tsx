@@ -18,14 +18,12 @@ export function Lightbox({
 
   useEffect(() => {
     if (!state) return
-
     const step = (delta: number) => onIndexChange((state.index + delta + count) % count)
     const onKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose()
       if (event.key === 'ArrowRight') step(1)
       if (event.key === 'ArrowLeft') step(-1)
     }
-
     const previous = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     window.addEventListener('keydown', onKey)
@@ -43,47 +41,40 @@ export function Lightbox({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-[90] flex flex-col bg-ink-950/[0.98]"
+          transition={{ duration: 0.2 }}
+          className="fixed inset-0 z-[90] flex flex-col bg-ink-950/97"
           role="dialog"
           aria-modal="true"
           aria-label={state.title}
         >
-          <div className="flex items-center justify-between gap-4 border-b border-white/[0.07] px-5 py-4 sm:px-8">
+          <div className="page flex items-center justify-between gap-6 border-b border-ink-700 py-4">
             <div className="min-w-0">
-              <p className="truncate font-display text-sm font-semibold text-white/90">{state.title}</p>
-              <p className="mt-0.5 font-mono text-[11px] text-white/40">
+              <p className="truncate font-sans text-sm font-medium text-paper">{state.title}</p>
+              <p className="label mt-1">
                 {state.index + 1} / {count}
               </p>
             </div>
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/70 transition hover:border-crimson-500/40 hover:text-white"
               aria-label="Close viewer"
+              className="inline-flex h-10 w-10 items-center justify-center border border-ink-600 text-paper-dim transition-colors hover:border-paper hover:text-paper"
             >
               <Icon name="close" className="text-[17px]" />
             </button>
           </div>
 
-          <div className="relative flex min-h-0 flex-1 items-center justify-center p-4 sm:p-8">
+          <div className="relative flex min-h-0 flex-1 items-center justify-center p-5 sm:p-10">
             <AnimatePresence mode="wait">
               <motion.img
                 key={state.images[state.index]}
                 src={state.images[state.index]}
                 alt={`${state.title} ${state.index + 1}`}
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.28, ease: EASE }}
-                drag={count > 1 ? 'x' : false}
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.16}
-                onDragEnd={(_, info) => {
-                  if (info.offset.x < -80) onIndexChange((state.index + 1) % count)
-                  if (info.offset.x > 80) onIndexChange((state.index - 1 + count) % count)
-                }}
-                className="max-h-full max-w-full cursor-grab rounded-xl border border-white/10 object-contain shadow-crest active:cursor-grabbing"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.22, ease: EASE }}
+                className="max-h-full max-w-full border border-ink-700 object-contain"
               />
             </AnimatePresence>
 
@@ -92,39 +83,37 @@ export function Lightbox({
                 <button
                   type="button"
                   onClick={() => onIndexChange((state.index - 1 + count) % count)}
-                  className="absolute left-3 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-ink-900/90 text-white/75 transition hover:border-crimson-500/45 hover:text-white sm:flex"
                   aria-label="Previous image"
+                  className="absolute left-4 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center border border-ink-600 bg-ink-950/80 text-paper-dim transition-colors hover:border-paper hover:text-paper sm:flex"
                 >
-                  <Icon name="arrow-right" className="rotate-180 text-[17px]" />
+                  <Icon name="chevron-left" className="text-[17px]" />
                 </button>
                 <button
                   type="button"
                   onClick={() => onIndexChange((state.index + 1) % count)}
-                  className="absolute right-3 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-ink-900/90 text-white/75 transition hover:border-crimson-500/45 hover:text-white sm:flex"
                   aria-label="Next image"
+                  className="absolute right-4 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center border border-ink-600 bg-ink-950/80 text-paper-dim transition-colors hover:border-paper hover:text-paper sm:flex"
                 >
-                  <Icon name="arrow-right" className="text-[17px]" />
+                  <Icon name="chevron-right" className="text-[17px]" />
                 </button>
               </>
             ) : null}
           </div>
 
           {count > 1 ? (
-            <div className="no-bar flex gap-2 overflow-x-auto border-t border-white/[0.07] px-5 py-4 sm:px-8">
+            <div className="page no-bar flex gap-2 overflow-x-auto border-t border-ink-700 py-4">
               {state.images.map((url, index) => (
                 <button
                   key={`${url}-${index}`}
                   type="button"
                   onClick={() => onIndexChange(index)}
-                  className={cn(
-                    'h-14 w-20 shrink-0 overflow-hidden rounded-lg border transition',
-                    index === state.index
-                      ? 'border-crimson-500 opacity-100'
-                      : 'border-white/10 opacity-50 hover:opacity-90',
-                  )}
                   aria-label={`View image ${index + 1}`}
+                  className={cn(
+                    'h-14 w-20 shrink-0 overflow-hidden border transition-opacity',
+                    index === state.index ? 'border-signal opacity-100' : 'border-ink-600 opacity-50 hover:opacity-90',
+                  )}
                 >
-                  <img src={url} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover" />
+                  <img src={url} alt="" loading="lazy" className="h-full w-full object-cover" />
                 </button>
               ))}
             </div>

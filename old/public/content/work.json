@@ -1,0 +1,187 @@
+{
+  "intro": {
+    "marker": "See my work",
+    "title": "Current jobs, and things I've finished.",
+    "kicker": "Live work with honest progress first, then a gallery of finished setups. Click any cover to see the rest of the shots."
+  },
+  "active": {
+    "marker": "Active projects",
+    "title": "On the bench right now.",
+    "kicker": "Three jobs going at the moment. The percentages are honest ones, I only move them when something actually gets done.",
+    "emptyLabel": "Nothing active right now, so the bench is clear and I'm taking new work.",
+    "items": [
+      {
+        "id": "aurora-rebuild",
+        "name": "Aurora Network proxy rebuild",
+        "phase": "Configuration",
+        "progress": 68,
+        "summary": "Moving four standalone Paper servers onto one Velocity proxy, with shared permissions, unified chat and player data that follows people between servers.",
+        "stack": [
+          "Velocity",
+          "Paper",
+          "LuckPerms",
+          "Redis"
+        ],
+        "links": [
+          {
+            "label": "Network site",
+            "href": "https://example.com"
+          }
+        ]
+      },
+      {
+        "id": "obsidian-season",
+        "name": "Obsidian Guild season three",
+        "phase": "Content build",
+        "progress": 42,
+        "summary": "A custom progression season with tiered quests, seasonal cosmetics, and a leaderboard that ties Discord roles to in game rank.",
+        "stack": [
+          "MythicMobs",
+          "ItemsAdder",
+          "Discord.js",
+          "PlaceholderAPI"
+        ],
+        "links": []
+      },
+      {
+        "id": "staff-programme",
+        "name": "Staff training programme",
+        "phase": "Rollout",
+        "progress": 85,
+        "summary": "A reusable hiring and training setup. Application scoring, a two week onboarding path, and an escalation ladder that survives contact with real drama.",
+        "stack": [
+          "Notion",
+          "Discord",
+          "Policy design"
+        ],
+        "links": []
+      }
+    ]
+  },
+  "showcase": {
+    "marker": "Showcase",
+    "title": "Finished work.",
+    "kicker": "Setups that shipped, sorted by the kind of problem they were solving.",
+    "allLabel": "All",
+    "emptyLabel": "Nothing in this category yet.",
+    "items": [
+      {
+        "id": "network-core",
+        "title": "Multi server network core",
+        "category": "Server configuration",
+        "year": "2025",
+        "summary": "Four servers behind one address, sharing permissions, chat and player data.",
+        "cover": "/media/showcase-01.svg",
+        "gallery": [
+          "/media/showcase-01.svg",
+          "/media/showcase-08.svg",
+          "/media/showcase-02.svg"
+        ],
+        "tags": [
+          "Velocity",
+          "Paper",
+          "Redis",
+          "LuckPerms"
+        ],
+        "links": [
+          {
+            "label": "Live network",
+            "href": "https://example.com"
+          }
+        ]
+      },
+      {
+        "id": "permission-tree",
+        "title": "Permission tree rebuild",
+        "category": "Plugin configuration",
+        "year": "2024",
+        "summary": "Ninety tangled permission groups cut down to fourteen inherited tracks in one weekend.",
+        "cover": "/media/showcase-02.svg",
+        "gallery": [
+          "/media/showcase-02.svg",
+          "/media/showcase-05.svg"
+        ],
+        "tags": [
+          "LuckPerms",
+          "Tracks",
+          "Contexts"
+        ],
+        "links": []
+      },
+      {
+        "id": "guild-hall",
+        "title": "Discord community structure",
+        "category": "Discord",
+        "year": "2024",
+        "summary": "A 40 channel layout with staged access that took a community from 400 to 12,000 members.",
+        "cover": "/media/showcase-03.svg",
+        "gallery": [
+          "/media/showcase-03.svg",
+          "/media/showcase-07.svg"
+        ],
+        "tags": [
+          "Discord",
+          "Onboarding",
+          "Roles"
+        ],
+        "links": []
+      },
+      {
+        "id": "economy-loop",
+        "title": "Closed loop server economy",
+        "category": "Plugin configuration",
+        "year": "2024",
+        "summary": "Shops, jobs and a player market balanced so money actually leaves the economy again.",
+        "cover": "/media/showcase-04.svg",
+        "gallery": [
+          "/media/showcase-04.svg",
+          "/media/showcase-06.svg"
+        ],
+        "tags": [
+          "EssentialsX",
+          "Jobs",
+          "Shops",
+          "Balancing"
+        ],
+        "links": []
+      },
+      {
+        "id": "staff-console",
+        "title": "Moderation and staff systems",
+        "category": "Management",
+        "year": "2025",
+        "summary": "Hiring rubrics, shift rotas and an escalation ladder for an eleven person team spread across three timezones.",
+        "cover": "/media/showcase-05.svg",
+        "gallery": [
+          "/media/showcase-05.svg",
+          "/media/showcase-03.svg"
+        ],
+        "tags": [
+          "Hiring",
+          "Rotas",
+          "Escalation",
+          "Policy"
+        ],
+        "links": []
+      },
+      {
+        "id": "onboarding-flow",
+        "title": "Verification and ticket automation",
+        "category": "Discord",
+        "year": "2023",
+        "summary": "One verification, ticket and logging stack, deployed across eleven communities.",
+        "cover": "/media/showcase-07.svg",
+        "gallery": [
+          "/media/showcase-07.svg",
+          "/media/showcase-03.svg"
+        ],
+        "tags": [
+          "Discord.js",
+          "Carl-bot",
+          "Webhooks"
+        ],
+        "links": []
+      }
+    ]
+  }
+}

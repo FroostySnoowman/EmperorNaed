@@ -1,0 +1,25 @@
+{
+  "intro": {
+    "marker": "Gallery",
+    "title": "Screenshots of the work.",
+    "kicker": "Servers, Discord setups and configs I've built. Click any image to open it full size."
+  },
+
+  "allLabel": "All",
+  "emptyLabel": "Nothing here yet.",
+
+  "items": [
+    { "id": "hub-spawn", "src": "/media/gallery/gallery-01.svg", "alt": "Hub spawn on Aurora Network", "caption": "Hub spawn, Aurora Network", "category": "Minecraft" },
+    { "id": "role-tree", "src": "/media/gallery/gallery-02.svg", "alt": "Role hierarchy in Obsidian Guild", "caption": "Role hierarchy, Obsidian Guild", "category": "Discord" },
+    { "id": "permissions", "src": "/media/gallery/gallery-03.svg", "alt": "LuckPerms track layout", "caption": "LuckPerms tracks after the rebuild", "category": "Configs" },
+    { "id": "survival", "src": "/media/gallery/gallery-04.svg", "alt": "Ironhold SMP survival world", "caption": "Survival world, Ironhold SMP", "category": "Minecraft" },
+    { "id": "tickets", "src": "/media/gallery/gallery-05.svg", "alt": "Discord ticket panel", "caption": "Ticket panel and routing", "category": "Discord" },
+    { "id": "proxy", "src": "/media/gallery/gallery-06.svg", "alt": "Velocity proxy layout", "caption": "Velocity proxy layout", "category": "Configs" },
+    { "id": "items", "src": "/media/gallery/gallery-07.svg", "alt": "Custom ItemsAdder set", "caption": "Custom item set, ItemsAdder", "category": "Minecraft" },
+    { "id": "onboarding", "src": "/media/gallery/gallery-08.svg", "alt": "Discord onboarding flow", "caption": "Verified onboarding flow", "category": "Discord" },
+    { "id": "economy", "src": "/media/gallery/gallery-09.svg", "alt": "Economy balancing sheet", "caption": "Economy balancing before launch", "category": "Configs" },
+    { "id": "arena", "src": "/media/gallery/gallery-10.svg", "alt": "Seasonal event arena", "caption": "Seasonal event arena", "category": "Minecraft" },
+    { "id": "mod-console", "src": "/media/gallery/gallery-11.svg", "alt": "Moderation tooling", "caption": "Staff moderation tooling", "category": "Discord" },
+    { "id": "timings", "src": "/media/gallery/gallery-12.svg", "alt": "Timings report after tuning", "caption": "Timings report after the tuning pass", "category": "Configs" }
+  ]
+}

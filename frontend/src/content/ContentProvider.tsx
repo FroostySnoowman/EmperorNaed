@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useState, type ReactNode } from 'react'
-import { z } from 'zod'
+import { useEffect, useState, type ReactNode } from 'react'
+import type { z } from 'zod'
 import { ContentContext, type ContentIssue, type ContentState } from './ContentContext'
 import {
+  activeSchema,
   contactSchema,
   gallerySchema,
   homeSchema,
@@ -17,6 +18,7 @@ const SOURCES = {
   site: { file: 'content/site.json', schema: siteSchema },
   home: { file: 'content/home.json', schema: homeSchema },
   timeline: { file: 'content/timeline.json', schema: timelineSchema },
+  active: { file: 'content/active.json', schema: activeSchema },
   work: { file: 'content/work.json', schema: workSchema },
   gallery: { file: 'content/gallery.json', schema: gallerySchema },
   skills: { file: 'content/skills.json', schema: skillsSchema },
@@ -26,39 +28,33 @@ const SOURCES = {
 
 type SourceKey = keyof typeof SOURCES
 
-function issuesFromZod(file: string, error: z.ZodError): ContentIssue[] {
-  return error.issues.slice(0, 12).map((issue) => ({
-    file,
-    path: issue.path.join('.'),
-    message: issue.message,
-  }))
-}
-
-async function loadSource(key: SourceKey): Promise<{ key: SourceKey; value: unknown } | ContentIssue[]> {
+async function load(key: SourceKey): Promise<{ key: SourceKey; value: unknown } | ContentIssue[]> {
   const { file, schema } = SOURCES[key]
-  const url = `${import.meta.env.BASE_URL}${file}`
-
   let raw: string
   try {
-    const res = await fetch(url, { cache: 'no-cache' })
-    if (!res.ok) {
-      return [{ file, path: '', message: `Could not load the file (HTTP ${res.status}). Check that it exists in public/.` }]
-    }
+    const res = await fetch(`${import.meta.env.BASE_URL}${file}`, { cache: 'no-cache' })
+    if (!res.ok) return [{ file, path: '', message: `Could not load the file (HTTP ${res.status}).` }]
     raw = await res.text()
   } catch {
-    return [{ file, path: '', message: 'Could not load the file. Check your network or the file path.' }]
+    return [{ file, path: '', message: 'Could not load the file.' }]
   }
 
   let parsed: unknown
   try {
     parsed = JSON.parse(raw)
   } catch (err) {
-    const detail = err instanceof Error ? err.message : 'Unknown parse error'
-    return [{ file, path: '', message: `Not valid JSON. ${detail}. A stray comma or a missing quote is usually the culprit.` }]
+    const detail = err instanceof Error ? err.message : 'unknown error'
+    return [{ file, path: '', message: `Not valid JSON. ${detail}` }]
   }
 
   const result = schema.safeParse(parsed)
-  if (!result.success) return issuesFromZod(file, result.error)
+  if (!result.success) {
+    return result.error.issues.slice(0, 10).map((issue) => ({
+      file,
+      path: issue.path.join('.'),
+      message: issue.message,
+    }))
+  }
   return { key, value: result.data }
 }
 
@@ -67,10 +63,9 @@ export function ContentProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     let cancelled = false
-
     void (async () => {
       const keys = Object.keys(SOURCES) as SourceKey[]
-      const settled = await Promise.all(keys.map((key) => loadSource(key)))
+      const settled = await Promise.all(keys.map(load))
       if (cancelled) return
 
       const issues = settled.flatMap((entry) => (Array.isArray(entry) ? entry : []))
@@ -88,12 +83,10 @@ export function ContentProvider({ children }: { children: ReactNode }) {
 
       setState({ status: 'ready', content, issues: [] })
     })()
-
     return () => {
       cancelled = true
     }
   }, [])
 
-  const value = useMemo(() => state, [state])
-  return <ContentContext.Provider value={value}>{children}</ContentContext.Provider>
+  return <ContentContext.Provider value={state}>{children}</ContentContext.Provider>
 }

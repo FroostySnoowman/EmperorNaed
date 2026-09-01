@@ -1,0 +1,69 @@
+{
+  "brand": {
+    "name": "Emperor Naed",
+    "monogram": "EN",
+    "avatar": "/media/emperor-naed.png",
+    "role": "Server & Community Configurator",
+    "tagline": "I set up Minecraft servers and Discord communities, then train the people who run them."
+  },
+
+  "seo": {
+    "siteName": "Emperor Naed",
+    "url": "https://emperornaed.com",
+    "title": "Emperor Naed | Minecraft and Discord server configuration",
+    "description": "140+ servers configured over 7 years. I set up Minecraft networks, Discord communities, plugins and permissions, then train the staff teams that keep them running.",
+    "image": "/og.png",
+    "imageAlt": "Emperor Naed, server and community configurator",
+    "themeColor": "#de0f3f"
+  },
+
+  "availability": {
+    "state": "open",
+    "label": "Open for work"
+  },
+
+  "nav": [
+    { "label": "Home", "to": "/", "end": true },
+    { "label": "Timeline", "to": "/timeline" },
+    { "label": "Work", "to": "/work" },
+    { "label": "Gallery", "to": "/gallery" },
+    { "label": "Skills", "to": "/skills" },
+    { "label": "Reviews", "to": "/reviews" },
+    { "label": "Contact", "to": "/contact" }
+  ],
+
+  "headerCta": { "label": "Get in touch", "to": "/contact" },
+
+  "socials": [
+    { "id": "discord", "label": "Discord", "handle": "@emperornaed", "href": "https://discord.com/users/000000000000000000", "icon": "discord" },
+    { "id": "builtbybit", "label": "BuiltByBit", "handle": "EmperorNaed", "href": "https://builtbybit.com/", "icon": "store" },
+    { "id": "github", "label": "GitHub", "handle": "emperornaed", "href": "https://github.com/", "icon": "github" },
+    { "id": "youtube", "label": "YouTube", "handle": "Emperor Naed", "href": "https://youtube.com/", "icon": "youtube" }
+  ],
+
+  "footer": {
+    "blurb": "I configure Minecraft networks and Discord communities, and I write everything down properly so your team isn't stuck guessing six months later.",
+    "legal": "All rights reserved.",
+    "columns": [
+      {
+        "title": "Explore",
+        "links": [
+          { "label": "Project timeline", "to": "/timeline" },
+          { "label": "See my work", "to": "/work" },
+          { "label": "Gallery", "to": "/gallery" },
+          { "label": "Skills", "to": "/skills" },
+          { "label": "Reviews", "to": "/reviews" }
+        ]
+      },
+      {
+        "title": "Get in touch",
+        "links": [
+          { "label": "Contact page", "to": "/contact" },
+          { "label": "Email me", "to": "mailto:hello@emperornaed.com" },
+          { "label": "Discord", "to": "https://discord.com/users/000000000000000000" },
+          { "label": "BuiltByBit", "to": "https://builtbybit.com/" }
+        ]
+      }
+    ]
+  }
+}
