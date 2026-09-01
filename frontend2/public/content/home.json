@@ -1,0 +1,91 @@
+{
+  "hero": {
+    "role": "Server and community configuration",
+    "statementLead": "Servers that stay up, and teams that",
+    "statementAccent": "keep them",
+    "statementTail": "that way.",
+    "intro": "I configure Minecraft networks, plugins and permissions, then build the Discord and the staff structure around them. Been doing this since 2019, and the handover matters as much as the build.",
+    "primaryCta": {
+      "label": "Start a project",
+      "to": "/contact"
+    },
+    "secondaryCta": {
+      "label": "See my work",
+      "to": "/work"
+    }
+  },
+  "figures": [
+    {
+      "id": "servers",
+      "value": "140+",
+      "label": "Servers configured"
+    },
+    {
+      "id": "years",
+      "value": "7",
+      "label": "Years doing this"
+    },
+    {
+      "id": "teams",
+      "value": "35+",
+      "label": "Staff teams trained"
+    },
+    {
+      "id": "reply",
+      "value": "12h",
+      "label": "Usual reply time"
+    }
+  ],
+  "disciplines": {
+    "label": "What I do",
+    "title": "Three sides of the same job.",
+    "lede": "Most servers I get called into aren't broken because of bad plugins. They're broken because nobody ever wrote down how any of it works.",
+    "items": [
+      {
+        "id": "servers",
+        "title": "Servers and plugins",
+        "body": "Paper and Purpur tuning, Velocity proxies, permission trees, economies and custom content. Most of the work is getting twenty plugins to stop fighting over the same events.",
+        "items": [
+          "Proxy networks",
+          "Permission architecture",
+          "Performance tuning",
+          "Custom content"
+        ]
+      },
+      {
+        "id": "discord",
+        "title": "Discord communities",
+        "body": "Channel structure, roles, onboarding and tickets, with enough automation that moderating stops being somebody's second job.",
+        "items": [
+          "Channel architecture",
+          "Role hierarchies",
+          "Verification and tickets",
+          "Minecraft relays"
+        ]
+      },
+      {
+        "id": "management",
+        "title": "Staff and teams",
+        "body": "Hiring, training, rotas and escalation. Teams that can make a call at three in the morning without waiting for an owner to wake up.",
+        "items": [
+          "Hiring rubrics",
+          "Two week onboarding",
+          "Shift coverage",
+          "Escalation ladders"
+        ]
+      }
+    ]
+  },
+  "closing": {
+    "title": "Tell me what's breaking.",
+    "body": "Send over what you're running and what keeps going wrong with it. If I'm not the right person for the job, I'll say so.",
+    "primaryCta": {
+      "label": "Get in touch",
+      "to": "/contact"
+    },
+    "secondaryCta": {
+      "label": "Read reviews",
+      "to": "/reviews"
+    }
+  }
+}

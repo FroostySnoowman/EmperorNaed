@@ -1,0 +1,45 @@
+{
+  "intro": {
+    "label": "Active projects",
+    "title": "What's on the bench right now.",
+    "lede": "Three jobs in progress. The percentages are honest ones, and they only move when something actually gets done."
+  },
+
+  "emptyLabel": "Nothing in progress right now, so the bench is clear.",
+
+  "items": [
+    {
+      "id": "aurora-rebuild",
+      "name": "Proxy rebuild",
+      "client": "Aurora Network",
+      "phase": "Configuration",
+      "progress": 68,
+      "started": "Jan 2026",
+      "target": "Apr 2026",
+      "summary": "Moving four standalone Paper servers onto one Velocity proxy, with shared permissions, unified chat, and player data that follows people between servers. Next up is party sync and a load test at 400 concurrent.",
+      "stack": ["Velocity", "Paper", "LuckPerms", "Redis"]
+    },
+    {
+      "id": "obsidian-season",
+      "name": "Season three systems",
+      "client": "Obsidian Guild",
+      "phase": "Content build",
+      "progress": 42,
+      "started": "Feb 2026",
+      "target": "May 2026",
+      "summary": "A custom progression season with tiered quests, seasonal cosmetics, and a leaderboard that ties Discord roles to in game rank. Tier four and five rewards still need balancing.",
+      "stack": ["MythicMobs", "ItemsAdder", "Discord.js", "PlaceholderAPI"]
+    },
+    {
+      "id": "staff-programme",
+      "name": "Staff training programme",
+      "client": "Internal, reusable",
+      "phase": "Rollout",
+      "progress": 85,
+      "started": "Dec 2025",
+      "target": "Mar 2026",
+      "summary": "A hiring and training setup I can reuse across clients. Application scoring, a two week onboarding path, and an escalation ladder that survives contact with real drama.",
+      "stack": ["Notion", "Discord", "Policy design"]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "intro": {
+    "label": "Gallery",
+    "title": "Screenshots of the work.",
+    "lede": "Servers, Discord setups and configs, shown as they actually looked. Click any image to open it full size."
+  },
+
+  "allLabel": "All",
+  "emptyLabel": "There is nothing in here yet. Screenshots go up as clients give me the go ahead to share them, so this page fills out over time.",
+  "emptyCta": { "label": "See my work", "to": "/work" },
+
+  "items": []
+}
