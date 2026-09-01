@@ -1,4 +1,4 @@
-import { readFileSync, mkdirSync, writeFileSync } from 'node:fs'
+import { readFileSync, mkdirSync, statSync, writeFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import react from '@vitejs/plugin-react'
 import { defineConfig, type Plugin } from 'vite'
@@ -53,7 +53,7 @@ function trimTitle(value: string): string {
   return value.trim().replace(/[.]$/, '')
 }
 
-type Route = { path: string; label: string; title: string; description: string; index: boolean }
+type Route = { path: string; label: string; title: string; description: string; source: string; index: boolean }
 
 function buildRoutes(publicDir: string): { site: Json; routes: Route[] } {
   const site = readJson(publicDir, 'site.json') ?? {}
@@ -68,6 +68,7 @@ function buildRoutes(publicDir: string): { site: Json; routes: Route[] } {
     label: 'Home',
     title: str(seo.title) || str(brand.name) || 'Portfolio',
     description: str(seo.description) || str(brand.summary),
+    source: 'home.json',
     index: true,
   })
 
@@ -82,11 +83,107 @@ function buildRoutes(publicDir: string): { site: Json; routes: Route[] } {
       label: str(item.label),
       title: title ? `${title} | ${str(brand.name)}`.trim() : str(seo.title),
       description: str(intro.lede) || str(seo.description),
+      source: PAGE_SOURCES[path],
       index: true,
     })
   }
 
   return { site, routes }
+}
+
+
+const AI_SEARCH_AGENTS = [
+  'OAI-SearchBot',
+  'ChatGPT-User',
+  'Claude-User',
+  'Claude-SearchBot',
+  'PerplexityBot',
+  'Perplexity-User',
+]
+
+const AI_TRAINING_AGENTS = [
+  'GPTBot',
+  'ClaudeBot',
+  'Google-Extended',
+  'Applebot-Extended',
+  'CCBot',
+  'meta-externalagent',
+  'Bytespider',
+]
+
+function lastmodFor(publicDir: string, route: Route): string {
+  const files = ['site.json', route.source].filter(Boolean)
+  let newest = 0
+  for (const file of files) {
+    try {
+      newest = Math.max(newest, statSync(join(publicDir, 'content', file)).mtimeMs)
+    } catch {
+      continue
+    }
+  }
+  return new Date(newest || Date.now()).toISOString().slice(0, 10)
+}
+
+function robotsTxt(site: Json, base: string): string {
+  const allowTraining = obj(site.seo).allowAiTraining !== false
+  const lines = ['User-agent: *', 'Allow: /', '']
+  for (const agent of AI_SEARCH_AGENTS) lines.push(`User-agent: ${agent}`, 'Allow: /', '')
+  for (const agent of AI_TRAINING_AGENTS) {
+    lines.push(`User-agent: ${agent}`, allowTraining ? 'Allow: /' : 'Disallow: /', '')
+  }
+  lines.push(`Sitemap: ${base}/sitemap.xml`, '')
+  return lines.join('\n')
+}
+
+function llmsTxt(site: Json, routes: Route[], base: string, publicDir: string): string {
+  const brand = obj(site.brand)
+  const out = [`# ${str(brand.name)}`, '']
+  if (str(brand.summary)) out.push(`> ${str(brand.summary)}`, '')
+  if (str(brand.role)) out.push(`Role: ${str(brand.role)}`, '')
+
+  out.push('## Pages', '')
+  for (const route of routes) {
+    const loc = `${base}${route.path === '/' ? '/' : route.path}`
+    out.push(`- [${route.label}](${loc}): ${route.description}`)
+  }
+
+  const items = list(readJson(publicDir, 'work.json')?.items).filter((item) => str(item.title))
+  if (items.length > 0) {
+    out.push('', '## Work', '')
+    for (const item of items) {
+      const meta = [str(item.category), str(item.year)].filter(Boolean).join(', ')
+      out.push(`- ${str(item.title)}${meta ? ` (${meta})` : ''}: ${str(item.summary)}`)
+    }
+  }
+
+  const channels = list(readJson(publicDir, 'contact.json')?.channels)
+  if (channels.length > 0) {
+    out.push('', '## Contact', '')
+    for (const channel of channels) {
+      out.push(`- ${str(channel.label)}: ${str(channel.value) || str(channel.href)}`)
+    }
+  }
+
+  return `${out.join('\n')}\n`
+}
+
+function serviceOffers(publicDir: string, brandName: string): Json[] {
+  return list(readJson(publicDir, 'skills.json')?.groups)
+    .filter((group) => str(group.title))
+    .map((group) => {
+      const description = str(group.lede) || str(group.body) || str(group.summary)
+      return {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: str(group.title),
+          serviceType: str(group.title),
+          ...(description ? { description } : {}),
+          ...(brandName ? { provider: { '@type': 'Person', name: brandName } } : {}),
+          areaServed: { '@type': 'Place', name: 'Worldwide' },
+        },
+      }
+    })
 }
 
 const PAGE_TYPES: Record<string, string> = {
@@ -154,6 +251,7 @@ function structuredData(site: Json, route: Route, base: string, imageUrl: string
   }
   if (route.path === '/') page.mainEntity = { '@id': `${base}/#person` }
 
+  const offers = route.path === '/' ? serviceOffers(publicDir, str(brand.name)) : []
   const graph: Json[] = [page]
 
   if (route.path === '/') {
@@ -182,6 +280,9 @@ function structuredData(site: Json, route: Route, base: string, imageUrl: string
           'Server performance tuning',
           'Staff training and moderation',
         ],
+        areaServed: { '@type': 'Place', name: 'Worldwide' },
+        availableLanguage: 'English',
+        ...(offers.length > 0 ? { makesOffer: offers } : {}),
         ...(sameAs.length > 0 ? { sameAs } : {}),
       },
     )
@@ -303,6 +404,7 @@ function seoPlugin(): Plugin {
         label: 'Not found',
         title: `Page not found | ${str(obj(site.brand).name)}`.trim(),
         description: 'That page does not exist.',
+        source: '',
         index: false,
       }
       writeFileSync(
@@ -311,23 +413,20 @@ function seoPlugin(): Plugin {
       )
 
       if (base) {
-        const lastmod = new Date().toISOString().slice(0, 10)
         const urls = routes
           .map((route) => {
             const loc = `${base}${route.path === '/' ? '/' : route.path}`
             const priority = route.path === '/' ? '1.0' : route.path === '/work' ? '0.9' : '0.8'
             const freq = route.path === '/active' ? 'weekly' : 'monthly'
-            return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`
+            return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmodFor(publicDir, route)}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`
           })
           .join('\n')
         writeFileSync(
           join(outDir, 'sitemap.xml'),
           `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
         )
-        writeFileSync(
-          join(outDir, 'robots.txt'),
-          `User-agent: *\nAllow: /\n\nSitemap: ${base}/sitemap.xml\n`,
-        )
+        writeFileSync(join(outDir, 'robots.txt'), robotsTxt(site, base))
+        writeFileSync(join(outDir, 'llms.txt'), llmsTxt(site, routes, base, publicDir))
       }
 
       const brand = obj(site.brand)
@@ -378,7 +477,9 @@ function seoPlugin(): Plugin {
         ].join('\n'),
       )
 
-      console.log(`[seo] ${routes.length} prerendered routes, sitemap, robots, manifest, headers and 404 written.`)
+      console.log(
+        `[seo] ${routes.length} prerendered routes, sitemap, robots, llms.txt, manifest, headers and 404 written.`,
+      )
     },
   }
 }

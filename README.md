@@ -19,8 +19,6 @@ Eight pages: **Home**, **Timeline**, **Active**, **Work**, **Gallery**, **Skills
 
 No backend and no database. Every heading, project and review lives in a JSON file that is read when the page loads, so edits go live on a refresh with nothing to rebuild.
 
-The look is type led. Large headings in Instrument Sans, near black grounds, and red used in solid blocks rather than thin lines or outlines. Sections are separated by changes of background colour instead of dividers. There is no invented artwork anywhere: the only image on the site is his own avatar, and the work entries carry image slots that stay hidden until real screenshots are added.
-
 ## Stack
 
 | Area | Stack |
@@ -28,7 +26,7 @@ The look is type led. Large headings in Instrument Sans, near black grounds, and
 | App | React 19, Vite 6, TypeScript |
 | Styling | Tailwind CSS 3 |
 | Routing | React Router 7 |
-| Motion | Framer Motion, fade and rise only |
+| Motion | Framer Motion |
 | Content | JSON validated with Zod |
 | Hosting | Cloudflare Pages |
 
@@ -41,8 +39,6 @@ cd frontend
 npm install
 npm run dev
 ```
-
-Then open whatever URL Vite prints.
 
 The other commands:
 
@@ -74,6 +70,7 @@ A few things worth knowing:
 - **Nothing is required.** Delete any field you don't want and it falls back to a sensible default. Delete a whole section and it just stops rendering.
 - **To add an entry, copy an existing one.** Every list is an array, so duplicate an item, change the values, and give it a new `id`.
 - **Typos get caught.** If a file has broken JSON the site shows a screen naming the exact file and field, rather than a blank page.
+- **The profile picture** is the one thing not driven by JSON. It sits at [`frontend/public/media/emperor-naed.png`](frontend/public/media/emperor-naed.png) and is used by the header, hero and footer, so replacing that file swaps it everywhere.
 - **Adding screenshots.** Drop files into [`frontend/public/media/`](frontend/public/media/), then reference them as `/media/your-file.png`. On a work entry fill in `image` and `images`. For the gallery, add objects to the `items` array in `gallery.json`:
 
 ```json
@@ -86,47 +83,26 @@ A few things worth knowing:
 }
 ```
 
-  The gallery shows a friendly empty state until that array has something in it, and the category filter appears on its own once there is more than one category.
-- **The profile picture** is the one thing not driven by JSON. It sits at [`frontend/public/media/emperor-naed.png`](frontend/public/media/emperor-naed.png) and is used by the header, hero and footer, so replacing that file swaps it everywhere.
+The gallery shows an empty state until that array has something in it, and the category filter appears on its own once there is more than one category.
 
-## Link Previews
+## Search And Link Previews
 
-Sharing the site in Discord, Slack, iMessage or on X pulls in a proper card: title, description and a 1200x630 image.
+Every page is written out as its own HTML file at build time, so each one gets its own title, description, canonical link, preview card and structured data. Crawlers don't run JavaScript, so this has to happen in the HTML rather than in React. Titles and descriptions come from each content file's `intro`.
 
-All of it comes from the `seo` block in `site.json` and gets baked into the HTML at build time by a plugin in [`frontend/vite.config.ts`](frontend/vite.config.ts). Crawlers don't run JavaScript, so these tags have to be in the HTML itself rather than set by React.
+The build also writes `sitemap.xml`, `robots.txt`, `llms.txt`, `site.webmanifest`, a `_headers` file with security and caching rules, and a real `404.html`. None of those are edited by hand.
 
-```json
-"seo": {
-  "siteName": "Emperor Naed",
-  "url": "https://emperornaed.com",
-  "title": "Emperor Naed | Minecraft and Discord server configuration",
-  "description": "Minecraft networks, plugin and permission setup...",
-  "image": "/og.png",
-  "imageAlt": "Emperor Naed, server and community configuration",
-  "themeColor": "#e11d2e"
-}
-```
+Four fields in the `seo` block of `site.json` matter:
 
-Two things to know:
+- **`url`** has to be the real domain before launch. Canonical links, the sitemap and the preview image all need an absolute URL. Left empty, the build falls back to `CF_PAGES_URL`, which is the `*.pages.dev` address.
+- **`image`** is [`frontend/public/og.png`](frontend/public/og.png). Any 1200x630 PNG works and the size tags update themselves. Platforms cache previews, so re-share the link in a private channel after changing it.
+- **`themeColor`** is the coloured bar down the left of a Discord embed. It also tints browser chrome on mobile.
+- **`allowAiTraining`** ships as `true`. Setting it to `false` still lets ChatGPT, Claude and Perplexity read the site to answer live questions and cite it, and only turns away the crawlers that collect training data.
 
-- **Set `url` to the real domain before launch.** Social crawlers need an absolute URL for the preview image, so if this is wrong the card shows up with no image. If you leave it empty the build falls back to `CF_PAGES_URL`, which is the `*.pages.dev` address.
-- **`themeColor` is the coloured bar** down the left of a Discord embed. It also tints the browser chrome on mobile.
-
-The preview image is [`frontend/public/og.png`](frontend/public/og.png). Replace it with any 1200x630 PNG and the width and height tags update themselves. After changing anything here, re-share the link in a private channel, since platforms cache previews for a while.
-
-## Search Engine Setup
-
-Every page is written out as its own HTML file at build time, so each one ships with its own title, description, canonical link, social preview tags and structured data instead of all eight sharing the home page's. Crawlers that do not run JavaScript still read the right thing on every page.
-
-Titles and descriptions come from each content file's `intro`, so writing better copy is the same job as improving the search result. The structured data describes him as a person, lists the work entries, and adds breadcrumbs, which is what search engines read to understand who the site belongs to.
-
-The build also writes `sitemap.xml`, `robots.txt`, `site.webmanifest`, a `_headers` file with security and caching rules, and a real `404.html`. None of those are edited by hand. The only field they depend on is `seo.url`, which has to be the live domain.
-
-Once the domain is live, add the site to [Google Search Console](https://search.google.com/search-console) and submit `https://your-domain/sitemap.xml`.
+Once the domain is live, submit `https://your-domain/sitemap.xml` to [Google Search Console](https://search.google.com/search-console).
 
 ## Deploying
 
-This runs on Cloudflare Pages. Connect the repo and use these settings:
+Cloudflare Pages. Connect the repo and use these settings:
 
 | Setting | Value |
 | --- | --- |
@@ -135,7 +111,7 @@ This runs on Cloudflare Pages. Connect the repo and use these settings:
 | Build command | `npm run build` |
 | Build output directory | `dist` |
 
-Routing needs no configuration. Each page is a real file in `dist`, so Pages serves it directly and anything unknown gets a genuine 404 rather than a page pretending to be found. There is no server side code.
+Routing needs no configuration. Each page is a real file in `dist`, so Pages serves it directly and unknown paths get a genuine 404.
 
 To try the production build locally exactly as Pages serves it:
 
