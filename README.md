@@ -24,9 +24,9 @@ No backend, no database. Every piece of text, every project, review and skill li
 | Area | Stack |
 | --- | --- |
 | App | React 19, Vite 6, TypeScript |
-| Styling | Tailwind CSS 3, Inter, a near-black and crimson palette |
+| Styling | Tailwind CSS 3 with a custom crimson and obsidian palette |
 | Routing | React Router 7 |
-| Motion | Framer Motion, used sparingly |
+| Motion | Framer Motion, Lenis smooth scroll |
 | Content | JSON files validated with Zod |
 | Contact form | Pages Function that forwards to a Discord webhook |
 | Hosting | Cloudflare Pages |

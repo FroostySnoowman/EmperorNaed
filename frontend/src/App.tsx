@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ContentContext } from './content/ContentContext'
 import { ContentProvider } from './content/ContentProvider'
 import { RootLayout } from './components/layout/RootLayout'
+import { SmoothScroll } from './components/layout/SmoothScroll'
 import { BootScreen } from './components/ui/BootScreen'
 import { ContentErrorScreen } from './components/ui/ContentErrorScreen'
 import { Home } from './pages/Home'
@@ -27,18 +28,20 @@ export default function App() {
     <ContentProvider>
       <ContentGate>
         <BrowserRouter>
-          <Routes>
-            <Route element={<RootLayout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/timeline" element={<Timeline />} />
-              <Route path="/work" element={<Work />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/skills" element={<Skills />} />
-              <Route path="/reviews" element={<Reviews />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<NotFound />} />
-            </Route>
-          </Routes>
+          <SmoothScroll>
+            <Routes>
+              <Route element={<RootLayout />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/timeline" element={<Timeline />} />
+                <Route path="/work" element={<Work />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/skills" element={<Skills />} />
+                <Route path="/reviews" element={<Reviews />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+              </Route>
+            </Routes>
+          </SmoothScroll>
         </BrowserRouter>
       </ContentGate>
     </ContentProvider>

@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { cn } from '../../lib/cn'
 import { Icon } from './Icon'
@@ -24,18 +25,40 @@ export function CopyButton({ value, label = 'Copy', className }: { value: string
   return (
     <button
       type="button"
-      onClick={(event) => {
-        event.preventDefault()
-        void handleCopy()
-      }}
+      onClick={handleCopy}
       aria-label={`${label} ${value}`}
       className={cn(
-        'inline-flex items-center gap-1.5 rounded-md border border-white/12 px-2.5 py-1.5 text-xs text-white/55 transition-colors hover:border-white/25 hover:text-white',
+        'inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] font-medium text-white/60 transition hover:border-crimson-500/40 hover:text-white',
         className,
       )}
     >
-      <Icon name={copied ? 'check' : 'copy'} className="text-[13px]" />
-      {copied ? 'Copied' : label}
+      <AnimatePresence mode="wait" initial={false}>
+        {copied ? (
+          <motion.span
+            key="done"
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.7 }}
+            transition={{ duration: 0.16 }}
+            className="inline-flex items-center gap-1.5 text-crimson-300"
+          >
+            <Icon name="check" className="text-[13px]" />
+            Copied
+          </motion.span>
+        ) : (
+          <motion.span
+            key="idle"
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.7 }}
+            transition={{ duration: 0.16 }}
+            className="inline-flex items-center gap-1.5"
+          >
+            <Icon name="copy" className="text-[13px]" />
+            {label}
+          </motion.span>
+        )}
+      </AnimatePresence>
     </button>
   )
 }

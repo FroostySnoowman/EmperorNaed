@@ -44,22 +44,22 @@ export function Lightbox({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-[90] flex flex-col bg-ink-950/95"
+          className="fixed inset-0 z-[90] flex flex-col bg-ink-950/[0.98]"
           role="dialog"
           aria-modal="true"
           aria-label={state.title}
         >
           <div className="flex items-center justify-between gap-4 border-b border-white/[0.07] px-5 py-4 sm:px-8">
             <div className="min-w-0">
-              <p className="truncate text-sm font-medium text-white/90">{state.title}</p>
-              <p className="mt-0.5 text-[11px] text-white/40">
+              <p className="truncate font-display text-sm font-semibold text-white/90">{state.title}</p>
+              <p className="mt-0.5 font-mono text-[11px] text-white/40">
                 {state.index + 1} / {count}
               </p>
             </div>
             <button
               type="button"
               onClick={onClose}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/70 transition hover:border-white/30 hover:text-white"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white/70 transition hover:border-crimson-500/40 hover:text-white"
               aria-label="Close viewer"
             >
               <Icon name="close" className="text-[17px]" />
@@ -83,7 +83,7 @@ export function Lightbox({
                   if (info.offset.x < -80) onIndexChange((state.index + 1) % count)
                   if (info.offset.x > 80) onIndexChange((state.index - 1 + count) % count)
                 }}
-                className="max-h-full max-w-full cursor-grab rounded-xl border border-white/10 object-contain active:cursor-grabbing"
+                className="max-h-full max-w-full cursor-grab rounded-xl border border-white/10 object-contain shadow-crest active:cursor-grabbing"
               />
             </AnimatePresence>
 
@@ -92,7 +92,7 @@ export function Lightbox({
                 <button
                   type="button"
                   onClick={() => onIndexChange((state.index - 1 + count) % count)}
-                  className="absolute left-3 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-ink-900/90 text-white/75 transition hover:border-white/30 hover:text-white sm:flex"
+                  className="absolute left-3 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-ink-900/90 text-white/75 transition hover:border-crimson-500/45 hover:text-white sm:flex"
                   aria-label="Previous image"
                 >
                   <Icon name="arrow-right" className="rotate-180 text-[17px]" />
@@ -100,7 +100,7 @@ export function Lightbox({
                 <button
                   type="button"
                   onClick={() => onIndexChange((state.index + 1) % count)}
-                  className="absolute right-3 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-ink-900/90 text-white/75 transition hover:border-white/30 hover:text-white sm:flex"
+                  className="absolute right-3 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-ink-900/90 text-white/75 transition hover:border-crimson-500/45 hover:text-white sm:flex"
                   aria-label="Next image"
                 >
                   <Icon name="arrow-right" className="text-[17px]" />
@@ -119,7 +119,7 @@ export function Lightbox({
                   className={cn(
                     'h-14 w-20 shrink-0 overflow-hidden rounded-lg border transition',
                     index === state.index
-                      ? 'border-white/50 opacity-100'
+                      ? 'border-crimson-500 opacity-100'
                       : 'border-white/10 opacity-50 hover:opacity-90',
                   )}
                   aria-label={`View image ${index + 1}`}

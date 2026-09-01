@@ -7,9 +7,9 @@ import { Icon } from './Icon'
 type Variant = 'primary' | 'ghost' | 'text'
 
 const VARIANTS: Record<Variant, string> = {
-  primary: 'btn btn-primary',
-  ghost: 'btn btn-ghost',
-  text: 'link-accent',
+  primary: 'btn btn-primary btn-sheen',
+  ghost: 'btn btn-ghost btn-sheen',
+  text: 'group/link inline-flex items-center gap-2 text-sm font-semibold text-crimson-300 transition hover:text-crimson-200',
 }
 
 export function ActionLink({
@@ -29,10 +29,19 @@ export function ActionLink({
 }) {
   const external = isExternal(to)
   const classes = cn(VARIANTS[variant], className)
+
   const inner = (
     <>
-      {children}
-      {withArrow ? <Icon name={external ? 'arrow-up-right' : 'arrow-right'} className="text-[1.05em]" /> : null}
+      <span className="relative z-[1]">{children}</span>
+      {withArrow ? (
+        <Icon
+          name={external ? 'arrow-up-right' : 'arrow-right'}
+          className={cn(
+            'relative z-[1] text-[1.05em] transition-transform duration-300',
+            variant === 'text' ? 'group-hover/link:translate-x-1' : 'group-hover:translate-x-0.5',
+          )}
+        />
+      ) : null}
     </>
   )
 
@@ -43,6 +52,7 @@ export function ActionLink({
       </a>
     )
   }
+
   return (
     <Link to={to} className={classes} onClick={onClick}>
       {inner}
