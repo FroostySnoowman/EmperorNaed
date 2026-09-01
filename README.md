@@ -93,7 +93,7 @@ The build also writes `sitemap.xml`, `robots.txt`, `llms.txt`, `site.webmanifest
 
 Four fields in the `seo` block of `site.json` matter:
 
-- **`url`** has to be the real domain before launch. Canonical links, the sitemap and the preview image all need an absolute URL. Left empty, the build falls back to `CF_PAGES_URL`, which is the `*.pages.dev` address.
+- **`url`** has to be the real domain before launch. Canonical links, the sitemap and the preview image all need an absolute URL. Left empty, the build falls back to whichever host URL is in the environment, `CF_PAGES_URL` on Cloudflare or `VERCEL_PROJECT_PRODUCTION_URL` on Vercel.
 - **`image`** is [`frontend/public/og.png`](frontend/public/og.png). Any 1200x630 PNG works and the size tags update themselves. Platforms cache previews, so re-share the link in a private channel after changing it.
 - **`themeColor`** is the coloured bar down the left of a Discord embed. It also tints browser chrome on mobile.
 - **`allowAiTraining`** ships as `true`. Setting it to `false` still lets ChatGPT, Claude and Perplexity read the site to answer live questions and cite it, and only turns away the crawlers that collect training data.
@@ -102,18 +102,20 @@ Once the domain is live, submit `https://your-domain/sitemap.xml` to [Google Sea
 
 ## Deploying
 
-Cloudflare Pages. Connect the repo and use these settings:
+Runs on Cloudflare Pages or Vercel with no code changes. Both build from the `frontend` directory and serve `dist`.
 
-| Setting | Value |
-| --- | --- |
-| Framework preset | None |
-| Root directory | `frontend` |
-| Build command | `npm run build` |
-| Build output directory | `dist` |
+| Setting | Cloudflare Pages | Vercel |
+| --- | --- | --- |
+| Framework preset | None | Other |
+| Root directory | `frontend` | `frontend` |
+| Build command | `npm run build` | `npm run build` |
+| Output directory | `dist` | `dist` |
 
-Routing needs no configuration. Each page is a real file in `dist`, so Pages serves it directly and unknown paths get a genuine 404.
+Every page is a real file in `dist`, so routing needs no configuration on either host and unknown paths get a genuine 404. Caching and security headers come from the generated `_headers` file on Cloudflare and from [`frontend/vercel.json`](frontend/vercel.json) on Vercel. Each host ignores the other's file.
 
-To try the production build locally exactly as Pages serves it:
+`vercel.json` also sets `cleanUrls`, so the served URL is `/work` rather than `/work.html`, which is what the canonical links and the sitemap point at.
+
+To try the production build locally exactly as Cloudflare serves it:
 
 ```bash
 cd frontend

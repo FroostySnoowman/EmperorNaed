@@ -124,6 +124,18 @@ function lastmodFor(publicDir: string, route: Route): string {
   return new Date(newest || Date.now()).toISOString().slice(0, 10)
 }
 
+function resolveBase(site: Json): string {
+  const configured = str(obj(site.seo).url)
+  const env = process.env
+  const candidate =
+    configured ||
+    env.CF_PAGES_URL ||
+    (env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${env.VERCEL_PROJECT_PRODUCTION_URL}` : '') ||
+    (env.VERCEL_URL ? `https://${env.VERCEL_URL}` : '') ||
+    ''
+  return candidate.replace(/\/+$/, '')
+}
+
 function robotsTxt(site: Json, base: string): string {
   const allowTraining = obj(site.seo).allowAiTraining !== false
   const lines = ['User-agent: *', 'Allow: /', '']
@@ -371,7 +383,7 @@ function seoPlugin(): Plugin {
       handler(html) {
         if (isBuild) return html
         const { site, routes } = buildRoutes(publicDir)
-        const base = (str(obj(site.seo).url) || process.env.CF_PAGES_URL || '').replace(/\/+$/, '')
+        const base = resolveBase(site)
         const home = routes[0]
         if (!home) return html
         return applyMeta(html, home.title, metaFor(site, home, base, publicDir))
@@ -380,9 +392,11 @@ function seoPlugin(): Plugin {
 
     closeBundle() {
       const { site, routes } = buildRoutes(publicDir)
-      const base = (str(obj(site.seo).url) || process.env.CF_PAGES_URL || '').replace(/\/+$/, '')
+      const base = resolveBase(site)
       if (!base) {
-        console.warn('[seo] No seo.url in site.json and no CF_PAGES_URL, so canonical, sitemap and JSON-LD are skipped.')
+        console.warn(
+          '[seo] No seo.url in site.json and no host URL in the environment, so canonical, sitemap and JSON-LD are skipped.',
+        )
       }
 
       let template: string
