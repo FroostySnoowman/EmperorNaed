@@ -9,7 +9,7 @@
 
   "seo": {
     "siteName": "Emperor Naed",
-    "url": "https://emperornaed.com",
+    "url": "https://emperornaed.myfolio.site",
     "title": "Emperor Naed | Minecraft and Discord server configuration",
     "description": "140+ servers configured over 7 years. I set up Minecraft networks, Discord communities, plugins and permissions, then train the staff teams that keep them running.",
     "image": "/og.png",
@@ -35,7 +35,7 @@
   "headerCta": { "label": "Get in touch", "to": "/contact" },
 
   "socials": [
-    { "id": "discord", "label": "Discord", "handle": "@emperornaed", "href": "https://discord.com/users/000000000000000000", "icon": "discord" },
+    { "id": "discord", "label": "Discord", "handle": "@emperornaed", "href": "https://discord.com/users/985012228904325170", "icon": "discord" },
     { "id": "builtbybit", "label": "BuiltByBit", "handle": "EmperorNaed", "href": "https://builtbybit.com/", "icon": "store" },
     { "id": "github", "label": "GitHub", "handle": "emperornaed", "href": "https://github.com/", "icon": "github" },
     { "id": "youtube", "label": "YouTube", "handle": "Emperor Naed", "href": "https://youtube.com/", "icon": "youtube" }
@@ -59,8 +59,8 @@
         "title": "Get in touch",
         "links": [
           { "label": "Contact page", "to": "/contact" },
-          { "label": "Email me", "to": "mailto:hello@emperornaed.com" },
-          { "label": "Discord", "to": "https://discord.com/users/000000000000000000" },
+          { "label": "Email me", "to": "mailto:dinonaedyt@gmail.com" },
+          { "label": "Discord", "to": "https://discord.com/users/985012228904325170" },
           { "label": "BuiltByBit", "to": "https://builtbybit.com/" }
         ]
       }

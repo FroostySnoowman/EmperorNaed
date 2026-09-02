@@ -179,6 +179,14 @@ function llmsTxt(site: Json, routes: Route[], base: string, publicDir: string): 
   return `${out.join('\n')}\n`
 }
 
+function contactEmail(publicDir: string): string {
+  for (const channel of list(readJson(publicDir, 'contact.json')?.channels)) {
+    const href = str(channel.href)
+    if (href.toLowerCase().startsWith('mailto:')) return href.slice('mailto:'.length)
+  }
+  return ''
+}
+
 function serviceOffers(publicDir: string, brandName: string): Json[] {
   return list(readJson(publicDir, 'skills.json')?.groups)
     .filter((group) => str(group.title))
@@ -264,6 +272,7 @@ function structuredData(site: Json, route: Route, base: string, imageUrl: string
   if (route.path === '/') page.mainEntity = { '@id': `${base}/#person` }
 
   const offers = route.path === '/' ? serviceOffers(publicDir, str(brand.name)) : []
+  const email = route.path === '/' ? contactEmail(publicDir) : ''
   const graph: Json[] = [page]
 
   if (route.path === '/') {
@@ -294,6 +303,7 @@ function structuredData(site: Json, route: Route, base: string, imageUrl: string
         ],
         areaServed: { '@type': 'Place', name: 'Worldwide' },
         availableLanguage: 'English',
+        ...(email ? { email } : {}),
         ...(offers.length > 0 ? { makesOffer: offers } : {}),
         ...(sameAs.length > 0 ? { sameAs } : {}),
       },
